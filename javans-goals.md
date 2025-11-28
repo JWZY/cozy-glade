@@ -1,4 +1,4 @@
-# Javan's Character: The Gardener of Lost Souls
+# Javan's Character: Exile Oracle from a Broken Dream
 
 <p align="center">
   <img src="SYLVARI_-_custom_race.png" alt="Sylvari Ancestry" width="250">
@@ -7,15 +7,15 @@
 </p>
 
 **Player:** Javan (he/him)  
-**Character Concept:** "The Gardener of Lost Souls" - Compassionate Sylvari exile cultivating chosen kinship  
+**Character Concept:** Exile Sylvari Seer - an oracle cut off from the Dream of Dreams, trying to regrow a living beacon  
 **Ancestry:** Sylvari (custom - plant-like humanoid, not Fungril)  
 **Class:** Witch (Divination, Hexes)
 
-**Core Theme:** *"True kinship is not inherited—it is cultivated."*
+**Core Theme:** *"The Dream can be replanted wherever hope takes root."*
 
 ## Character Essence
 
-A compassionate Sylvari exile who realizes true kinship isn't limited to shared sap. They find family in strangers by tending to trauma and grief. Melancholic, thoughtful, and patient—their presence is a quiet garden in a prison wasteland.
+An exiled Sylvari mystic whose visions once flowed through the Dream of Dreams. Cut off from the network, he now reads omens in seeds, ash, and starlight, determined to grow a new Grove that can call the Dream back to this barren world.
 
 **Energy:** Blue - Calm, thoughtful, emotionally sensitive, melancholic. A gentle presence who sees beauty in decay and potential in death. Speaks softly but with weight. Moves deliberately, like seasons changing.
 
@@ -41,7 +41,7 @@ You don't deny your actions. The court called it terrorism. You called it protec
 
 **Cellmate - Bory:** Paired with a violent Ribbet enforcer for two years. You taught him about cycles (anger-release-peace-renewal) and that his roots could anchor him rather than confine him. You grew small plants from smuggled seeds in your cell, and watching them calmed him. By the end, Bory had killed only 4 prisoners (down from dozens). You considered this a successful harvest.
 
-**On Prison Planet:** The Dream is completely severed here. The planet is remote, barren, inhospitable—too far from any known Sylvari presence to maintain connection. You can't sense if any of your kind are here, and the silence is profound. But there's peace in it too. For the first time, you are truly individual. And paradoxically, this isolation has made you desperate to connect—not just to Sylvari, but to anyone who will tend the garden with you.
+**On Prison Planet:** The Dream is completely severed here. The planet is remote, barren, inhospitable—too far from any known Sylvari presence to maintain connection. You can't sense if any of your kind are here, and the silence is profound. But there's peace in it too. For the first time, you are truly individual. And paradoxically, this isolation has made you desperate to connect—not just to Sylvari, but to anyone willing to stand within the circle of your future Grove.
 
 ---
 
@@ -49,7 +49,7 @@ You don't deny your actions. The court called it terrorism. You called it protec
 
 **The Communion of Fallen Seeds** *(name to be workshopped)*
 
-A binding ritual that creates a living Grove fueled by chosen kinship. The ritual requires four sacred elements:
+A binding ritual that births a living Grove that can act as a local node of the Dream of Dreams. The ritual requires four sacred elements:
 
 1. **Oath** - A promise of guardianship. Each participant must swear to protect and tend the others, witnessed by someone of spiritual authority
 2. **Seed** - Three seeds taken from the Sylvari's own body, representing life and potential
@@ -58,26 +58,23 @@ A binding ritual that creates a living Grove fueled by chosen kinship. The ritua
 
 **The Ceremony:** Seeds are planted in soil mixed with ash and tears, while oaths are spoken. Each member of the chosen family must contribute one element, binding them together in a network of mutual care.
 
-**What Grows:** If successful, a **Grove Marker** emerges—a young tree that acts as a living node connecting all participants. This seedling must be tended, nurtured, and protected. As the bonds between the family deepen through shared experiences, positive emotions, and acts of care, the Grove grows stronger. Eventually, if cultivated properly, it can grow powerful enough to reach across the stars and reconnect with the Mother Tree's Dream.
+**What Grows:** If successful, a **Grove Marker** emerges—a young tree that acts as both a living node connecting all participants and a future beacon for the Dream. This seedling must be tended, nurtured, and protected. As the bonds between the family deepen through shared experiences, positive emotions, and acts of care, the Grove grows stronger and your visions sharpen. Eventually, if cultivated properly, it can grow powerful enough to reach across the stars and reconnect with the Mother Tree's Dream.
 
 ---
 
 ## Goals: The Path to the Grove
 
-**Short-Term Goals** *(Gathering)*
+**Long‑term: (Thriving)**
+- Use the Grove as a beacon to reconnect to the Mother Tree and reshape the Dream with these new stories.
+
+**Mid‑term (Growing)**
+- Perform the Dream of Dreams ceremony to create a new Grove
+- Ensure the seedling for the Grove takes root during its early phase
+- Tend the Grove - Protect it, and help it THRIVE through deepening bonds
+
+**Short-Term goals (Gathering)**
 - Confirm whether any other Sylvari are on the Prison Planet
-- Follow the vision of the worm egg to the wedding—visions mean CONNECTION, and you're starving for it
-- Identify and gather the four ritual elements: someone with spiritual authority to witness oaths (Tess?), ashes of someone meaningful, tears from willing participants, and prepare your own seeds
-
-**Mid-Term Goals** *(The Ritual & Nurturing)*
-- Perform the Communion of Fallen Seeds ritual with your chosen family (Bory, Sarah, Tess, and others)
-- Ensure the seedling takes root
-- **Tend the Grove** - Protect it, nurture it, and help it THRIVE through deepening bonds, shared experiences, and positive emotions among your found family
-
-**Long-Term Goals** *(Reconnection & Expansion)*
-- **Grow the Grove until it's strong enough to connect with the Mother Tree** - Fueled by connections, positive emotions, and the life your family builds together, the Grove can eventually reach across the stars to touch the Dream
-- Create a Sanctum of Adopted Roots on Prison Planet: a living glade where the ritual can be repeated, proving that kinship can be cultivated and the Dream can expand beyond blood
-- Send word back to the Sylvari homeworld: *"I have found kinship among the exiled, and we are beautiful. The Dream can grow anywhere love is planted."*
+- Identify and gather the four ritual elements
 
 ---
 
@@ -110,10 +107,10 @@ Traditional Tarot reimagined using plant biology and natural phenomena.
 
 ### The Minor Arcana (The Suits)
 
-1. **Branches** (Replaces Wands/Fire) - Action, Will, Growth, Ambition, Creativity
-2. **Blossoms** (Replaces Cups/Water) - Emotion, Intuition, Relationships, Healing
-3. **Thorns** (Replaces Swords/Air) - Intellect, Conflict, Truth, Protection, Pain
-4. **Roots** (Replaces Pentacles/Earth) - Material World, Stability, Health, Resources, Heritage
+1. **Branches** (Wands) - Action, Will, Growth, Ambition, Creativity
+2. **Blossoms** (Cups) - Emotion, Intuition, Relationships, Healing
+3. **Thorns** (Swords) - Intellect, Conflict, Truth, Protection, Pain
+4. **Roots** (Pentacles) - Material World, Stability, Health, Resources, Heritage
 
 ### The Major Arcana (The Archetypes)
 
@@ -125,19 +122,19 @@ Traditional Tarot reimagined using plant biology and natural phenomena.
 | **III. The Empress** | **The Mother Tree** | Fertility, creation, nature, nurturing |
 | **IV. The Emperor** | **The Mountain** | Structure, authority, immovability, stability |
 | **V. The Hierophant** | **The Grove Keeper** | Tradition, spiritual guidance, shared knowledge |
-| **VI. The Lovers** | **Symbiosis** | Connection, harmony, choices (grafting) |
+| **VI. The Lovers** | **Life** | Connection, harmony, choices (grafting) |
 | **VII. The Chariot** | **The River** | Movement, force of nature, overcoming obstacles |
 | **VIII. Strength** | **The Bear** | Endurance, inner strength, patience |
 | **IX. The Hermit** | **The Moss** | Solitude, introspection, slow growth in quiet places |
 | **X. Wheel of Fortune** | **The Seasons** | Cycles, change, inevitability |
 | **XI. Justice** | **The Balance** | Cause and effect, equilibrium in the ecosystem |
-| **XII. The Hanged Man** | **Dormancy** | Suspension, sacrifice for spring, waiting |
-| **XIII. Death** | **Decomposition** | Transformation, ending to feed the new, fungi |
+| **XII. The Hanged Man** | **Winter** | Suspension, sacrifice for spring, waiting |
+| **XIII. Death** | **Death** | Transformation, ending to feed the new, fungi |
 | **XIV. Temperance** | **Photosynthesis** | Alchemy, blending elements (sun + water), patience |
 | **XV. The Devil** | **The Parasite** | Addiction, unhealthy attachment, strangling vines |
-| **XVI. The Tower** | **The Lightning Oak** | Sudden destruction, clearing the brush, revelation |
-| **XVII. The Star** | **The Starlight** | Hope, guidance, navigation |
+| **XVI. The Tower** | **Lightning** | Sudden destruction, clearing the brush, revelation |
+| **XVII. The Star** | **The Star** | Hope, guidance, navigation |
 | **XVIII. The Moon** | **The Moon** | Illusion, fear, cycles |
 | **XIX. The Sun** | **The Sun** | Joy, success, vitality |
 | **XX. Judgment** | **The Harvest** | Assessment, reaping what was sown, awakening |
-| **XXI. The World** | **The Forest** | Completion, wholeness, the interconnected web |
+| **XXI. The World** | **The World** | Completion, wholeness, the interconnected web |
