@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daggerheart Campaign Planning</title>
+
+    <!-- Social Media / Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Daggerheart Campaign Planning">
+    <meta property="og:description" content="Campaign planning resources and notes for Bonetop and Prison Planet.">
+    <meta property="og:image" content="bonetop/preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Daggerheart Campaign Planning">
+    <meta property="twitter:description" content="Campaign planning resources and notes for Bonetop and Prison Planet.">
+    <meta property="twitter:image" content="bonetop/preview.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗡️</text></svg>">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
@@ -80,6 +96,11 @@
             margin-bottom: 1rem;
             padding-left: 1.5rem;
             color: #cbd5e1;
+            list-style-type: disc;
+        }
+
+        .markdown-content ol {
+            list-style-type: decimal;
         }
 
         .markdown-content li {
@@ -224,8 +245,13 @@
         <aside class="hidden md:flex w-80 bg-slate-900 border-r border-slate-800 flex-col">
             <!-- Header -->
             <div class="p-6 border-b border-slate-800">
-                <h1 class="text-xl font-bold text-white mb-1">Daggerheart Campaign</h1>
-                <p class="text-sm text-slate-400">Character Goals & Planning</p>
+                <div class="flex items-center justify-between mb-1">
+                    <h1 id="campaign-title" class="text-xl font-bold text-white">Bonetop</h1>
+                    <button onclick="toggleCampaign()" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-lg transition-colors" title="Switch Campaign">
+                        <span id="campaign-icon">🪐</span>
+                    </button>
+                </div>
+                <p id="campaign-desc" class="text-sm text-slate-400">Cozy slice of life</p>
             </div>
 
             <!-- Search -->
@@ -252,23 +278,9 @@
                         <div class="text-xs text-slate-500 mt-0.5">Criteria & Examples</div>
                     </button>
                     
-                    <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3 mt-6">Player Characters</div>
-                    <button onclick="loadMarkdown('javan.md')" class="nav-item w-full text-left px-4 py-2 rounded-lg hover:bg-slate-800 text-slate-300 hover:text-white transition-colors">
-                        <div class="font-medium">Javan</div>
-                        <div class="text-xs text-slate-500 mt-0.5">Character: Arden</div>
-                    </button>
-                    <button onclick="loadMarkdown('pat.md')" class="nav-item w-full text-left px-4 py-2 rounded-lg hover:bg-slate-800 text-slate-300 hover:text-white transition-colors">
-                        <div class="font-medium">Pat</div>
-                        <div class="text-xs text-slate-500 mt-0.5">Character: Bory</div>
-                    </button>
-                    <button onclick="loadMarkdown('tess.md')" class="nav-item w-full text-left px-4 py-2 rounded-lg hover:bg-slate-800 text-slate-300 hover:text-white transition-colors">
-                        <div class="font-medium">Tess</div>
-                        <div class="text-xs text-slate-500 mt-0.5">Character: Tess</div>
-                    </button>
-                    <button onclick="loadMarkdown('sarah.md')" class="nav-item w-full text-left px-4 py-2 rounded-lg hover:bg-slate-800 text-slate-300 hover:text-white transition-colors">
-                        <div class="font-medium">Sarah</div>
-                        <div class="text-xs text-slate-500 mt-0.5">Character: Sarah</div>
-                    </button>
+                    <div id="campaign-nav-container">
+                        <!-- Populated by JS -->
+                    </div>
                 </div>
             </nav>
 
@@ -375,26 +387,8 @@
                 </button>
             </div>
             
-            <div>
-                <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3 px-2">Player Characters</div>
-                <div class="space-y-2">
-                    <button onclick="loadMarkdownMobile('javan.md')" class="page-item w-full text-left px-4 py-4 rounded-xl bg-slate-800/50 border border-slate-700/50">
-                        <div class="font-medium text-white">Javan</div>
-                        <div class="text-sm text-slate-400 mt-1">Character: Arden</div>
-                    </button>
-                    <button onclick="loadMarkdownMobile('pat.md')" class="page-item w-full text-left px-4 py-4 rounded-xl bg-slate-800/50 border border-slate-700/50">
-                        <div class="font-medium text-white">Pat</div>
-                        <div class="text-sm text-slate-400 mt-1">Character: Bory</div>
-                    </button>
-                    <button onclick="loadMarkdownMobile('tess.md')" class="page-item w-full text-left px-4 py-2 rounded-xl bg-slate-800/50 border border-slate-700/50">
-                        <div class="font-medium text-white">Tess</div>
-                        <div class="text-sm text-slate-400 mt-1">Character: Tess</div>
-                    </button>
-                    <button onclick="loadMarkdownMobile('sarah.md')" class="page-item w-full text-left px-4 py-4 rounded-xl bg-slate-800/50 border border-slate-700/50">
-                        <div class="font-medium text-white">Sarah</div>
-                        <div class="text-sm text-slate-400 mt-1">Character: Sarah</div>
-                    </button>
-                </div>
+            <div id="mobile-campaign-nav-container">
+                <!-- Populated by JS -->
             </div>
         </div>
     </div>
@@ -402,15 +396,175 @@
     <script>
         let allDocuments = {};
         let currentContent = '';
+        let currentCampaign = 'bonetop';
+        let isDmMode = false;
+        const dmFileSet = new Set();
+
+        const campaigns = {
+            'prison-planet': {
+                name: 'Prison Planet',
+                description: 'Space western',
+                icon: '🪐',
+                basePath: 'prison-planet/',
+                sections: [
+                    {
+                        title: 'Player Characters',
+                        items: [
+                            { file: 'javan.md', name: 'Bran', sub: 'Played by Javan' },
+                            { file: 'pat.md', name: 'Bory', sub: 'Played by Pat' },
+                            { file: 'tess.md', name: 'Nyra', sub: 'Played by Tess' },
+                            { file: 'sarah.md', name: 'Madsen', sub: 'Played by Sarah' }
+                        ]
+                    }
+                ]
+            },
+            'bonetop': {
+                name: 'Bonetop',
+                description: 'Cozy slice of life',
+                icon: '🦴',
+                basePath: 'bonetop/',
+                sections: [
+                    {
+                        title: 'Campaign Overview',
+                        items: [
+                            { file: 'campaign_overview.md', name: 'Overview & Setting', sub: 'The World' },
+                            { file: 'session_1_prep.md', name: 'Session 1 Prep', sub: 'Encounters & Scenes', dmOnly: true },
+                            { file: 'dm_notes.md', name: 'DM Notes', sub: 'Factions & Goals', dmOnly: true }
+                        ]
+                    },
+                    {
+                        title: 'Player Characters',
+                        items: [
+                            { file: 'Oleg.md', name: 'Oleg', sub: 'Played by Token' },
+                            { file: 'Halden.md', name: 'Halden', sub: 'Played by Lumberjake' },
+                            { file: 'Ellery.md', name: 'Ellery Briggs', sub: 'Played by Cheez' }
+                        ]
+                    },
+                    {
+                        title: 'NPCs',
+                        items: [
+                            { file: 'Finley_Boreas.md', name: 'Finley Boreas', sub: 'NPC' },
+                            { file: 'Nellie_Saddler.md', name: 'Nellie Saddler', sub: 'NPC' },
+                            { file: 'Vinos.md', name: 'Vinos', sub: 'NPC' }
+                        ]
+                    }
+                ]
+            }
+        };
+
+        const sharedResources = [
+            'goal_pyramid_guide.md'
+        ];
+
+        // Initialize DM file set
+        Object.values(campaigns).forEach(campaign => {
+            campaign.sections.forEach(section => {
+                section.items.forEach(item => {
+                    if (item.dmOnly) {
+                        dmFileSet.add(campaign.basePath + item.file);
+                    }
+                });
+            });
+        });
+
+        function toggleCampaign() {
+            currentCampaign = currentCampaign === 'prison-planet' ? 'bonetop' : 'prison-planet';
+            renderNav();
+            loadAllDocuments();
+            // Reset content to welcome screen
+            document.getElementById('content').innerHTML = `
+                <div class="text-center py-12 md:py-20">
+                    <svg class="w-16 h-16 md:w-24 md:h-24 mx-auto mb-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                    <h1 class="text-2xl md:text-4xl font-bold text-white mb-4">Welcome to ${campaigns[currentCampaign].name}</h1>
+                    <p class="text-slate-400 text-base md:text-lg mb-8 hidden md:block">Select a document from the sidebar to begin</p>
+                </div>
+            `;
+        }
+
+        function toggleDmMode() {
+            isDmMode = !isDmMode;
+            console.log('DM Mode:', isDmMode);
+            renderNav();
+            // Reload documents if turning on DM mode to ensure we have them
+            if (isDmMode) loadAllDocuments();
+            
+            // Visual feedback
+            const indicator = document.createElement('div');
+            indicator.className = 'fixed top-4 right-4 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 transition-opacity duration-1000';
+            indicator.textContent = isDmMode ? 'DM Mode Enabled' : 'DM Mode Disabled';
+            document.body.appendChild(indicator);
+            setTimeout(() => {
+                indicator.style.opacity = '0';
+                setTimeout(() => indicator.remove(), 1000);
+            }, 2000);
+        }
+
+        function renderNav() {
+            const campaign = campaigns[currentCampaign];
+            
+            // Update Header
+            const titleEl = document.getElementById('campaign-title');
+            const descEl = document.getElementById('campaign-desc');
+            const iconEl = document.getElementById('campaign-icon');
+            
+            if(titleEl) titleEl.textContent = campaign.name;
+            if(descEl) descEl.textContent = campaign.description;
+            if(iconEl) iconEl.textContent = campaign.icon;
+            
+            // Desktop Nav
+            const desktopContainer = document.getElementById('campaign-nav-container');
+            if (desktopContainer) {
+                desktopContainer.innerHTML = campaign.sections.map(section => {
+                    const visibleItems = section.items.filter(item => isDmMode || !item.dmOnly);
+                    if (visibleItems.length === 0) return '';
+                    
+                    return `
+                    <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3 mt-6">${section.title}</div>
+                    ${visibleItems.map(p => `
+                        <button onclick="loadMarkdown('${campaign.basePath}${p.file}')" class="nav-item w-full text-left px-4 py-2 rounded-lg hover:bg-slate-800 text-slate-300 hover:text-white transition-colors">
+                            <div class="font-medium">${p.name}</div>
+                            <div class="text-xs text-slate-500 mt-0.5">${p.sub}</div>
+                        </button>
+                    `).join('')}
+                `}).join('');
+            }
+
+            // Mobile Nav
+            const mobileContainer = document.getElementById('mobile-campaign-nav-container');
+            if(mobileContainer) {
+                mobileContainer.innerHTML = campaign.sections.map(section => {
+                    const visibleItems = section.items.filter(item => isDmMode || !item.dmOnly);
+                    if (visibleItems.length === 0) return '';
+
+                    return `
+                    <div class="mb-4">
+                        <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3 px-2">${section.title}</div>
+                        <div class="space-y-2">
+                            ${visibleItems.map(p => `
+                                <button onclick="loadMarkdownMobile('${campaign.basePath}${p.file}')" class="page-item w-full text-left px-4 py-4 rounded-xl bg-slate-800/50 border border-slate-700/50">
+                                    <div class="font-medium text-white">${p.name}</div>
+                                    <div class="text-sm text-slate-400 mt-1">${p.sub}</div>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `}).join('');
+            }
+        }
 
         // Load all markdown files
         async function loadAllDocuments() {
+            const campaign = campaigns[currentCampaign];
+            // Flatten files from all sections
+            const campaignFiles = campaign.sections.flatMap(section => 
+                section.items.map(item => campaign.basePath + item.file)
+            );
+            
             const files = [
-                'javan.md',
-                'pat.md',
-                'tess.md',
-                'sarah.md',
-                'goal_pyramid_guide.md'
+                ...sharedResources,
+                ...campaignFiles
             ];
 
             for (const file of files) {
@@ -498,6 +652,9 @@
             // Search through all documents
             let results = [];
             for (const [filename, content] of Object.entries(allDocuments)) {
+                // Skip DM files if not in DM mode
+                if (!isDmMode && dmFileSet.has(filename)) continue;
+
                 const lines = content.split('\n');
                 lines.forEach((line, index) => {
                     if (line.toLowerCase().includes(query)) {
@@ -729,6 +886,13 @@
 
         // Keyboard shortcuts
         document.addEventListener('keydown', (e) => {
+            // Toggle DM Mode: Alt + Shift + D
+            // Using e.code to handle Mac Option key correctly (which changes e.key value)
+            if (e.altKey && e.shiftKey && e.code === 'KeyD') {
+                e.preventDefault();
+                toggleDmMode();
+            }
+
             if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
                 e.preventDefault();
                 const searchInput = document.getElementById('searchInput');
@@ -752,8 +916,8 @@
         });
 
         // Initialize
+        renderNav();
         loadAllDocuments();
     </script>
 </body>
 </html>
-
