@@ -5,7 +5,7 @@
 ## Scene 1: The Overlook (Introduction)
 *   **Setting the Scene:**
     *   The wagon crests the final hill as the sun begins to set.
-    *   **Visual:** In the distance, the colossal **Dragon Skeleton** (Bonetop) rises from the earth, its ribs forming natural white arches against the sky. The lake ("Mirrorwater") reflects the orange light.
+    *   **Visual:** In the distance, the colossal **Dragon Skeleton** (Bonetop) rises from the earth, its ribs forming natural white arches against the sky. The lake reflects the orange light.
     *   **Atmosphere:** Quiet, ancient, and slightly ominous but beautiful.
 *   **Player Choice:**
     *   Where do they park the wagon?

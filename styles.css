@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* Markdown content styling */
+.markdown-content {
+    line-height: 1.8;
+}
+
+.markdown-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #f1f5f9;
+    border-bottom: 2px solid #334155;
+    padding-bottom: 0.5rem;
+}
+
+.markdown-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #e2e8f0;
+}
+
+.markdown-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #cbd5e1;
+}
+
+.markdown-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #cbd5e1;
+}
+
+.markdown-content p {
+    margin-bottom: 1rem;
+    color: #cbd5e1;
+}
+
+.markdown-content ul, .markdown-content ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    color: #cbd5e1;
+    list-style-type: disc;
+}
+
+.markdown-content ol {
+    list-style-type: decimal;
+}
+
+.markdown-content li {
+    margin-bottom: 0.5rem;
+}
+
+.markdown-content strong {
+    color: #f1f5f9;
+    font-weight: 600;
+}
+
+.markdown-content em {
+    color: #94a3b8;
+    font-style: italic;
+}
+
+.markdown-content blockquote {
+    border-left: 4px solid #3b82f6;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: #94a3b8;
+    font-style: italic;
+    background: #1e293b;
+    padding: 1rem;
+    border-radius: 0.375rem;
+}
+
+.markdown-content blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.markdown-content hr {
+    border: none;
+    border-top: 1px solid #334155;
+    margin: 2rem 0;
+}
+
+.markdown-content code {
+    background: #1e293b;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    color: #60a5fa;
+}
+
+.markdown-content pre {
+    background: #1e293b;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}
+
+.markdown-content pre code {
+    background: none;
+    padding: 0;
+}
+
+/* Sidebar animation */
+.nav-item {
+    transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+    transform: translateX(4px);
+}
+
+/* Search highlight */
+mark {
+    background-color: #3b82f6;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+/* Sidebar glass effect */
+.glass-sidebar {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Mobile bottom bar */
+.mobile-bottom-bar {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+}
+
+/* Mobile modal */
+.mobile-modal {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(15, 23, 42, 0.75);
+}
+
+.mobile-modal-enter {
+    animation: blurIn 0.3s ease-out;
+}
+
+.mobile-modal-exit {
+    animation: blurOut 0.25s ease-in forwards;
+}
+
+@keyframes blurIn {
+    from {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+    }
+    to {
+        opacity: 1;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+}
+
+@keyframes blurOut {
+    from {
+        opacity: 1;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+    to {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+    }
+}
+
+/* Page item hover effect on mobile */
+.page-item {
+    transition: all 0.15s ease;
+}
+
+.page-item:active {
+    transform: scale(0.98);
+    background: rgba(59, 130, 246, 0.2);
+}
+
+/* Safe area padding for notched phones */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .mobile-bottom-bar {
+        padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    }
+}
+
+/* Page Cover Image (Generic) */
+.page-cover {
+    width: 100%;
+    /* background-image set via inline style or JS */
+    background-size: cover;
+    background-position: center 30%;
+    padding: 10rem 0 0 0;
+    /* margin-bottom: 2rem; */
+}
+
+@media (min-width: 768px) {
+    .page-cover {
+        padding: 16rem 0 0 0;
+    }
+}
+
+.page-cover-content {
+    max-width: 56rem; /* max-w-4xl */
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .page-cover-content {
+        padding: 0 2rem;
+    }
+}
+
+.page-cover h1 {
+    /* Cover specific overrides */
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.8);
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 100%;
+    /* Match standard markdown-content h1 spacing */
+    padding-bottom: 0.5rem;
+}
+
+/* Character Backgrounds */
+.character-bg {
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right, rgba(2, 6, 23, 0.9) 0%, rgba(2, 6, 23, 0.6) 100%), var(--char-bg-image);
+    /* Mobile: subtle background at bottom right */
+    background-position: 120% 100%;
+    background-size: 80% auto;
+    background-attachment: fixed;
+}
+
+@media (min-width: 768px) {
+    .character-bg {
+        /* Desktop: peeking in from right, fixed */
+        /* Positioned at right bottom, offset slightly to the right */
+        background-position: 110% 100%;
+        background-size: auto 85vh; /* Scale based on height to fit nicely */
+        background-image: linear-gradient(to right, rgba(2, 6, 23, 1) 50%, rgba(2, 6, 23, 0.7) 100%), var(--char-bg-image);
+        background-attachment: fixed;
+    }
+}
+
+@media (min-width: 1280px) {
+    .character-bg {
+        /* Large Desktop: Make sure it doesn't overlap text too much */
+        /* Align right bottom exactly */
+        background-position: right bottom;
+        background-size: auto 90vh;
+    }
+}

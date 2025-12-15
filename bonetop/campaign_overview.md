@@ -1,13 +1,14 @@
-# Campaign Overview: Bonetop
+<!-- cover: bonetop/img/bonetop-splash.png -->
+# Bonetop
 
 ## The Setting
-**Bonetop** is the provisional name for the new settlement the party is establishing.
-
-*   **Location:** The Western Frontier, far from the bustling capitals.
+*   **Location:** A frontier settlement, far from the bustling capitals.
 *   **Landmark:** The colossal, calcified skeleton of an ancient dragon, half-embedded in the earth. Its ribs form natural arches, and its skull serves as a grim but majestic lookout.
-*   **Geography:** Nestled next to a vast, crystal-clear lake ("The Mirrorwater"?). The land is fertile but untamed.
+*   **Geography:** Nestled next to a vast, freshwater lake (to be named). The land is fertile but untamed.
 *   **Seasons:** The region experiences four distinct seasons, each bringing its own beauty and challenges.
     *   *Current Season:* Early Spring. The snow is melting, the ground is soft, and life is waking up.
+
+> *Life is what you create, moment by moment.*
 
 ## The Tone
 **"Slice of Life" & Homesteading**
@@ -16,7 +17,7 @@ Inspired by *Frieren: Beyond Journey's End*, this campaign focuses on the quiet 
 *   **Themes:**
     *   Found Family & Bonding.
     *   The passage of time and the legacy we leave.
-    *   Man vs. Nature (in a gardening way, not just a fighting way).
+    *   Man vs. Nature
     *   The magic of the mundane.
 
 ## The Party (The Founders)
@@ -31,7 +32,4 @@ A group of 6 motley individuals seeking a fresh start.
 *   **Finley Boreas (Elf Noble):** Disgraced rich kid in exile.
 *   **Nellie Saddler (Halfling Doctor):** Holistic healer starting over.
 *   **Vinos (Simiah Mailboy):** Chill Academy courier.
-
----
-> *"The dragon died so that we might live. Let us make this a good life."*
 
