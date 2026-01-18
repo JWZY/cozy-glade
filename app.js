@@ -51,6 +51,14 @@ const campaigns = {
                     { file: 'Nellie_Saddler.md', name: 'Nellie Saddler', sub: 'NPC' },
                     { file: 'Vinos.md', name: 'Vinos', sub: 'NPC' }
                 ]
+            },
+            {
+                title: 'Compendium',
+                items: [
+                    { file: 'compendium/fauna.md', name: 'Fauna', sub: 'Creatures & Beasts' },
+                    { file: 'compendium/flora.md', name: 'Flora', sub: 'Plants & Fungi' },
+                    { file: 'compendium/recipes.md', name: 'Recipes', sub: 'Food & Alchemy' }
+                ]
             }
         ]
     }
@@ -606,6 +614,32 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+// Lightbox for bestiary gallery
+function openLightbox(element) {
+    const img = element.querySelector('img');
+    if (!img) return;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.onclick = () => overlay.remove();
+
+    const lightboxImg = document.createElement('img');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+
+    overlay.appendChild(lightboxImg);
+    document.body.appendChild(overlay);
+
+    // Close on escape
+    const closeOnEscape = (e) => {
+        if (e.key === 'Escape') {
+            overlay.remove();
+            document.removeEventListener('keydown', closeOnEscape);
+        }
+    };
+    document.addEventListener('keydown', closeOnEscape);
+}
 
 // Initialize
 renderNav();
