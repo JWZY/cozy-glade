@@ -5,7 +5,7 @@
 <div class="compendium-grid">
   <a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/fauna/frog_boar.md')" class="compendium-card">
     <div class="compendium-card-img">
-      <img src="bonetop/img/compendium/boarfrog-token.png" alt="Frog Boar">
+      <img src="bonetop/img/compendium/BoarFrog-jake.jpg" alt="Frog Boar">
     </div>
     <div class="compendium-card-body">
       <div class="compendium-card-number">#001</div>

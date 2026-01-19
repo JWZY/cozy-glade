@@ -298,15 +298,8 @@ async function loadMarkdown(filename) {
             }
         }
         
-        // Highlight active nav item
-        document.querySelectorAll('nav button').forEach(btn => {
-            btn.classList.remove('bg-white/10', 'text-white');
-            btn.classList.add('text-slate-300');
-        });
-        if (event && event.target) {
-            event.target.closest('button')?.classList.add('bg-white/10', 'text-white');
-            event.target.closest('button')?.classList.remove('text-slate-300');
-        }
+        // Highlight active nav item (including parent for subpages)
+        highlightNavItem(filename);
         
         // Scroll to top
         document.querySelector('main').scrollTop = 0;
@@ -639,6 +632,110 @@ function openLightbox(element) {
         }
     };
     document.addEventListener('keydown', closeOnEscape);
+}
+
+// Switch main image in bestiary gallery
+function switchMainImage(thumbElement, imageSrc) {
+    // Update main image
+    const mainImg = document.querySelector('.bestiary-gallery-main img');
+    if (mainImg) {
+        mainImg.src = imageSrc;
+    }
+
+    // Update active state on thumbnails
+    document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+    thumbElement.classList.add('active');
+}
+
+// Set favorite image for an entry (saves to localStorage)
+function setFavoriteImage(entryId, imageSrc, event) {
+    event.stopPropagation(); // Prevent triggering the thumbnail click
+
+    // Save to localStorage
+    const favorites = JSON.parse(localStorage.getItem('bestiaryFavorites') || '{}');
+    favorites[entryId] = imageSrc;
+    localStorage.setItem('bestiaryFavorites', JSON.stringify(favorites));
+
+    // Update star states
+    document.querySelectorAll('.favorite-star').forEach(star => {
+        star.classList.remove('is-favorite');
+    });
+    event.currentTarget.classList.add('is-favorite');
+
+    // Also switch to this image
+    const thumb = event.currentTarget.closest('.gallery-thumb');
+    if (thumb) {
+        const mainImg = document.querySelector('.bestiary-gallery-main img');
+        if (mainImg) {
+            mainImg.src = imageSrc;
+        }
+        document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+    }
+}
+
+// Load favorite image for an entry from localStorage
+function loadFavoriteImage(entryId) {
+    const favorites = JSON.parse(localStorage.getItem('bestiaryFavorites') || '{}');
+    const favoriteSrc = favorites[entryId];
+
+    if (favoriteSrc) {
+        // Find the thumbnail with this image and activate it
+        document.querySelectorAll('.gallery-thumb').forEach(thumb => {
+            const img = thumb.querySelector('img');
+            const star = thumb.querySelector('.favorite-star');
+
+            if (img && img.src.endsWith(favoriteSrc.split('/').pop())) {
+                // Set as active
+                document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+
+                // Update main image
+                const mainImg = document.querySelector('.bestiary-gallery-main img');
+                if (mainImg) {
+                    mainImg.src = favoriteSrc;
+                }
+
+                // Mark star as favorite
+                if (star) {
+                    star.classList.add('is-favorite');
+                }
+            }
+        });
+    }
+}
+
+// Highlight nav item for current page (including parent for subpages)
+function highlightNavItem(filename) {
+    const campaign = campaigns[currentCampaign];
+
+    // Reset all nav items
+    document.querySelectorAll('.nav-item').forEach(btn => {
+        btn.classList.remove('bg-white/10', 'text-white');
+        btn.classList.add('text-slate-300');
+    });
+
+    // Find matching nav item - check for exact match or parent match
+    let matchFile = filename;
+
+    // If this is a subpage (e.g., compendium/fauna/frog_boar.md), find parent (compendium/fauna.md)
+    const relativePath = filename.replace(campaign.basePath, '');
+    const pathParts = relativePath.split('/');
+
+    if (pathParts.length > 2) {
+        // It's nested: compendium/fauna/frog_boar.md -> compendium/fauna.md
+        const parentDir = pathParts.slice(0, -1).join('/');
+        matchFile = campaign.basePath + parentDir + '.md';
+    }
+
+    // Find and highlight the nav button
+    document.querySelectorAll('.nav-item').forEach(btn => {
+        const onclickAttr = btn.getAttribute('onclick');
+        if (onclickAttr && onclickAttr.includes(matchFile)) {
+            btn.classList.add('bg-white/10', 'text-white');
+            btn.classList.remove('text-slate-300');
+        }
+    });
 }
 
 // Initialize
