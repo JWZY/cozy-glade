@@ -1,11 +1,13 @@
-# Recipes
+# Feasts
 
-<p class="compendium-intro">Culinary creations and alchemical concoctions discovered in Bonetop.</p>
+<div class="compendium-grid">
 
-<div class="compendium-empty">
-  <svg class="compendium-empty-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-  </svg>
-  <p>No recipes yet.</p>
-  <p class="compendium-empty-hint">Recipes will appear here as the party discovers them.</p>
+<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/recipes/boarchetta_risotto.md')" class="compendium-card compendium-card-no-img" id="card-boarchetta-risotto">
+<div class="compendium-card-content">
+<div class="compendium-card-number">#001</div>
+<div class="compendium-card-name">Boarchetta and Wild Grain Risotto</div>
+<div class="compendium-card-desc">Fresh caught frog boar roast with fruit compote, served with creamy Risotto al Tartufo.</div>
+</div>
+</a>
+
 </div>

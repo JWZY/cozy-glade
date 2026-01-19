@@ -7,7 +7,7 @@
 <div class="bestiary-page">
 <div class="bestiary-illustration">
 <div class="bestiary-gallery-main" onclick="openLightbox(this)">
-<img src="bonetop/img/compendium/BoarFrog-jake.jpg" alt="Frog Boar">
+<img src="bonetop/img/compendium/BoarFrog-jake.jpg" alt="Frog Boar" onload="applyImageGradient(this)" crossorigin="anonymous">
 </div>
 <div class="bestiary-gallery-thumbs">
 <div class="gallery-thumb active" onclick="switchMainImage(this, 'bonetop/img/compendium/BoarFrog-jake.jpg')">
@@ -24,13 +24,6 @@
 
 <div class="bestiary-details">
 <div class="bestiary-props">
-<div class="bestiary-prop prop-header">
-<span class="bestiary-number">#001</span>
-<div class="bestiary-types">
-<span class="type-badge type-aquatic">Aquatic</span>
-<span class="type-badge type-beast">Beast</span>
-</div>
-</div>
 <div class="bestiary-prop">
 <span class="prop-label">Size</span>
 <span class="prop-value placeholder">Awaiting measurement</span>
@@ -41,7 +34,7 @@
 </div>
 <div class="bestiary-prop">
 <span class="prop-label">Habitat</span>
-<span class="prop-value">Wetlands</span>
+<span class="prop-value">The lake shore</span>
 </div>
 </div>
 

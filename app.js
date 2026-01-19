@@ -57,7 +57,7 @@ const campaigns = {
                 items: [
                     { file: 'compendium/fauna.md', name: 'Fauna', sub: 'Creatures & Beasts' },
                     { file: 'compendium/flora.md', name: 'Flora', sub: 'Plants & Fungi' },
-                    { file: 'compendium/recipes.md', name: 'Recipes', sub: 'Food & Alchemy' }
+                    { file: 'compendium/recipes.md', name: 'Feasts', sub: 'Culinary Creations' }
                 ]
             }
         ]
@@ -640,6 +640,8 @@ function switchMainImage(thumbElement, imageSrc) {
     const mainImg = document.querySelector('.bestiary-gallery-main img');
     if (mainImg) {
         mainImg.src = imageSrc;
+        // Re-apply gradient for the new image
+        mainImg.onload = () => applyImageGradient(mainImg);
     }
 
     // Update active state on thumbnails
@@ -702,6 +704,116 @@ function loadFavoriteImage(entryId) {
                 }
             }
         });
+    }
+}
+
+// Extract colors from image and apply gradient background
+function applyImageGradient(img) {
+    if (typeof ColorThief === 'undefined') return;
+
+    const colorThief = new ColorThief();
+
+    const applyGradient = () => {
+        try {
+            const palette = colorThief.getPalette(img, 5);
+            const color1 = rgbToHex(palette[0]);
+            const color2 = rgbToHex(palette[1]);
+
+            const galleryMain = document.querySelector('.bestiary-gallery-main');
+            if (galleryMain) {
+                galleryMain.style.setProperty('--bestiary-gradient', `linear-gradient(135deg, ${color1}, ${color2})`);
+            }
+        } catch (e) {
+            console.warn('Color extraction failed:', e);
+        }
+    };
+
+    // If image is already loaded, extract immediately
+    if (img.complete) {
+        setTimeout(applyGradient, 50);
+    } else {
+        img.addEventListener('load', () => setTimeout(applyGradient, 50));
+    }
+}
+
+function rgbToHex([r, g, b]) {
+    return '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
+}
+
+// Desaturate and darken a color for better card backgrounds
+function adjustColorForCard([r, g, b], saturationMult = 0.7, brightnessMult = 0.8) {
+    // Convert to HSL, adjust, convert back
+    const max = Math.max(r, g, b) / 255;
+    const min = Math.min(r, g, b) / 255;
+    let h, s, l = (max + min) / 2;
+
+    if (max === min) {
+        h = s = 0;
+    } else {
+        const d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch (Math.max(r, g, b)) {
+            case r: h = ((g - b) / 255 / d + (g < b ? 6 : 0)) / 6; break;
+            case g: h = ((b - r) / 255 / d + 2) / 6; break;
+            case b: h = ((r - g) / 255 / d + 4) / 6; break;
+        }
+    }
+
+    // Adjust saturation and lightness
+    s = Math.min(1, s * saturationMult);
+    l = Math.min(0.4, l * brightnessMult); // Cap lightness for dark theme
+
+    // Convert back to RGB
+    const hue2rgb = (p, q, t) => {
+        if (t < 0) t += 1;
+        if (t > 1) t -= 1;
+        if (t < 1/6) return p + (q - p) * 6 * t;
+        if (t < 1/2) return q;
+        if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+        return p;
+    };
+
+    let newR, newG, newB;
+    if (s === 0) {
+        newR = newG = newB = l;
+    } else {
+        const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        const p = 2 * l - q;
+        newR = hue2rgb(p, q, h + 1/3);
+        newG = hue2rgb(p, q, h);
+        newB = hue2rgb(p, q, h - 1/3);
+    }
+
+    return [Math.round(newR * 255), Math.round(newG * 255), Math.round(newB * 255)];
+}
+
+// Apply gradient to compendium card based on its image
+function applyCardGradient(img, card) {
+    if (typeof ColorThief === 'undefined') return;
+
+    const colorThief = new ColorThief();
+
+    const apply = () => {
+        try {
+            const palette = colorThief.getPalette(img, 5);
+            const color1 = adjustColorForCard(palette[0]);
+            const color2 = adjustColorForCard(palette[1], 0.6, 0.6);
+
+            const hex1 = rgbToHex(color1);
+            const hex2 = rgbToHex(color2);
+
+            card.style.setProperty('--card-gradient', `linear-gradient(135deg, ${hex1}, ${hex2})`);
+            card.style.setProperty('--card-border', `${hex1}33`);
+            card.style.setProperty('--card-shadow', `${hex1}40`);
+        } catch (e) {
+            console.warn('Card color extraction failed:', e);
+        }
+    };
+
+    if (img.complete && img.naturalWidth > 0) {
+        setTimeout(apply, 10);
+    } else {
+        img.addEventListener('load', () => setTimeout(apply, 10));
     }
 }
 
