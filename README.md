@@ -1,54 +1,57 @@
-# Daggerheart Campaign Planning
+# Bonetop Campaign Wiki
 
-A modern, searchable web interface for tracking character goals and campaign planning documents.
+A web-based campaign companion for the Bonetop Daggerheart campaign - a cozy slice-of-life adventure beneath the calcified skeleton of an ancient dragon.
+
+## Live Site
+
+**[jwzy.github.io/daggerheart-planning](https://jwzy.github.io/daggerheart-planning)**
 
 ## Features
 
-- **Modern Dark Theme**: Easy on the eyes for long planning sessions
-- **Vertical Sidebar Navigation**: Quick access to all character goals and campaign resources
-- **Real-time Search**: Search across all documents with highlighted results
-- **Markdown Rendering**: Beautiful rendering of all markdown content
-- **Keyboard Shortcuts**: Press `Ctrl+K` (or `Cmd+K` on Mac) to focus search
+- **Hub-Style Overview**: Quick access to PCs, NPCs, and the Compendium from the main page
+- **Compendium**: Pokédex-inspired entries for discoveries
+  - **Fauna**: Creatures & beasts encountered (Frog Boar, Dragon-flies)
+  - **Flora**: Plants & fungi discovered (Weeping Crystal Pine)
+  - **Feasts**: Culinary creations from local ingredients
+- **Character Pages**: Detailed info for player characters and NPCs
+- **Real-time Search**: Search across all documents with `Ctrl/Cmd+K`
+- **Mobile Support**: Bottom navigation bar for mobile browsing
+- **Dynamic Color Extraction**: Cards with images get gradient backgrounds extracted from the artwork
 
-## How to Use
+## Tech Stack
 
-1. Open `index.html` in your web browser
-2. Click on any character's goals in the sidebar to view their content
-3. Use the search bar to find specific content across all documents
-4. Navigate between documents seamlessly
+- Vanilla HTML, CSS, JavaScript (no build step)
+- [Tailwind CSS](https://tailwindcss.com/) for utility styling
+- [Marked.js](https://marked.js.org/) for markdown rendering
+- [Color Thief](https://lokeshdhakar.com/projects/color-thief/) for image color extraction
+- Hosted on GitHub Pages
 
-## Files
+## Local Development
 
-### Character Goals
-- `javans-goals.md` - Javan's character goals
-- `bory-goals.md` - Bory's character goals (southernetobicokelove)
-- `tess-goals.md` - Tess's character goals
-- `sarah-goals.md` - Sarah's character goals
+```bash
+python3 -m http.server 8000
+```
 
-### Campaign Resources
-- `goal_pyramid_guide.md` - Guide for creating character goals with examples
-- `DnD_Pyramid_goal_map.jpg` - Original goal pyramid reference image
+Then open [http://localhost:8000](http://localhost:8000)
 
-## Technical Details
+## Adding Content
 
-- Built with vanilla HTML, CSS, and JavaScript
-- Uses Tailwind CSS for styling (CDN)
-- Uses Marked.js for markdown parsing (CDN)
-- No build step required - just open and use!
-- Responsive design works on desktop and tablet
+### New Compendium Entry
 
-## Adding New Content
+1. Create markdown file in the appropriate folder:
+   - `bonetop/compendium/fauna/creature_name.md`
+   - `bonetop/compendium/flora/plant_name.md`
+   - `bonetop/compendium/recipes/recipe_name.md`
 
-To add new character goals or campaign documents:
+2. Use the existing entry templates (breadcrumb, bestiary-page layout)
 
-1. Create a new markdown file (e.g., `new-character-goals.md`)
-2. Add it to the `files` array in `index.html` (around line 230)
-3. Add a navigation button in the sidebar section (around line 90)
+3. Add card to the index page (`fauna.md`, `flora.md`, or `recipes.md`)
 
-## Tips
+### New Character/NPC
 
-- Keep markdown files in the same directory as `index.html`
-- Use consistent heading levels for best rendering
-- Search works across all loaded documents simultaneously
-- Documents are cached after first load for faster switching
+1. Create markdown file in `bonetop/` folder
+2. Add entry to the appropriate section in `app.js` campaigns object
 
+## DM Mode
+
+Press `Alt+Shift+D` to toggle DM mode, which reveals hidden documents marked with `dmOnly: true`.
