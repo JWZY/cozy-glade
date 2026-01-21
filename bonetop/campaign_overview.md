@@ -1,15 +1,19 @@
 <!-- cover: bonetop/img/bonetop-splash.png -->
-# Bonetop
+# Cozy Glade
 
-<p class="overview-tagline">A frontier settlement beneath the calcified skeleton of an ancient dragon, where 6 settlers seek a fresh start.</p>
+<p class="overview-intro">A frontier settlement beneath the calcified skeleton of an ancient dragon, where a band of settlers seek a fresh start in the wilderness.</p>
 
-<div class="overview-section">
-<div class="overview-section-header">
-<h2>Player Characters</h2>
-<span class="overview-section-sub">The Founders</span>
+<div class="overview-details">
+<div class="overview-detail"><span class="detail-label">Location</span> Remote frontier, beside a freshwater lake</div>
+<div class="overview-detail"><span class="detail-label">Season</span> Early Spring — snow melting, ground soft</div>
+<div class="overview-detail"><span class="detail-label">Tone</span> Slice-of-life homesteading with liberal time skips</div>
+<div class="overview-detail"><span class="detail-label">Themes</span> Found family, legacy, man vs. nature</div>
 </div>
 
-<div class="compendium-grid">
+<div class="overview-section">
+<div class="overview-section-header">Player Characters</div>
+
+<div class="compendium-grid-compact">
 
 <a href="javascript:void(0)" onclick="loadMarkdown('bonetop/Oleg.md')" class="compendium-card compendium-card-no-img">
 <div class="compendium-card-content">
@@ -39,12 +43,9 @@
 </div>
 
 <div class="overview-section">
-<div class="overview-section-header">
-<h2>NPCs</h2>
-<span class="overview-section-sub">Companions & Allies</span>
-</div>
+<div class="overview-section-header">NPCs</div>
 
-<div class="compendium-grid">
+<div class="compendium-grid-compact">
 
 <a href="javascript:void(0)" onclick="loadMarkdown('bonetop/Finley_Boreas.md')" class="compendium-card compendium-card-no-img">
 <div class="compendium-card-content">
@@ -74,18 +75,15 @@
 </div>
 
 <div class="overview-section">
-<div class="overview-section-header">
-<h2>Compendium</h2>
-<span class="overview-section-sub">Discoveries & Knowledge</span>
-</div>
+<div class="overview-section-header">Compendium</div>
 
-<div class="compendium-grid">
+<div class="compendium-grid-compact">
 
 <a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/fauna.md')" class="compendium-card compendium-card-no-img">
 <div class="compendium-card-content">
 <div class="compendium-card-number">Creatures & Beasts</div>
 <div class="compendium-card-name">Fauna</div>
-<div class="compendium-card-desc">Wildlife discovered in and around Bonetop.</div>
+<div class="compendium-card-desc">Wildlife discovered in and around the Glade.</div>
 </div>
 </a>
 

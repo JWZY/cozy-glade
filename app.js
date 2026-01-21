@@ -1,5 +1,6 @@
 let allDocuments = {};
 let currentContent = '';
+let currentFile = '';
 let currentCampaign = 'bonetop';
 let isDmMode = false;
 const dmFileSet = new Set();
@@ -23,7 +24,7 @@ const campaigns = {
         ]
     },
     'bonetop': {
-        name: 'Bonetop',
+        name: 'Cozy Glade',
         description: 'Cozy slice of life',
         icon: '🦴',
         basePath: 'bonetop/',
@@ -186,9 +187,9 @@ function renderNav() {
                 <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 px-2">${section.title}</div>
                 <div class="space-y-2">
                     ${visibleItems.map(p => `
-                        <button onclick="loadMarkdownMobile('${campaign.basePath}${p.file}')" class="page-item w-full text-left px-4 py-4 rounded-xl bg-slate-800/50 border border-white/20">
-                            <div class="font-medium text-white">${p.name}</div>
-                            <div class="text-sm text-slate-400 mt-1">${p.sub}</div>
+                        <button onclick="loadMarkdownMobile('${campaign.basePath}${p.file}')" class="page-item">
+                            <div class="page-item-title">${p.name}</div>
+                            <div class="page-item-sub">${p.sub}</div>
                         </button>
                     `).join('')}
                 </div>
@@ -210,9 +211,10 @@ async function loadAllDocuments() {
         ...campaignFiles
     ];
 
+    const cacheBust = Date.now();
     for (const file of files) {
         try {
-            const response = await fetch(file);
+            const response = await fetch(file + '?v=' + cacheBust);
             if (response.ok) {
                 const text = await response.text();
                 allDocuments[file] = text;
@@ -230,7 +232,7 @@ async function loadMarkdown(filename) {
         if (allDocuments[filename]) {
             content = allDocuments[filename];
         } else {
-            const response = await fetch(filename);
+            const response = await fetch(filename + '?v=' + Date.now());
             if (!response.ok) {
                 throw new Error('File not found');
             }
@@ -238,6 +240,7 @@ async function loadMarkdown(filename) {
         }
         
         currentContent = content;
+        currentFile = filename;
         const html = marked.parse(content);
         const contentEl = document.getElementById('content');
         const mainContainer = document.getElementById('main-container');
@@ -364,47 +367,82 @@ function performSearch(query, targetElement) {
     // Display search results
     if (results.length > 0) {
         const isMobile = targetElement.id === 'mobileSearchResults';
+
+        // Helper to strip HTML tags and clean up the line for display
+        function cleanLine(line) {
+            return line
+                .replace(/<[^>]*>/g, '') // Remove HTML tags
+                .replace(/!\[([^\]]*)\]\([^)]*\)/g, '$1') // Convert images to alt text
+                .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1') // Convert links to text
+                .replace(/^#+\s*/, '') // Remove heading markers
+                .replace(/\*\*([^*]+)\*\*/g, '$1') // Remove bold
+                .replace(/\*([^*]+)\*/g, '$1') // Remove italic
+                .trim();
+        }
+
+        // Filter out empty/useless results and deduplicate by file
+        const seenFiles = new Map();
+        const filteredResults = results.filter(result => {
+            const cleaned = cleanLine(result.line);
+            if (!cleaned || cleaned.length < 3) return false;
+
+            // Keep best result per file (first meaningful one)
+            if (!seenFiles.has(result.file)) {
+                seenFiles.set(result.file, true);
+                return true;
+            }
+            return false;
+        });
+
         let html = isMobile ? '' : `
             <h1>Search Results</h1>
-            <p class="text-slate-400 mb-6">Found ${results.length} result${results.length !== 1 ? 's' : ''} for "${query}"</p>
+            <p class="text-slate-400 mb-6">Found ${filteredResults.length} result${filteredResults.length !== 1 ? 's' : ''} for "${query}"</p>
         `;
-        
+
         if (isMobile) {
-            html += `<p class="text-slate-400 mb-4 text-sm">${results.length} result${results.length !== 1 ? 's' : ''}</p>`;
+            html += `<p class="text-slate-400 mb-4 text-sm">${filteredResults.length} result${filteredResults.length !== 1 ? 's' : ''}</p>`;
         }
-        
-        results.forEach(result => {
-            const highlightedLine = result.line.replace(
-                new RegExp(query, 'gi'), 
+
+        filteredResults.forEach(result => {
+            const cleanedLine = cleanLine(result.line);
+            const highlightedLine = cleanedLine.replace(
+                new RegExp(query, 'gi'),
                 match => `<mark>${match}</mark>`
             );
-            
+
+            // Get a friendly name from the file path
+            const fileName = result.file.split('/').pop().replace('.md', '').replace(/_/g, ' ');
+            const friendlyName = fileName.charAt(0).toUpperCase() + fileName.slice(1);
+
             if (isMobile) {
                 html += `
-                    <button 
-                        onclick="loadMarkdownFromSearch('${result.file}')" 
-                        class="page-item w-full text-left mb-3 p-4 bg-slate-800/50 rounded-xl border border-white/20"
+                    <button
+                        onclick="loadMarkdownFromSearch('${result.file}')"
+                        class="page-item"
                     >
-                        <div class="text-xs text-blue-400 mb-1">${result.file}</div>
-                        <div class="text-sm text-slate-300 line-clamp-2">${highlightedLine}</div>
+                        <div class="page-item-title">${friendlyName}</div>
+                        <div class="page-item-sub line-clamp-2">${highlightedLine}</div>
                     </button>
                 `;
             } else {
                 html += `
-                    <div class="mb-6 p-4 bg-slate-800/50 rounded-lg border border-white/20">
-                        <div class="text-sm text-blue-400 mb-2">${result.file}</div>
-                        <div class="mb-2">${highlightedLine}</div>
-                        <button 
-                            onclick="loadMarkdown('${result.file}')" 
-                            class="text-xs text-slate-400 hover:text-blue-400 transition-colors"
-                        >
-                            View in document →
-                        </button>
-                    </div>
+                    <a href="javascript:void(0)" onclick="loadMarkdown('${result.file}')" class="search-result-card">
+                        <div class="search-result-title">${friendlyName}</div>
+                        <div class="search-result-excerpt">${highlightedLine}</div>
+                    </a>
                 `;
             }
         });
-        
+
+        if (filteredResults.length === 0) {
+            html = `
+                <div class="text-center py-12">
+                    <h2 class="text-xl font-bold text-white mb-2">No Results Found</h2>
+                    <p class="text-slate-400 text-sm">Try searching for something else</p>
+                </div>
+            `;
+        }
+
         targetElement.innerHTML = html;
     } else {
         targetElement.innerHTML = `
@@ -443,40 +481,100 @@ document.getElementById('mobileSearchInput').addEventListener('input', (e) => {
     }, 300);
 });
 
-// Store original button content
-    const buttonStates = {
-    search: {
-        icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-        </svg>`,
-        label: 'Search'
-    },
-    pages: {
-        icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-        </svg>`,
-        label: 'Pages'
-    }
-};
+// Desktop floating search
+let desktopSearchTimeout;
+const desktopSearchInput = document.getElementById('desktopSearchInput');
+if (desktopSearchInput) {
+    desktopSearchInput.addEventListener('input', (e) => {
+        clearTimeout(desktopSearchTimeout);
+        desktopSearchTimeout = setTimeout(() => {
+            // Only search if the search is still expanded (not being collapsed)
+            const container = document.getElementById('desktopSearchContainer');
+            if (!container || !container.classList.contains('expanded')) return;
 
-const closeIcon = `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-</svg>`;
+            const query = e.target.value.toLowerCase().trim();
+            performSearch(query, document.getElementById('content'));
+        }, 300);
+    });
+
+    // Allow Escape to close desktop search
+    desktopSearchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            collapseDesktopSearch();
+        }
+    });
+}
+
+// Home button (works for both mobile and desktop)
+function goHome() {
+    // Close any open modals
+    const searchModal = document.getElementById('mobileSearchModal');
+    const pagesModal = document.getElementById('mobilePagesModal');
+
+    if (searchModal && !searchModal.classList.contains('hidden')) {
+        closeMobileModal('search');
+    }
+    if (pagesModal && !pagesModal.classList.contains('hidden')) {
+        closeMobileModal('pages');
+    }
+
+    // Close desktop search if open
+    collapseDesktopSearch();
+
+    loadMarkdown('bonetop/campaign_overview.md');
+}
+
+// Desktop search expand/collapse
+function toggleDesktopSearch() {
+    const container = document.getElementById('desktopSearchContainer');
+    const input = document.getElementById('desktopSearchInput');
+
+    if (container.classList.contains('expanded')) {
+        collapseDesktopSearch();
+    } else {
+        container.classList.add('expanded');
+        setTimeout(() => input.focus(), 250);
+    }
+}
+
+function collapseDesktopSearch() {
+    const container = document.getElementById('desktopSearchContainer');
+    const input = document.getElementById('desktopSearchInput');
+    if (container) {
+        const hadSearchQuery = input && input.value.trim();
+        container.classList.remove('expanded');
+        if (input) input.value = '';
+        clearTimeout(desktopSearchTimeout);
+
+        // Reload current page if search was used (to restore proper page structure)
+        if (hadSearchQuery && currentFile) {
+            loadMarkdown(currentFile);
+        }
+    }
+}
+
+// Close desktop search when clicking outside
+document.addEventListener('click', function(e) {
+    const container = document.getElementById('desktopSearchContainer');
+    if (container && container.classList.contains('expanded')) {
+        if (!container.contains(e.target)) {
+            collapseDesktopSearch();
+        }
+    }
+});
 
 // Mobile modal functions
 function toggleMobileModal(type) {
-    const modal = type === 'search' ? document.getElementById('mobileSearchModal') : document.getElementById('mobilePagesModal');
+    const modal = document.getElementById(type === 'search' ? 'mobileSearchModal' : 'mobilePagesModal');
     const isOpen = !modal.classList.contains('hidden');
-    
+
     if (isOpen) {
         closeMobileModal(type);
     } else {
-        // Close the other modal if it's open
         const otherType = type === 'search' ? 'pages' : 'search';
-        const otherModal = otherType === 'search' ? document.getElementById('mobileSearchModal') : document.getElementById('mobilePagesModal');
-        
+        const otherModal = document.getElementById(otherType === 'search' ? 'mobileSearchModal' : 'mobilePagesModal');
+
         if (!otherModal.classList.contains('hidden')) {
-            // Crossfade: Start opening the new modal while the old one closes
             openMobileModal(type);
             closeModalSilently(otherType);
         } else {
@@ -486,95 +584,66 @@ function toggleMobileModal(type) {
 }
 
 function closeModalSilently(type) {
-    const modal = type === 'search' ? document.getElementById('mobileSearchModal') : document.getElementById('mobilePagesModal');
+    const modal = document.getElementById(type === 'search' ? 'mobileSearchModal' : 'mobilePagesModal');
     const button = document.getElementById(type === 'search' ? 'searchButton' : 'pagesButton');
-    
-    // Start exit animation but let the new modal's entrance cover it
+
     modal.classList.remove('mobile-modal-enter');
     modal.classList.add('mobile-modal-exit');
-    
-    // Restore original button content immediately
-    button.innerHTML = `
-        ${buttonStates[type].icon}
-        <span class="text-xs font-medium">${buttonStates[type].label}</span>
-    `;
-    button.classList.remove('text-red-400');
-    button.classList.add('text-slate-400');
-    
-    // Clean up after animation completes
+    button.classList.remove('active');
+
     setTimeout(() => {
         modal.classList.add('hidden');
         modal.classList.remove('flex', 'mobile-modal-exit');
-        
         if (type === 'search') {
             document.getElementById('mobileSearchInput').value = '';
-            document.getElementById('mobileSearchResults').innerHTML = `
-                <div class="text-center py-12 text-slate-400">
-                    <svg class="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
-                    <p>Start typing to search</p>
-                </div>
-            `;
+            resetMobileSearchResults();
         }
     }, 250);
 }
 
 function openMobileModal(type) {
-    const modal = type === 'search' ? document.getElementById('mobileSearchModal') : document.getElementById('mobilePagesModal');
+    const modal = document.getElementById(type === 'search' ? 'mobileSearchModal' : 'mobilePagesModal');
     const button = document.getElementById(type === 'search' ? 'searchButton' : 'pagesButton');
-    
+
     modal.classList.remove('hidden', 'mobile-modal-exit');
     modal.classList.add('flex', 'mobile-modal-enter');
     document.body.style.overflow = 'hidden';
-    
-    // Transform button to close button
-    button.innerHTML = `
-        ${closeIcon}
-        <span class="text-xs font-medium">Close</span>
-    `;
-    button.classList.add('text-red-400');
-    button.classList.remove('text-slate-400');
-    
+    button.classList.add('active');
+
     if (type === 'search') {
-        setTimeout(() => {
-            document.getElementById('mobileSearchInput').focus();
-        }, 100);
+        setTimeout(() => document.getElementById('mobileSearchInput').focus(), 100);
     }
 }
 
 function closeMobileModal(type) {
-    const modal = type === 'search' ? document.getElementById('mobileSearchModal') : document.getElementById('mobilePagesModal');
+    const modal = document.getElementById(type === 'search' ? 'mobileSearchModal' : 'mobilePagesModal');
     const button = document.getElementById(type === 'search' ? 'searchButton' : 'pagesButton');
-    
+
     modal.classList.remove('mobile-modal-enter');
     modal.classList.add('mobile-modal-exit');
     document.body.style.overflow = '';
-    
-    // Restore original button content
-    button.innerHTML = `
-        ${buttonStates[type].icon}
-        <span class="text-xs font-medium">${buttonStates[type].label}</span>
-    `;
-    button.classList.remove('text-red-400');
-    button.classList.add('text-slate-400');
-    
+    button.classList.remove('active');
+
     setTimeout(() => {
         modal.classList.add('hidden');
         modal.classList.remove('flex', 'mobile-modal-exit');
     }, 250);
-    
+
     if (type === 'search') {
         document.getElementById('mobileSearchInput').value = '';
-        document.getElementById('mobileSearchResults').innerHTML = `
-            <div class="text-center py-12 text-slate-400">
-                <svg class="w-12 h-12 mx-auto mb-3 opacity-50 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
-                <p>Start typing to search</p>
-            </div>
-        `;
+        resetMobileSearchResults();
     }
+}
+
+function resetMobileSearchResults() {
+    document.getElementById('mobileSearchResults').innerHTML = `
+        <div class="text-center py-12 text-slate-400">
+            <svg class="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <p>Start typing to search</p>
+        </div>
+    `;
 }
 
 // Keyboard shortcuts
@@ -588,9 +657,16 @@ document.addEventListener('keydown', (e) => {
 
     if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput) {
-            searchInput.focus();
+        // On desktop, use the floating search; on mobile, open mobile search modal
+        if (window.innerWidth >= 768) {
+            const container = document.getElementById('desktopSearchContainer');
+            const input = document.getElementById('desktopSearchInput');
+            if (container && input) {
+                container.classList.add('expanded');
+                setTimeout(() => input.focus(), 250);
+            }
+        } else {
+            toggleMobileModal('search');
         }
     }
     
@@ -647,64 +723,6 @@ function switchMainImage(thumbElement, imageSrc) {
     // Update active state on thumbnails
     document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
     thumbElement.classList.add('active');
-}
-
-// Set favorite image for an entry (saves to localStorage)
-function setFavoriteImage(entryId, imageSrc, event) {
-    event.stopPropagation(); // Prevent triggering the thumbnail click
-
-    // Save to localStorage
-    const favorites = JSON.parse(localStorage.getItem('bestiaryFavorites') || '{}');
-    favorites[entryId] = imageSrc;
-    localStorage.setItem('bestiaryFavorites', JSON.stringify(favorites));
-
-    // Update star states
-    document.querySelectorAll('.favorite-star').forEach(star => {
-        star.classList.remove('is-favorite');
-    });
-    event.currentTarget.classList.add('is-favorite');
-
-    // Also switch to this image
-    const thumb = event.currentTarget.closest('.gallery-thumb');
-    if (thumb) {
-        const mainImg = document.querySelector('.bestiary-gallery-main img');
-        if (mainImg) {
-            mainImg.src = imageSrc;
-        }
-        document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
-        thumb.classList.add('active');
-    }
-}
-
-// Load favorite image for an entry from localStorage
-function loadFavoriteImage(entryId) {
-    const favorites = JSON.parse(localStorage.getItem('bestiaryFavorites') || '{}');
-    const favoriteSrc = favorites[entryId];
-
-    if (favoriteSrc) {
-        // Find the thumbnail with this image and activate it
-        document.querySelectorAll('.gallery-thumb').forEach(thumb => {
-            const img = thumb.querySelector('img');
-            const star = thumb.querySelector('.favorite-star');
-
-            if (img && img.src.endsWith(favoriteSrc.split('/').pop())) {
-                // Set as active
-                document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
-                thumb.classList.add('active');
-
-                // Update main image
-                const mainImg = document.querySelector('.bestiary-gallery-main img');
-                if (mainImg) {
-                    mainImg.src = favoriteSrc;
-                }
-
-                // Mark star as favorite
-                if (star) {
-                    star.classList.add('is-favorite');
-                }
-            }
-        });
-    }
 }
 
 // Extract colors from image and apply gradient background
