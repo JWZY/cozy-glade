@@ -227,6 +227,13 @@ async function loadAllDocuments() {
 
 // Load and display markdown file
 async function loadMarkdown(filename) {
+    const mainContainer = document.getElementById('main-container');
+    const mainScroller = document.getElementById('main-scroller');
+
+    // Fade out
+    mainContainer.classList.add('fade-out');
+    await new Promise(resolve => setTimeout(resolve, 100));
+
     try {
         let content;
         if (allDocuments[filename]) {
@@ -238,22 +245,20 @@ async function loadMarkdown(filename) {
             }
             content = await response.text();
         }
-        
+
         currentContent = content;
         currentFile = filename;
         const html = marked.parse(content);
         const contentEl = document.getElementById('content');
-        const mainContainer = document.getElementById('main-container');
-        const mainScroller = document.getElementById('main-scroller');
-        
+
         // Cleanup existing cover
         const existingCover = document.querySelector('.page-cover');
         if (existingCover) {
             existingCover.remove();
         }
-        
-        // Reset main container padding
-        mainContainer.className = "max-w-4xl mx-auto px-4 md:px-8 py-8 md:py-12";
+
+        // Reset main container padding (preserve fade-out class)
+        mainContainer.className = "max-w-4xl mx-auto px-4 md:px-8 py-8 md:py-12 fade-out";
 
         // Handle character backgrounds
         if (characterBackgrounds[filename]) {
@@ -268,44 +273,52 @@ async function loadMarkdown(filename) {
 
         // Check for cover image metadata: <!-- cover: url -->
         const coverMatch = content.match(/<!--\s*cover:\s*(.*?)\s*-->/);
-        
+
         if (coverMatch && coverMatch[1]) {
             const coverUrl = coverMatch[1];
             const h1 = contentEl.querySelector('h1');
-            
+
             if (h1) {
                 // Create full width cover
                 const cover = document.createElement('div');
                 cover.className = 'page-cover';
-                
+
                 // Apply background with gradient
                 cover.style.backgroundImage = `
                     linear-gradient(to bottom, rgba(2, 6, 23, 0.1) 50%, rgba(2, 6, 23, 1) 100%),
                     url('${coverUrl}')
                 `;
-                
+
                 // Create inner container for alignment
                 const coverContent = document.createElement('div');
                 coverContent.className = 'page-cover-content markdown-content';
-                
+
                 // Move H1 into cover
                 coverContent.appendChild(h1);
                 cover.appendChild(coverContent);
-                
+
                 // Insert before main container
                 mainScroller.insertBefore(cover, mainContainer);
-                
+
                 // Remove top padding from main container so it flows nicely
                 mainContainer.classList.remove('py-8', 'md:py-12');
                 mainContainer.classList.add('pb-8', 'md:pb-12');
             }
         }
-        
+
         // Highlight active nav item (including parent for subpages)
         highlightNavItem(filename);
-        
+
+        // Update back button visibility
+        updateBackButton();
+
         // Scroll to top
         document.querySelector('main').scrollTop = 0;
+
+        // Fade in
+        requestAnimationFrame(() => {
+            mainContainer.classList.remove('fade-out');
+        });
     } catch (error) {
         document.getElementById('content').innerHTML = `
             <div class="text-center py-20">
@@ -317,6 +330,8 @@ async function loadMarkdown(filename) {
                 <p class="text-sm text-slate-400 mt-2">${error.message}</p>
             </div>
         `;
+        // Fade in even on error
+        mainContainer.classList.remove('fade-out');
     }
 }
 
@@ -503,6 +518,89 @@ if (desktopSearchInput) {
             collapseDesktopSearch();
         }
     });
+}
+
+// Get parent path for back navigation
+function getParentPath(filename) {
+    if (!filename) return null;
+
+    const campaign = campaigns[currentCampaign];
+    const overviewPath = campaign.basePath + 'campaign_overview.md';
+
+    // Overview has no parent
+    if (filename === overviewPath) return null;
+
+    // Get path relative to campaign base
+    const relativePath = filename.replace(campaign.basePath, '');
+    const pathParts = relativePath.split('/');
+
+    // Compendium detail pages go to their section index
+    // e.g., compendium/fauna/frog_boar.md -> compendium/fauna.md
+    if (pathParts.length > 2 && pathParts[0] === 'compendium') {
+        const section = pathParts[1]; // 'fauna', 'flora', 'recipes'
+        return campaign.basePath + 'compendium/' + section + '.md';
+    }
+
+    // Compendium section indexes go to overview
+    // e.g., compendium/fauna.md -> campaign_overview.md
+    if (pathParts.length === 2 && pathParts[0] === 'compendium') {
+        return overviewPath;
+    }
+
+    // Everything else (characters, NPCs) goes to overview
+    return overviewPath;
+}
+
+// Navigate to parent page
+function goBack() {
+    const parentPath = getParentPath(currentFile);
+    if (parentPath) {
+        // Close any open modals
+        const searchModal = document.getElementById('mobileSearchModal');
+        const pagesModal = document.getElementById('mobilePagesModal');
+
+        if (searchModal && !searchModal.classList.contains('hidden')) {
+            closeMobileModal('search');
+        }
+        if (pagesModal && !pagesModal.classList.contains('hidden')) {
+            closeMobileModal('pages');
+        }
+
+        // Close desktop search if open
+        collapseDesktopSearch();
+
+        loadMarkdown(parentPath);
+    }
+}
+
+// Update back button visibility based on current page
+function updateBackButton() {
+    const parentPath = getParentPath(currentFile);
+    const hasParent = parentPath !== null;
+
+    // Desktop back button
+    const desktopBackBtn = document.getElementById('desktopBackBtn');
+    if (desktopBackBtn) {
+        if (hasParent) {
+            desktopBackBtn.classList.remove('disabled');
+            desktopBackBtn.disabled = false;
+        } else {
+            desktopBackBtn.classList.add('disabled');
+            desktopBackBtn.disabled = true;
+        }
+    }
+
+    // Mobile back button
+    const mobileBackBtn = document.getElementById('mobileBackBtn');
+    if (mobileBackBtn) {
+        if (hasParent) {
+            mobileBackBtn.classList.remove('disabled');
+            mobileBackBtn.disabled = false;
+        } else {
+            mobileBackBtn.classList.add('disabled');
+            mobileBackBtn.disabled = true;
+        }
+    }
 }
 
 // Home button (works for both mobile and desktop)
@@ -867,6 +965,80 @@ function highlightNavItem(filename) {
         }
     });
 }
+
+// Mobile bottom bar bubble interaction
+(function() {
+    const mobileBar = document.getElementById('mobileBottomBar');
+    const bubble = document.getElementById('mobileBubble');
+    if (!mobileBar || !bubble) return;
+
+    const buttons = mobileBar.querySelectorAll('.mobile-bar-btn');
+    let isDragging = false;
+    let lastX = 0;
+    let wobbleTimeout = null;
+
+    function applyWobble(velocityX) {
+        const clampedVel = Math.max(-50, Math.min(50, velocityX));
+        const skew = clampedVel * 0.8;
+        const scaleX = 1 + Math.abs(clampedVel) * 0.02;
+        const scaleY = 1 - Math.abs(clampedVel) * 0.012;
+
+        bubble.style.transform = `scale(${scaleX}, ${scaleY}) skewX(${skew}deg)`;
+
+        clearTimeout(wobbleTimeout);
+        wobbleTimeout = setTimeout(() => {
+            bubble.style.transform = 'scale(1)';
+        }, 100);
+    }
+
+    function handleStart(e) {
+        isDragging = true;
+        mobileBar.classList.add('dragging');
+
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        lastX = clientX;
+
+        // Position bubble at touch point
+        const barRect = mobileBar.getBoundingClientRect();
+        const relativeX = clientX - barRect.left;
+        const clampedX = Math.max(32, Math.min(relativeX, barRect.width - 32));
+        bubble.style.left = (clampedX - 32) + 'px';
+    }
+
+    function handleMove(e) {
+        if (!isDragging) return;
+
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const barRect = mobileBar.getBoundingClientRect();
+
+        // Calculate velocity for wobble
+        const velocity = clientX - lastX;
+        lastX = clientX;
+        applyWobble(velocity);
+
+        // Follow thumb directly
+        const relativeX = clientX - barRect.left;
+        const clampedX = Math.max(32, Math.min(relativeX, barRect.width - 32));
+        bubble.style.left = (clampedX - 32) + 'px';
+    }
+
+    function handleEnd() {
+        isDragging = false;
+        mobileBar.classList.remove('dragging');
+        clearTimeout(wobbleTimeout);
+        bubble.style.transform = '';
+    }
+
+    // Touch events
+    mobileBar.addEventListener('touchstart', handleStart, { passive: true });
+    document.addEventListener('touchmove', handleMove, { passive: true });
+    document.addEventListener('touchend', handleEnd);
+
+    // Mouse events (for testing on desktop)
+    mobileBar.addEventListener('mousedown', handleStart);
+    document.addEventListener('mousemove', handleMove);
+    document.addEventListener('mouseup', handleEnd);
+})();
 
 // Initialize
 renderNav();

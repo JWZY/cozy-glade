@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+/* Page transitions */
+#main-container {
+    transition: opacity 0.1s ease;
+}
+
+#main-container.fade-out {
+    opacity: 0;
+}
+
 :root {
     /* Border Radius */
     --radius-xs: 0.125rem;   /* 2px - micro elements */
@@ -341,6 +350,22 @@ mark {
     width: 22px;
     height: 22px;
     color: rgba(255, 255, 255, 0.8);
+    transition: color 0.15s ease;
+}
+
+.bubble-btn:hover svg,
+.bubble-btn:active svg {
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Desktop back button - disabled state */
+#desktopBackBtn {
+    transition: opacity 0.15s ease;
+}
+
+#desktopBackBtn.disabled {
+    opacity: 0.3;
+    pointer-events: none;
 }
 
 /* Desktop search container with expanding input */
@@ -348,6 +373,7 @@ mark {
     display: flex;
     align-items: center;
     position: relative;
+    min-width: 48px;
 }
 
 .desktop-search-input {
@@ -401,6 +427,7 @@ mark {
 
 /* Mobile bottom bar - Apple Liquid Glass */
 .mobile-bottom-bar {
+    position: relative;
     height: 56px;
     background: linear-gradient(
         180deg,
@@ -438,21 +465,52 @@ mark {
     transition: color 0.15s ease, background 0.15s ease;
 }
 
-.mobile-bar-btn:hover {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.mobile-bar-btn:active {
-    background: rgba(255, 255, 255, 0.1);
-}
-
 .mobile-bar-btn.active {
     color: #fff;
+}
+
+.mobile-bar-btn.disabled {
+    opacity: 0.3;
+    pointer-events: none;
 }
 
 .mobile-bar-btn svg {
     width: 24px;
     height: 24px;
+}
+
+/* Mobile bar bubble effect */
+.mobile-bubble {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    bottom: -4px;
+    transform: scale(0);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0.03) 50%,
+        rgba(0, 0, 0, 0.02) 100%
+    );
+    backdrop-filter: blur(2px) saturate(150%);
+    -webkit-backdrop-filter: blur(2px) saturate(150%);
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.1),
+        inset 0 2px 2px rgba(255, 255, 255, 0.5),
+        inset 0 3px 6px rgba(255, 255, 255, 0.15),
+        inset 0 -2px 2px rgba(0, 0, 0, 0.15),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.08),
+        0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.mobile-bottom-bar.dragging .mobile-bubble {
+    transform: scale(1);
+    transition: transform 0.15s cubic-bezier(0.34, 1.2, 0.64, 1);
 }
 
 /* Mobile modal - liquid glass */

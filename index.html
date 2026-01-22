@@ -26,11 +26,16 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.4.0/color-thief.umd.js"></script>
-    <link rel="stylesheet" href="styles.css?v=20260120f">
+    <link rel="stylesheet" href="styles.css?v=20260120h">
 </head>
 <body class="bg-slate-950 text-slate-200">
     <!-- Desktop Floating Buttons (hidden on mobile) -->
-    <div id="desktopFloatingNav" class="hidden md:flex fixed top-6 right-6 z-50 items-center gap-3">
+    <div id="desktopFloatingNav" class="hidden md:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 items-center gap-3">
+        <button id="desktopBackBtn" class="bubble-btn disabled" onclick="goBack()">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+        </button>
         <div id="desktopSearchContainer" class="desktop-search-container">
             <input
                 type="text"
@@ -129,12 +134,13 @@
     </div>
 
     <!-- Mobile Bottom Bar -->
-    <div class="mobile-bottom-bar-wrapper md:hidden fixed bottom-4 left-4 right-4 z-[60]">
-        <div class="mobile-bottom-bar rounded-full">
+    <div class="mobile-bottom-bar-wrapper md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-[60]" style="width: 168px;">
+        <div id="mobileBottomBar" class="mobile-bottom-bar rounded-full">
+            <div class="mobile-bubble" id="mobileBubble"></div>
             <div class="mobile-bottom-bar-inner">
-                <button id="homeButton" class="mobile-bar-btn" onclick="goHome()">
+                <button id="mobileBackBtn" class="mobile-bar-btn disabled" onclick="goBack()" disabled>
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
                 </button>
                 <button id="searchButton" class="mobile-bar-btn" onclick="toggleMobileModal('search')">
@@ -199,6 +205,6 @@
         </div>
     </div>
 
-    <script src="app.js?v=20260120e"></script>
+    <script src="app.js?v=20260120g"></script>
 </body>
 </html>

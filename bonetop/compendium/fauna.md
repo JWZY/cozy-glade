@@ -21,4 +21,20 @@
 </div>
 </a>
 
+<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/fauna/night_strix.md')" class="compendium-card compendium-card-no-img" id="card-night-strix">
+<div class="compendium-card-content">
+<div class="compendium-card-number">#003</div>
+<div class="compendium-card-name">Night Strix</div>
+<div class="compendium-card-desc">Giant one-eyed owl that blends into the night sky. Can trap prey in another dimension.</div>
+</div>
+</a>
+
+<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/fauna/jub_jub.md')" class="compendium-card compendium-card-no-img" id="card-jub-jub">
+<div class="compendium-card-content">
+<div class="compendium-card-number">#004</div>
+<div class="compendium-card-name">Jub-jub</div>
+<div class="compendium-card-desc">Wallaby-like creatures with squirrel tails and antlers. Collect teeth and can turn ethereal.</div>
+</div>
+</a>
+
 </div>
