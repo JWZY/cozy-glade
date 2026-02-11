@@ -341,6 +341,10 @@ async function loadMarkdown(filename) {
 
         currentContent = content;
         currentFile = filename;
+        // Update URL hash for shareable links & browser history
+        if (window.location.hash.slice(1) !== filename) {
+            history.pushState(null, '', '#' + filename);
+        }
         const html = marked.parse(content);
         const contentEl = document.getElementById('content');
 
@@ -1142,11 +1146,23 @@ function highlightNavItem(filename) {
     document.addEventListener('mouseup', handleEnd);
 })();
 
+// Hash routing
+function getPageFromHash() {
+    const hash = window.location.hash.slice(1);
+    return hash || null;
+}
+
+window.addEventListener('popstate', () => {
+    const page = getPageFromHash();
+    if (page && page !== currentFile) {
+        loadMarkdown(page);
+    }
+});
+
 // Initialize
 renderNav();
 loadAllDocuments().then(() => {
-    if (currentCampaign === 'bonetop') {
-        loadMarkdown('bonetop/campaign_overview.md');
-    }
+    const startPage = getPageFromHash() || 'bonetop/campaign_overview.md';
+    loadMarkdown(startPage);
 });
 
