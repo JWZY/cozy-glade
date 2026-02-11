@@ -342,8 +342,9 @@ async function loadMarkdown(filename) {
         currentContent = content;
         currentFile = filename;
         // Update URL hash for shareable links & browser history
-        if (window.location.hash.slice(1) !== filename) {
-            history.pushState(null, '', '#' + filename);
+        const hashPath = filename.replace(/^bonetop\//, '');
+        if (window.location.hash.slice(1) !== hashPath) {
+            history.pushState(null, '', '#' + hashPath);
         }
         const html = marked.parse(content);
         const contentEl = document.getElementById('content');
@@ -1149,7 +1150,9 @@ function highlightNavItem(filename) {
 // Hash routing
 function getPageFromHash() {
     const hash = window.location.hash.slice(1);
-    return hash || null;
+    if (!hash) return null;
+    // Add bonetop/ prefix if not present
+    return hash.startsWith('bonetop/') ? hash : 'bonetop/' + hash;
 }
 
 window.addEventListener('popstate', () => {
