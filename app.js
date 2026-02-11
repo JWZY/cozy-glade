@@ -78,6 +78,87 @@ const characterBackgrounds = {
     'bonetop/Oleg.md': 'bonetop/img/oleg-svg.svg'
 };
 
+// Wiki-link dictionary: term → page path (longest terms first to avoid partial matches)
+const wikiLinks = [
+    { term: 'Wooly Moss Moose', file: 'bonetop/compendium/fauna/wooly_moss_moose.md' },
+    { term: 'Weeping Crystal Pine', file: 'bonetop/compendium/flora/crystalline_pines.md' },
+    { term: 'Crystal Pine', file: 'bonetop/compendium/flora/crystalline_pines.md' },
+    { term: 'Bad Luck Bees', file: 'bonetop/compendium/fauna/bad_luck_bees.md' },
+    { term: 'Rolling Moss', file: 'bonetop/compendium/flora/rolling_moss.md' },
+    { term: 'Roly Poly', file: 'bonetop/compendium/flora/rolling_moss.md' },
+    { term: 'Roly Polys', file: 'bonetop/compendium/flora/rolling_moss.md' },
+    { term: 'Dragon-flies', file: 'bonetop/compendium/fauna/dragon_flies.md' },
+    { term: 'Night Strix', file: 'bonetop/compendium/fauna/night_strix.md' },
+    { term: 'Frog Boar', file: 'bonetop/compendium/fauna/frog_boar.md' },
+    { term: 'Jub-jub', file: 'bonetop/compendium/fauna/jub_jub.md' },
+    { term: 'Jub-jubs', file: 'bonetop/compendium/fauna/jub_jub.md' },
+    { term: 'Ellery', file: 'bonetop/Ellery.md' },
+    { term: 'Halden', file: 'bonetop/Halden.md' },
+    { term: 'Oleg', file: 'bonetop/Oleg.md' },
+    { term: 'Finley', file: 'bonetop/Finley_Boreas.md' },
+    { term: 'Nellie', file: 'bonetop/Nellie_Saddler.md' },
+    { term: 'Vinos', file: 'bonetop/Vinos.md' },
+];
+
+function applyWikiLinks(container, currentFilename) {
+    // Tags to skip: links, buttons, headings, breadcrumbs, card elements, props
+    const skipTags = new Set(['A', 'BUTTON', 'H1', 'H2', 'H3', 'H4', 'SCRIPT', 'STYLE', 'CODE', 'PRE']);
+    const skipClasses = ['breadcrumb-title', 'compendium-card', 'bestiary-prop', 'prop-value', 'prop-label', 'section-label', 'compendium-card-name'];
+
+    function shouldSkip(node) {
+        let el = node.nodeType === 3 ? node.parentElement : node;
+        while (el && el !== container) {
+            if (skipTags.has(el.tagName)) return true;
+            if (el.className && skipClasses.some(c => el.className.includes(c))) return true;
+            el = el.parentElement;
+        }
+        return false;
+    }
+
+    // Build regex: match longest terms first (already sorted in array)
+    const pattern = wikiLinks
+        .filter(w => w.file !== currentFilename)
+        .map(w => w.term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+        .join('|');
+    if (!pattern) return;
+    const regex = new RegExp(`\\b(${pattern})\\b`, 'g');
+
+    // Walk text nodes
+    const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null);
+    const textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+    textNodes.forEach(node => {
+        if (shouldSkip(node)) return;
+        const text = node.textContent;
+        if (!regex.test(text)) return;
+        regex.lastIndex = 0;
+
+        const frag = document.createDocumentFragment();
+        let lastIndex = 0;
+        let match;
+        while ((match = regex.exec(text)) !== null) {
+            // Add text before match
+            if (match.index > lastIndex) {
+                frag.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+            }
+            // Create link
+            const link = document.createElement('a');
+            link.href = 'javascript:void(0)';
+            link.className = 'wiki-link';
+            const entry = wikiLinks.find(w => w.term === match[0]);
+            link.onclick = () => loadMarkdown(entry.file);
+            link.textContent = match[0];
+            frag.appendChild(link);
+            lastIndex = regex.lastIndex;
+        }
+        if (lastIndex < text.length) {
+            frag.appendChild(document.createTextNode(text.slice(lastIndex)));
+        }
+        node.parentNode.replaceChild(frag, node);
+    });
+}
+
 // Initialize DM file set
 Object.values(campaigns).forEach(campaign => {
     campaign.sections.forEach(section => {
@@ -287,6 +368,9 @@ async function loadMarkdown(filename) {
         contentEl.querySelectorAll('.dm-only').forEach(el => {
             el.style.display = isDmMode ? '' : 'none';
         });
+
+        // Auto-link wiki terms
+        applyWikiLinks(contentEl, filename);
 
         // Check for cover image metadata: <!-- cover: url -->
         const coverMatch = content.match(/<!--\s*cover:\s*(.*?)\s*-->/);

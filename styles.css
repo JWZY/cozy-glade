@@ -1462,6 +1462,19 @@ mark {
     line-height: var(--leading-relaxed);
 }
 
+/* Wiki auto-links */
+.wiki-link {
+    color: #93c5fd;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(147, 197, 253, 0.3);
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.wiki-link:hover {
+    color: #bfdbfe;
+    border-bottom-color: rgba(191, 219, 254, 0.6);
+}
+
 .placeholder-text {
     color: var(--color-placeholder);
     font-style: italic;
