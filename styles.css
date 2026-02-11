@@ -1,5 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+/* Initial loader */
+.loader-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40vh;
+}
+
+.loader-bar {
+    width: 120px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.loader-fill {
+    height: 100%;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 2px;
+    animation: loader-slide 0.8s ease-in-out infinite;
+}
+
+@keyframes loader-slide {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(350%); }
+}
+
 /* Page transitions */
 #main-container {
     transition: opacity 0.1s ease;
