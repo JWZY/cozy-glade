@@ -20,7 +20,7 @@
 ## Relationships
 
 - **Ellery** — Birdwatching buddies (for fun)
-- **Halden** — Regular foraging partners
+- **Halden** — Regular foraging partners. Called him "dad" during the moose chase ("don't hurt my dad!").
 - **Finley** — Crashes his Hot Goss Club meetings
 - **Nellie** — Golden retriever energy, desperately trying to win her over. She hates spiritualists. His attempts to help always backfire and creep her out or make things worse. Running gag.
 

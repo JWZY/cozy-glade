@@ -1,6 +1,6 @@
 # Halden
 
-**Ancestry:** Firbolg
+**Ancestry:** Firbolg | **Class:** Seraph (re-specced from Brawler)
 
 ## Short-term Goals
 
@@ -16,12 +16,15 @@
 
 ## Developments
 
+- Re-specced from Brawler to Seraph. Narratively unchanged — reflects Halden becoming more spiritually attuned to the settlers and the land. His healing now comes through cooking comfort food rather than brawling.
 - Built small 1-bedroom homesteads for everyone in the settlement
-- Successfully domesticated a Wooly Moss Moose. It imprinted on him and now follows him everywhere, constantly rubbing itself against him.
+- Attempted to domesticate a Wooly Moss Moose alpha. The alpha was in heat and imprinted on him — obsessively nuzzling and rubbing against him. A chase sequence ensued when Ellery put it to sleep and the herd panicked. In the final moments, Halden hesitated — a flashback to his vow to Anja not to harm creatures paralysed him, and the alpha broke free. It looked back at him with eyes not of rage, but of betrayal, before leading the herd back into the forest.
+- The moose escaped, but the connection was made. Unfinished business.
 
 ## Relationships
 
-- **Oleg** — Regular foraging partners
+- **Oleg** — Regular foraging partners. Oleg called him "dad" during the moose chase.
+- **The Alpha Moose** — It got away. But it looked back.
 
 ## Completed Goals
 

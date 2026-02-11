@@ -16,7 +16,7 @@
 </div>
 <div class="bestiary-prop">
 <span class="prop-label">Habitat</span>
-<span class="prop-value placeholder">Awaiting survey</span>
+<span class="prop-value">Lakeside, moist areas</span>
 </div>
 </div>
 
@@ -28,12 +28,13 @@
 
 <div class="bestiary-section">
 <div class="section-label">Behaviour</div>
-<p class="placeholder-text">Awaiting observation.</p>
+<p>Prefers moist lakeside areas for gathering more moss. Can float across the lake to "travel to other far places." Moves at surprising speed when startled — described as rolling away "at Mach speed." Capable of speech when communed with via Nature's Tongue; speaks in a chill, matter-of-fact tone. Refers to Wooly Moss Moose as "woolly terrors" and avoids the riverside where they roam.</p>
 </div>
 
 <div class="bestiary-section">
 <div class="section-label">Field Notes</div>
-<p class="placeholder-text">First catalogued by the settlers of Bonetop.</p>
+<p>First caught by Ellery using a bucket and Mage Hand, as an errand for Nellie. Oleg communed with it and it directed the party toward the Wooly Moss Moose by the riverside.</p>
+<p><em>Ellery noted that the jade trees thin out approaching the river, eventually disappearing entirely — other tree types remain. Cause unknown.</em></p>
 </div>
 </div>
 </div>

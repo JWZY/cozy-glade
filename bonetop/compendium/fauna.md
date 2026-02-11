@@ -41,7 +41,7 @@
 <div class="compendium-card-content">
 <div class="compendium-card-number">#005</div>
 <div class="compendium-card-name">Wooly Moss Moose</div>
-<div class="compendium-card-desc">A large moss-covered moose found in the forests around Bonetop.</div>
+<div class="compendium-card-desc">Green-wooled moose that eat Rolling Moss like jawbreakers. Found in herds by the riverside.</div>
 </div>
 </a>
 

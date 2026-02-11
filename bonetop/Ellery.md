@@ -10,14 +10,21 @@
 
 **Graduate from the Academy** — Prove to her maker, Alprazepam the Stern, that creating Ellery and teaching her magic was worthwhile.
 
+## Developments
+
+- Dampening bracelet broke during the Wooly Moss Moose stampede. Needs repair before the library-raising spell can be attempted.
+- Has been running errands for Nellie to repair relations after the bee incident. Secretly believes Nellie has an "unbalanced aura" she's trying to cure. ("Don't tell her this.")
+- During the moose chase, the herd trampled straight over her without a second look — she was "just a piece of wood" to them. Minor existential crisis.
+
 ## Relationships
 
 - **Oleg** — Birdwatching buddies (for fun)
 - **Vinos** — Keeps pestering him to assemble the communication kit. He keeps saying "I'm working on it." He has not opened it.
+- **Nellie** — Doing favours for her (collecting obscure materials, running far-flung errands) to make up for the bee incident. Privately thinks Nellie's aura is unbalanced.
 
 ## Completed Goals
 
-- ~~Find the perfect reading nook~~ — Built the Floating Library: a magically suspended, self-stabilizing structure above Bonetop using lumber from the communal yard. A perfectly organized prefab set, levitated into the sky. Canonically did not design an entrance.
+- ~~Find the perfect reading nook~~ — Built the Floating Library: a magically suspended, self-stabilizing structure above Bonetop using lumber from the communal yard. A perfectly organized prefab set, levitated into the sky. Canonically did not design an entrance. Assembly spell on hold until the dampening bracelet is repaired.
 
 ## Appearance
 - Wooden dummy with a very faint yellow glow lining each wooden groove.

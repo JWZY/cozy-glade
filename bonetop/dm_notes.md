@@ -3,31 +3,30 @@
 *Strictly for DM Eyes Only*
 
 ## 1. Player Goals (Running List)
-*Based on `IMG_7061.jpg` methodology.*
 
-### **Ellery (The Academic)**
-*   **Short Term:** Find the perfect reading nook near Bonetop.
-    *   *Process:* Survey residents -> Debate with Vinos -> Vote.
-*   **Long Term:** Graduate from The Academy; prove worth to Alprazepam.
-*   **Potential Conflict:** The "perfect spot" is dangerous, occupied, or structurally unsound.
-*   **Opposing Faction:** **The Academy** (Bureaucracy, Alprazepam's sudden silence).
-
-### **Halden (The Builder)**
+### **Halden (The Builder)** — Seraph (re-specced from Brawler)
 *   **Short Term:**
-    *   Plot land for Town & Homestead (planting pear seeds).
-    *   Clear pests/plants.
-    *   Secure a communal lumber yard (cutting area, transport).
+    *   Build a tavern — communal gathering place
+    *   Find livestock — the Wooly Moss Moose are the target, but the first attempt failed spectacularly
+    *   Attract new settlers — ideas: ale ingredients, advertisements via Vinos
 *   **Long Term:** Spread Anja's ashes in a place where "Nature and Beauty Reigns."
-*   **Potential Conflict:** The land fights back (aggressive flora/fauna).
-*   **Opposing Faction:** **Nature Itself** (or a Druidic circle/Spirit that resents the "taming" of the land).
+*   **Key Conflict (NEW):** Halden's vow to Anja not to harm creatures directly conflicts with his monster-hunting instincts. The dice exposed this during the moose chase — his hesitation caused a critical failure. This is the richest thread the session produced.
+*   **Opposing Faction:** **His own past** — the Scarlett Scale monster hunter vs. the farmer Anja loved.
 
 ### **Oleg (The Mystic)**
 *   **Short Term:**
-    *   Clear a perimeter (trees/pests).
-    *   Establish shelter & traps.
-*   **Long Term:** Establish contact with local Spirits (planting mushrooms). Deter "The Flipped Coin."
-*   **Potential Conflict:** His attempts to clear the perimeter offend the spirits he wants to befriend.
+    *   Commune with dragon spirits — stuck, too intense
+    *   Make contracts with lesser forest spirits
+    *   Find the leader of the Jub-jubs
+*   **Long Term:** Establish himself in the local spiritual realm. Deter "The Flipped Coin."
+*   **Key Dynamic:** Golden retriever energy with Nellie (backfires every time). Father-figure bond with Halden emerging ("don't hurt my dad").
 *   **Opposing Faction:** **The Flipped Coin** (Crime Syndicate), **Local Spirits**.
+
+### **Ellery (The Academic)**
+*   **Short Term:** Construct the Floating Library — all pieces ready, but dampening bracelet broke during the moose stampede. Needs repair first.
+*   **Long Term:** Graduate from The Academy; prove worth to Alprazepam.
+*   **Key Dynamic:** Running secret errands for Nellie (thinks Nellie has an "unbalanced aura"). Existential thread — the moose herd treated her as "just a piece of wood."
+*   **Opposing Faction:** **The Academy** (Bureaucracy, Alprazepam's sudden silence).
 
 ---
 
@@ -55,11 +54,38 @@
 
 ---
 
-## 4. Conflict Generation Table
+## 4. Active Narrative Threads (Post Arc 2)
 
-| PC Goal | Potential Obstacle | Type | Resulting Encounter |
+### The Moose Nemesis System
+The dice told this story perfectly. Halden tried to domesticate the alpha moose, it imprinted on him (in heat), the party panicked and tried to run with it asleep, the herd gave chase, and in the critical moment Halden froze — his vow to Anja not to harm creatures paralysed him. The alpha woke up, looked back with "eyes of betrayal," and led the herd away.
+
+**Why this works:** Halden's internal conflict (monster hunter vs. peaceful farmer) was invisible until the Fear roll forced it to the surface. Now it's the central tension of his arc. The moose alpha is a mirror — an animal that trusted him and was betrayed. Halden needs to earn that trust back *without* falling back on his old ways.
+
+**The alpha has a brother** — darker moss, scar across one eye. Mufasa and Scar. This is a Lion King dynamic the players established collaboratively. Use it.
+
+### Ellery's Dampening Bracelet
+Broke during the stampede. This gates the library construction — she can't cast the big assembly spell without it. Finding repair materials or an alternative is now a quest. Could tie into the Academy thesis pressure.
+
+### The Jade Tree Gradient
+Ellery noticed the jade/emerald trees thin out approaching the river and eventually disappear entirely. Other trees remain. Cause unknown. This is a planted ecological mystery — could connect to the dragon corpse's magical influence, the forest queens, or something deeper.
+
+### Forest Queens
+Discussed in session: the forest may be governed by multiple queens (Bad Luck Bee Queen, Jub-Jub Queen, possibly others), each ruling their own domain with contracts between them. Wizard of Oz witches analogy. Not yet encountered, but seeds are planted through the player wishlist items.
+
+### Nellie's Situation
+Got magically immolated by Bad Luck Bees — burned, stung, lost eyebrows. Ellery is secretly trying to cure her "unbalanced aura." Oleg is making it worse with his golden retriever spiritualist energy. She's a comedy fulcrum but could become more — her modernist worldview vs. the increasingly magical reality of Bonetop.
+
+### Vinos's Kit
+Still. Not. Opened. The longer this runs, the funnier it gets. But eventually it needs to pay off — the communication kit is the settlement's link to the outside world.
+
+---
+
+## 5. Conflict Generation Table (Updated)
+
+| Thread | Potential Obstacle | Type | Resulting Encounter |
 | :--- | :--- | :--- | :--- |
-| **Reading Nook** | The nook is occupied by a moody Spirit. | Social / Puzzle | **The Silent Library:** Ellery must solve the Spirit's riddle to gain entry. |
-| **Clear Perimeter** | The trees are awakened/protected. | Combat / Skill | **The Root Awakening:** Vines grapple the workers; they must be soothed or cut. |
-| **Plant Pear Tree** | The soil is acidic/cursed. | Exploration | **The Blight:** Finding the source of the corruption near the lake. |
-| **Mail Delivery** | The path is blocked by a storm. | Survival | **The Postal Run:** Helping Vinos get a critical package through the mud. |
+| **Moose Round 2** | Halden needs a new approach — the herd knows him now | Social / Skill | Must earn the alpha's trust without force. Scar-brother could complicate things. |
+| **Bracelet Repair** | Materials are rare, or require a spirit contract | Exploration / Social | Oleg brokers a deal; Ellery confronts what she is without her tools |
+| **Bee Queen Honey** | The bees bring literal bad luck to anyone nearby | Skill / Combat | A heist-style encounter: plan the approach, mitigate the misfortune field, face the queen |
+| **Jub-Jub Pilgrimage** | The tooth deity is real and has expectations | Exploration / Mystery | Following the Jub-jubs to wherever they deliver the teeth |
+| **The Jade Boundary** | Something is keeping the jade trees from the river | Exploration | What's at the river that repels them? Or what's in the jade forest that holds them? |
