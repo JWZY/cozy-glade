@@ -2,23 +2,32 @@
 
 **Ancestry:** Goblin (mixed ancestry - Infernis)
 
-## Long-term Goals He's Working Towards
+## Short-term Goals
 
-**Establishing himself with the local spiritual realm:**
-- Seeking favour with the local creatures/spirits. i.e. planting mushrooms in circles to gain favour with the local Fae-spirits.
+**Commune with the dragon spirits** — Stuck; hitting a wall trying to connect with the dragon spirits directly.
+- In the meantime, seeking out lesser spirits to make contracts with.
+- Forages with Halden regularly.
+- Wants to find the leader of the Jub-jubs.
 
-**Gaining rapport with his fellow settlers.**
+## Long-term Goals
 
-**Deterring the Flipped Coin from seeking him out:** Sending them a clear signal he has no intention of returning.
+**Establish himself with the local spiritual realm** — Seeking favour with the local creatures/spirits, planting mushrooms in circles to gain favour with the local Fae-spirits.
 
-## Short-term/Immediate Goals
+**Gain rapport with his fellow settlers**
 
-**Preparing space for settlement:**
-- Oleg, with the help of who's willing, will work to clear out a perimeter of land to establish the settlement
-(i.e. clearing trees, clearing pests / deterring wildlife)
+**Deter the Flipped Coin** — Sending them a clear signal he has no intention of returning.
 
-**Shelter:**
-- Gathering firewood, setting up a watch rotation, and deterrents/traps for local wildlife.
+## Relationships
+
+- **Ellery** — Birdwatching buddies (for fun)
+- **Halden** — Regular foraging partners
+- **Finley** — Crashes his Hot Goss Club meetings
+- **Nellie** — Golden retriever energy, desperately trying to win her over. She hates spiritualists. His attempts to help always backfire and creep her out or make things worse. Running gag.
+
+## Completed Goals
+
+- ~~Clear a perimeter of land to establish the settlement~~
+- ~~Set up shelter, watch rotation, and wildlife deterrents/traps~~
 
 ## Appearance
 - Short stature; lightweight build
@@ -52,4 +61,4 @@
 
 **Strengths:** Creative, kind, unconventionally wise
 
-**Inspirations:** Coffee-Talk [game], Mushi-Shi [manga/anime], Nimue’s magic from Bright Sword [book]
+**Inspirations:** Coffee-Talk [game], Mushi-Shi [manga/anime], Nimue's magic from Bright Sword [book]

@@ -1,4 +1,4 @@
-# Session 1: "The Arrival"
+# Arc 1: "The Arrival"
 
 *See `DM Notes` for full Goal & Faction breakdown.*
 

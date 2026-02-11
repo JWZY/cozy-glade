@@ -18,6 +18,10 @@
 - Will attempt to recruit people into the Modernistic Medical Society, which only has one member.... her.
 - Young and feels like she has much to prove
 
+## Relationships
+
+- **Oleg** — He's in golden retriever mode trying to befriend her. She's a staunch modernist who distrusts spiritualists. His spirit-based "help" consistently backfires — creeping her out or making things worse. Running gag.
+
 ---
 
 **Occupation:** "Doctor", though she never completed her schooling for a legal "doctorate" title.

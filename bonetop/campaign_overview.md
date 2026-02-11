@@ -10,6 +10,46 @@
 <div class="overview-detail"><span class="detail-label">Themes</span> Found family, legacy, man vs. nature</div>
 </div>
 
+<div class="overview-section dm-only" style="display:none">
+<div class="overview-section-header">DM Resources</div>
+
+<div class="compendium-grid-compact">
+
+<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/session_1_prep.md')" class="compendium-card compendium-card-no-img dm-card">
+<div class="compendium-card-content">
+<div class="compendium-card-number">Encounters & Scenes</div>
+<div class="compendium-card-name">Arc 1 Prep</div>
+<div class="compendium-card-desc">Encounter plans, scene setups, and pacing notes.</div>
+</div>
+</a>
+
+<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/session_2_prep.md')" class="compendium-card compendium-card-no-img dm-card">
+<div class="compendium-card-content">
+<div class="compendium-card-number">Time Skip & Summer</div>
+<div class="compendium-card-name">Arc 2 Prep</div>
+<div class="compendium-card-desc">The Thaw — collaborative worldbuilding, the pear tree, spirit negotiations, and incoming visitors.</div>
+</div>
+</a>
+
+<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/dm_notes.md')" class="compendium-card compendium-card-no-img dm-card">
+<div class="compendium-card-content">
+<div class="compendium-card-number">Factions & Goals</div>
+<div class="compendium-card-name">DM Notes</div>
+<div class="compendium-card-desc">Behind-the-scenes factions, goals, and world secrets.</div>
+</div>
+</a>
+
+<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/player_wishlist.md')" class="compendium-card compendium-card-no-img dm-card">
+<div class="compendium-card-content">
+<div class="compendium-card-number">Session Ideas</div>
+<div class="compendium-card-name">Player Wishlist</div>
+<div class="compendium-card-desc">Things players want to do — pull from this when planning arcs.</div>
+</div>
+</a>
+
+</div>
+</div>
+
 <div class="overview-section">
 <div class="overview-section-header">Player Characters</div>
 

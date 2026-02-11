@@ -3,9 +3,30 @@
 **Ancestry:** Firbolg
 
 ## Short-term Goals
-Halden would like to plot out a portion of land for the Town and his own personal homestead. He is looking for an area of property that could support small livestock, farming, a small home with room for additions, and enough area to continue to build outer buildings. The plot will be claimed by planting seeds from Anja's pear tree back home. Halden and company may need to clear out areas for housing for local residents from harmful pests/plants
 
-Halden is also looking to prepare for infrastructure of Bonetop, and would like to secure a small, communal lumber yard. The Caravan may need to designate a cutting area, figure out transport logistics, and consider what type of wood is being harvested, potentially limited by the current tools at hand (2 story buildings may need stronger wood, which needs stronger tools to cut)
+**Build a tavern** — The homesteads are done, now Bonetop needs a communal gathering place.
+
+**Find livestock** — Looking for a sheep equivalent to herd onto his homestead.
+
+**Attract new settlers** — Give people a reason to come to Bonetop. Ideas include gathering ingredients for ale to get the pub started, drawing up advertisements for Vinos to send back to the mainland.
+
+## Long-term Goal
+
+**Spread Anja's ashes** — Find the place where "Nature and Beauty Reigns" to fulfill his final vow to his late wife.
+
+## Developments
+
+- Built small 1-bedroom homesteads for everyone in the settlement
+- Successfully domesticated a Wooly Moss Moose. It imprinted on him and now follows him everywhere, constantly rubbing itself against him.
+
+## Relationships
+
+- **Oleg** — Regular foraging partners
+
+## Completed Goals
+
+- ~~Plot land for the town and his personal homestead (planted Anja's pear seeds)~~
+- ~~Secure a communal lumber yard~~
 
 ## Appearance
 - Tall, blue skin and windswept grey hair, specks of auburn in it.

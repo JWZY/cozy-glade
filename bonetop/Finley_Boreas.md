@@ -18,6 +18,15 @@
 - His father *will* check up on him. When and how are unknown.
 - His family is a shadow-donor to the expedition
 
+## Relationships
+
+- **Oleg** — Crashes the Hot Goss Club meetings
+
+## Developments
+
+- Founded the **Hot Goss Club** in Bonetop
+- Made a cedar chest for his sweaters — already infested with moths. Won't stop complaining about it.
+
 ---
 
 **Occupation:** ???? [Taking up space]

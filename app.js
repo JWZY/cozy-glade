@@ -33,8 +33,10 @@ const campaigns = {
                 title: 'Campaign Overview',
                 items: [
                     { file: 'campaign_overview.md', name: 'Overview & Setting', sub: 'The World' },
-                    { file: 'session_1_prep.md', name: 'Session 1 Prep', sub: 'Encounters & Scenes', dmOnly: true },
-                    { file: 'dm_notes.md', name: 'DM Notes', sub: 'Factions & Goals', dmOnly: true }
+                    { file: 'session_1_prep.md', name: 'Arc 1 Prep', sub: 'Encounters & Scenes', dmOnly: true },
+                    { file: 'session_2_prep.md', name: 'Arc 2 Prep', sub: 'Time Skip & Summer', dmOnly: true },
+                    { file: 'dm_notes.md', name: 'DM Notes', sub: 'Factions & Goals', dmOnly: true },
+                    { file: 'player_wishlist.md', name: 'Player Wishlist', sub: 'Session Ideas', dmOnly: true }
                 ]
             },
             {
@@ -111,18 +113,27 @@ function toggleDmMode() {
     isDmMode = !isDmMode;
     console.log('DM Mode:', isDmMode);
     renderNav();
+    updateDmModeButton();
     // Reload documents if turning on DM mode to ensure we have them
     if (isDmMode) loadAllDocuments();
-    
-    // Visual feedback
-    const indicator = document.createElement('div');
-    indicator.className = 'fixed top-4 right-4 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 transition-opacity duration-1000';
-    indicator.textContent = isDmMode ? 'DM Mode Enabled' : 'DM Mode Disabled';
-    document.body.appendChild(indicator);
-    setTimeout(() => {
-        indicator.style.opacity = '0';
-        setTimeout(() => indicator.remove(), 1000);
-    }, 2000);
+
+    // Toggle DM-only elements on the current page
+    document.querySelectorAll('.dm-only').forEach(el => {
+        el.style.display = isDmMode ? '' : 'none';
+    });
+}
+
+function updateDmModeButton() {
+    const btn = document.getElementById('dmModeBtn');
+    if (btn) {
+        if (isDmMode) {
+            btn.classList.remove('hidden');
+            btn.classList.add('dm-mode-active');
+        } else {
+            btn.classList.add('hidden');
+            btn.classList.remove('dm-mode-active');
+        }
+    }
 }
 
 function renderNav() {
@@ -270,6 +281,11 @@ async function loadMarkdown(filename) {
         }
 
         contentEl.innerHTML = html;
+
+        // Show/hide DM-only elements based on current mode
+        contentEl.querySelectorAll('.dm-only').forEach(el => {
+            el.style.display = isDmMode ? '' : 'none';
+        });
 
         // Check for cover image metadata: <!-- cover: url -->
         const coverMatch = content.match(/<!--\s*cover:\s*(.*?)\s*-->/);
@@ -441,7 +457,7 @@ function performSearch(query, targetElement) {
                 `;
             } else {
                 html += `
-                    <a href="javascript:void(0)" onclick="loadMarkdown('${result.file}')" class="search-result-card">
+                    <a href="javascript:void(0)" onclick="collapseDesktopSearch(true); loadMarkdown('${result.file}')" class="search-result-card">
                         <div class="search-result-title">${friendlyName}</div>
                         <div class="search-result-excerpt">${highlightedLine}</div>
                     </a>
@@ -635,7 +651,7 @@ function toggleDesktopSearch() {
     }
 }
 
-function collapseDesktopSearch() {
+function collapseDesktopSearch(skipReload) {
     const container = document.getElementById('desktopSearchContainer');
     const input = document.getElementById('desktopSearchInput');
     if (container) {
@@ -645,7 +661,8 @@ function collapseDesktopSearch() {
         clearTimeout(desktopSearchTimeout);
 
         // Reload current page if search was used (to restore proper page structure)
-        if (hadSearchQuery && currentFile) {
+        // Skip reload when navigating to a new page from search results
+        if (!skipReload && hadSearchQuery && currentFile) {
             loadMarkdown(currentFile);
         }
     }

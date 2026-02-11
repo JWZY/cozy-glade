@@ -2,13 +2,22 @@
 
 **Ancestry:** Clank
 
-## Long Term Goal
-**Graduate from the Academy** to prove to her maker that creating Ellery and teaching her magic was worthwhile
+## Short-term Goal
 
-## Short Term Goal
-**Find the perfect reading nook near Bonetop** for late-night study sessions, and to separate fact from fiction in fae riddles.
+**Construct the Floating Library** — Assemble and complete the magically suspended library above Bonetop. The structure is designed but needs to be built and put together.
 
-*"The residents of Bonetop must each be asked about good reading areas and a list of locations must be compiled. Then, Vinos and I will debate which area is best, and those in attendance (Halden, Finley, and Nellie) will vote to declare the ideal spot."*
+## Long-term Goal
+
+**Graduate from the Academy** — Prove to her maker, Alprazepam the Stern, that creating Ellery and teaching her magic was worthwhile.
+
+## Relationships
+
+- **Oleg** — Birdwatching buddies (for fun)
+- **Vinos** — Keeps pestering him to assemble the communication kit. He keeps saying "I'm working on it." He has not opened it.
+
+## Completed Goals
+
+- ~~Find the perfect reading nook~~ — Built the Floating Library: a magically suspended, self-stabilizing structure above Bonetop using lumber from the communal yard. A perfectly organized prefab set, levitated into the sky. Canonically did not design an entrance.
 
 ## Appearance
 - Wooden dummy with a very faint yellow glow lining each wooden groove.

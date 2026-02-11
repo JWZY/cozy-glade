@@ -37,4 +37,20 @@
 </div>
 </a>
 
+<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/fauna/wooly_moss_moose.md')" class="compendium-card compendium-card-no-img" id="card-wooly-moss-moose">
+<div class="compendium-card-content">
+<div class="compendium-card-number">#005</div>
+<div class="compendium-card-name">Wooly Moss Moose</div>
+<div class="compendium-card-desc">A large moss-covered moose found in the forests around Bonetop.</div>
+</div>
+</a>
+
+<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/fauna/bad_luck_bees.md')" class="compendium-card compendium-card-no-img" id="card-bad-luck-bees">
+<div class="compendium-card-content">
+<div class="compendium-card-number">#006</div>
+<div class="compendium-card-name">Bad Luck Bees</div>
+<div class="compendium-card-desc">Misfortune-bringing bees with extraordinarily valuable honey. Ruled by a queen.</div>
+</div>
+</a>
+
 </div>
