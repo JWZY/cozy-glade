@@ -27,7 +27,7 @@
 <div class="bestiary-content">
 <div class="bestiary-section">
 <div class="section-label">Description</div>
-<p>Large moose-like creatures with mossy antlers and green-tinged wool. Their wool takes its colour from their diet — they eat so much moss it tints their fur, much like flamingos turning pink from shrimp. When sleeping, they resemble mounds of moss on the forest floor, which attracts Rolling Moss to roll onto them — a relationship the Roly Polys find significantly less charming. They travel in herds led by a dominant alpha.</p>
+<p>Large moose-like creatures with mossy antlers and green-tinged wool. Their wool takes its colour from their diet — they eat so much moss it tints their fur, much like flamingos turning pink from shrimp. They travel in herds led by a dominant alpha.</p>
 </div>
 
 <div class="bestiary-section">
