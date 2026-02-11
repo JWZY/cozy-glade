@@ -60,7 +60,8 @@ const campaigns = {
                 items: [
                     { file: 'compendium/fauna.md', name: 'Fauna', sub: 'Creatures & Beasts' },
                     { file: 'compendium/flora.md', name: 'Flora', sub: 'Plants & Fungi' },
-                    { file: 'compendium/recipes.md', name: 'Feasts', sub: 'Culinary Creations' }
+                    { file: 'compendium/recipes.md', name: 'Feasts', sub: 'Culinary Creations' },
+                    { file: 'compendium/session_notes.md', name: 'Session Notes', sub: 'Adventure Log' }
                 ]
             }
         ]
