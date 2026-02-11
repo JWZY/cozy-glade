@@ -5,7 +5,7 @@
 
 <div class="overview-details">
 <div class="overview-detail"><span class="detail-label">Location</span> Remote frontier, beside a freshwater lake</div>
-<div class="overview-detail"><span class="detail-label">Season</span> Early Spring — snow melting, ground soft</div>
+<div class="overview-detail"><span class="detail-label">In-Game Date</span> Year 1, Summer</div>
 <div class="overview-detail"><span class="detail-label">Tone</span> Slice-of-life homesteading with liberal time skips</div>
 <div class="overview-detail"><span class="detail-label">Themes</span> Found family, legacy, man vs. nature</div>
 </div>
