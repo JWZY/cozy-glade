@@ -1,7 +1,7 @@
 <div class="breadcrumb-title">
 <a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/session_notes.md')">Session Notes</a>
 <span class="breadcrumb-caret">></span>
-<span class="breadcrumb-current">The Woolly Terrors</span>
+<span class="breadcrumb-current">The Wooly Terrors</span>
 </div>
 
 <div class="bestiary-page-no-img">
@@ -28,7 +28,7 @@
 <li>Halden built homesteads for everyone; Ellery designed a floating library with no entrance; Oleg kept crashing Finley's Hot Goss Club</li>
 <li>Nellie lost her eyebrows to Bad Luck Bees; Vinos still hasn't opened his communication kit</li>
 <li>On a foraging walk, Ellery burst out of the brush chasing a Rolling Moss ("Roly Poly")</li>
-<li>Oleg communed with it — learned about "woolly terrors" by the riverside: Wooly Moss Moose that swallow Roly Polys whole like jawbreakers</li>
+<li>Oleg communed with it — learned about "wooly terrors" by the riverside: Wooly Moss Moose that swallow Roly Polys whole like jawbreakers</li>
 <li>Halden saw livestock — lured the alpha with a mossy rock, but the alpha was in heat and imprinted on him instead</li>
 <li>Ellery put the alpha to sleep; the party ran with it; the herd gave chase</li>
 <li>Oleg cleared the forest path with a critical Nature's Tongue — "I love you! Move aside! Big fan!"</li>
@@ -44,7 +44,7 @@
 <div class="section-label">Discoveries</div>
 <ul>
 <li><strong>Wooly Moss Moose</strong> — Green-wooled moose that eat Rolling Moss like jawbreakers. The alpha has a brother with darker moss and a scar across one eye.</li>
-<li><strong>Rolling Moss</strong> — Can speak. Prefers the lakeside. Calls the moose "woolly terrors." Rolls at Mach speed when scared.</li>
+<li><strong>Rolling Moss</strong> — Can speak. Prefers the lakeside. Calls the moose "wooly terrors." Rolls at Mach speed when scared.</li>
 <li><strong>Jade Tree Gradient</strong> — The jade trees thin out approaching the river and vanish entirely. Cause unknown.</li>
 </ul>
 </div>

@@ -35,7 +35,7 @@ Key prompts used to build this project, in order. Follow these to replicate the 
 
 ### Session Notes Section
 - "Add a compendium section called Session Notes with a subpage — give it a name and the date (Feb 10)"
-- Created "The Woolly Terrors" session summary
+- Created "The Wooly Terrors" session summary
 - "Add a card on the home page too"
 - "Add an in-game date — Year 1, Summer"
 - "Make it point form"

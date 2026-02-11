@@ -28,7 +28,7 @@
 
 <div class="bestiary-section">
 <div class="section-label">Behaviour</div>
-<p>Prefers moist lakeside areas for gathering more moss. Can float across the lake to "travel to other far places." Moves at surprising speed when startled — described as rolling away "at Mach speed." Capable of speech when communed with via Nature's Tongue; speaks in a chill, matter-of-fact tone. Refers to Wooly Moss Moose as "woolly terrors" and avoids the riverside where they roam.</p>
+<p>Prefers moist lakeside areas for gathering more moss. Can float across the lake to "travel to other far places." Moves at surprising speed when startled — described as rolling away "at Mach speed." Capable of speech when communed with via Nature's Tongue; speaks in a chill, matter-of-fact tone. Refers to Wooly Moss Moose as "wooly terrors" and avoids the riverside where they roam.</p>
 </div>
 
 <div class="bestiary-section">
