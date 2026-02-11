@@ -143,6 +143,14 @@
 </div>
 </a>
 
+<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/session_notes.md')" class="compendium-card compendium-card-no-img">
+<div class="compendium-card-content">
+<div class="compendium-card-number">Adventure Log</div>
+<div class="compendium-card-name">Session Notes</div>
+<div class="compendium-card-desc">Summaries of each session's key events and discoveries.</div>
+</div>
+</a>
+
 </div>
 </div>
 
