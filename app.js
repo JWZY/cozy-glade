@@ -33,9 +33,7 @@ const campaigns = {
                 title: 'Campaign Overview',
                 items: [
                     { file: 'campaign_overview.md', name: 'Overview & Setting', sub: 'The World' },
-                    { file: 'session_1_prep.md', name: 'Arc 1 Prep', sub: 'Encounters & Scenes', dmOnly: true },
-                    { file: 'session_2_prep.md', name: 'Arc 2 Prep', sub: 'Time Skip & Summer', dmOnly: true },
-                    { file: 'dm_notes.md', name: 'DM Notes', sub: 'Factions & Goals', dmOnly: true },
+                    { file: 'arc2_roadmap.md', name: 'Arc 2 Roadmap', sub: 'Portents & Pressures', dmOnly: true },
                     { file: 'player_wishlist.md', name: 'Player Wishlist', sub: 'Session Ideas', dmOnly: true }
                 ]
             },

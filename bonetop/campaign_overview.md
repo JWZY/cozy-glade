@@ -15,27 +15,11 @@
 
 <div class="compendium-grid-compact">
 
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/session_1_prep.md')" class="compendium-card compendium-card-no-img dm-card">
+<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/arc2_roadmap.md')" class="compendium-card compendium-card-no-img dm-card">
 <div class="compendium-card-content">
-<div class="compendium-card-number">Encounters & Scenes</div>
-<div class="compendium-card-name">Arc 1 Prep</div>
-<div class="compendium-card-desc">Encounter plans, scene setups, and pacing notes.</div>
-</div>
-</a>
-
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/session_2_prep.md')" class="compendium-card compendium-card-no-img dm-card">
-<div class="compendium-card-content">
-<div class="compendium-card-number">Time Skip & Summer</div>
-<div class="compendium-card-name">Arc 2 Prep</div>
-<div class="compendium-card-desc">The Thaw — collaborative worldbuilding, the pear tree, spirit negotiations, and incoming visitors.</div>
-</div>
-</a>
-
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/dm_notes.md')" class="compendium-card compendium-card-no-img dm-card">
-<div class="compendium-card-content">
-<div class="compendium-card-number">Factions & Goals</div>
-<div class="compendium-card-name">DM Notes</div>
-<div class="compendium-card-desc">Behind-the-scenes factions, goals, and world secrets.</div>
+<div class="compendium-card-number">Portents & Pressures</div>
+<div class="compendium-card-name">Arc 2 Roadmap</div>
+<div class="compendium-card-desc">Faction escalation chains, environment stat blocks, and the Summer Clock.</div>
 </div>
 </a>
 
