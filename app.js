@@ -5,6 +5,73 @@ let currentCampaign = 'bonetop';
 let isDmMode = false;
 const dmFileSet = new Set();
 
+// Seasonal theme system
+const seasons = ['summer', 'spring'];
+let currentSeason = localStorage.getItem('bonetop-season') || 'summer';
+
+const seasonIcons = {
+    summer: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>',
+    spring: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3"/><path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4"/><path d="M5 21h14"/></svg>'
+};
+
+function applySeason(season) {
+    document.body.dataset.season = season;
+    // Update season toggle icons
+    ['seasonBtn', 'mobileSeasonBtn'].forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) btn.innerHTML = seasonIcons[season];
+    });
+}
+
+const seasonImages = { summer: 'bonetop/img/Year 1 Summer.png', spring: 'bonetop/img/Year 1 Spring.png' };
+
+function cycleSeason() {
+    const idx = seasons.indexOf(currentSeason);
+    const oldSeason = currentSeason;
+    currentSeason = seasons[(idx + 1) % seasons.length];
+
+    const cover = document.querySelector('.page-cover');
+    if (cover) {
+        // Capture old gradient values before switching
+        const oldBgRgb = getComputedStyle(document.body).getPropertyValue('--bg-rgb').trim();
+
+        // Switch season (CSS vars + icon update)
+        applySeason(currentSeason);
+
+        // Set new season image on cover
+        cover.style.backgroundImage = `
+            linear-gradient(to bottom, rgba(var(--bg-rgb), 0.1) 50%, rgba(var(--bg-rgb), 1) 100%),
+            url('${seasonImages[currentSeason]}')
+        `;
+        cover.style.animation = 'none';
+
+        // Crossfade: overlay with old image fades out
+        const overlay = document.createElement('div');
+        overlay.style.cssText = `
+            position: absolute; inset: 0; z-index: 1;
+            background-image: linear-gradient(to bottom, rgba(${oldBgRgb}, 0.1) 50%, rgba(${oldBgRgb}, 1) 100%), url('${seasonImages[oldSeason]}');
+            background-size: cover;
+            background-position: center 35%;
+            transition: opacity 0.8s ease;
+            pointer-events: none;
+        `;
+        cover.appendChild(overlay);
+
+        requestAnimationFrame(() => {
+            overlay.style.opacity = '0';
+        });
+        overlay.addEventListener('transitionend', () => overlay.remove());
+    } else {
+        applySeason(currentSeason);
+        if (currentFile) loadMarkdown(currentFile);
+    }
+
+    localStorage.setItem('bonetop-season', currentSeason);
+}
+
+// Apply saved season immediately
+applySeason(currentSeason);
+
 const campaigns = {
     'prison-planet': {
         name: 'Prison Planet',
@@ -85,9 +152,10 @@ const wikiLinks = [
     { term: 'Rolling Moss', file: 'bonetop/compendium/flora/rolling_moss.md' },
     { term: 'Roly Poly', file: 'bonetop/compendium/flora/rolling_moss.md' },
     { term: 'Roly Polys', file: 'bonetop/compendium/flora/rolling_moss.md' },
-    { term: 'Dragon-flies', file: 'bonetop/compendium/fauna/dragon_flies.md' },
+    { term: 'Flyverns', file: 'bonetop/compendium/fauna/flyverns.md' },
     { term: 'Night Strix', file: 'bonetop/compendium/fauna/night_strix.md' },
-    { term: 'Frog Boar', file: 'bonetop/compendium/fauna/frog_boar.md' },
+    { term: 'PolliHog', file: 'bonetop/compendium/fauna/pollihog.md' },
+    { term: 'Pollihog', file: 'bonetop/compendium/fauna/pollihog.md' },
     { term: 'Jub-jub', file: 'bonetop/compendium/fauna/jub_jub.md' },
     { term: 'Jub-jubs', file: 'bonetop/compendium/fauna/jub_jub.md' },
     { term: 'Ellery', file: 'bonetop/Ellery.md' },
@@ -379,7 +447,7 @@ async function loadMarkdown(filename) {
         const coverMatch = content.match(/<!--\s*cover:\s*(.*?)\s*-->/);
 
         if (coverMatch && coverMatch[1]) {
-            const coverUrl = coverMatch[1];
+            const coverUrl = coverMatch[1] === 'season' ? seasonImages[currentSeason] : coverMatch[1];
             const h1 = contentEl.querySelector('h1');
 
             if (h1) {
@@ -387,9 +455,9 @@ async function loadMarkdown(filename) {
                 const cover = document.createElement('div');
                 cover.className = 'page-cover';
 
-                // Apply background with gradient
+                // Apply background with gradient — uses CSS var so it adapts to season changes
                 cover.style.backgroundImage = `
-                    linear-gradient(to bottom, rgba(2, 6, 23, 0.1) 50%, rgba(2, 6, 23, 1) 100%),
+                    linear-gradient(to bottom, rgba(var(--bg-rgb), 0.1) 50%, rgba(var(--bg-rgb), 1) 100%),
                     url('${coverUrl}')
                 `;
 
@@ -937,8 +1005,9 @@ function applyImageGradient(img) {
     const applyGradient = () => {
         try {
             const palette = colorThief.getPalette(img, 5);
-            const color1 = rgbToHex(palette[0]);
-            const color2 = rgbToHex(palette[1]);
+            const [c1, c2] = pickContrastingPair(palette);
+            const color1 = rgbToHex(c1);
+            const color2 = rgbToHex(c2);
 
             const galleryMain = document.querySelector('.bestiary-gallery-main');
             if (galleryMain) {
@@ -959,6 +1028,30 @@ function applyImageGradient(img) {
 
 function rgbToHex([r, g, b]) {
     return '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
+}
+
+// Euclidean distance between two RGB colors
+function colorDistance([r1, g1, b1], [r2, g2, b2]) {
+    return Math.sqrt((r1 - r2) ** 2 + (g1 - g2) ** 2 + (b1 - b2) ** 2);
+}
+
+// Pick the two most dominant non-background colors from a palette
+// ColorThief returns colors sorted by dominance, so after filtering
+// out near-white/near-black, the first two are the most representative
+function pickContrastingPair(palette) {
+    const valid = palette.filter(([r, g, b]) => {
+        const brightness = (r + g + b) / 3;
+        return brightness > 30 && brightness < 230;
+    });
+
+    if (valid.length >= 2) return [valid[0], valid[1]];
+
+    if (valid.length === 1) {
+        const fallback = palette.find(c => c !== valid[0]) || palette[1];
+        return [valid[0], fallback];
+    }
+
+    return [palette[0], palette[1]];
 }
 
 // Desaturate and darken a color for better card backgrounds
@@ -1017,8 +1110,9 @@ function applyCardGradient(img, card) {
     const apply = () => {
         try {
             const palette = colorThief.getPalette(img, 5);
-            const color1 = adjustColorForCard(palette[0]);
-            const color2 = adjustColorForCard(palette[1], 0.6, 0.6);
+            const [c1, c2] = pickContrastingPair(palette);
+            const color1 = adjustColorForCard(c1);
+            const color2 = adjustColorForCard(c2, 0.6, 0.6);
 
             const hex1 = rgbToHex(color1);
             const hex2 = rgbToHex(color2);

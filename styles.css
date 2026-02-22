@@ -83,15 +83,36 @@
     /* Colors - Placeholder */
     --color-placeholder: #475569;
 
-    /* Liquid Glass System */
-    --glass-base: 20, 27, 45;
-    --glass-subtle: rgba(var(--glass-base), 0.4);
-    --glass-medium: rgba(var(--glass-base), 0.6);
-    --glass-strong: rgba(var(--glass-base), 0.8);
+    /* Liquid Glass System (theme-independent) */
     --glass-highlight: rgba(255, 255, 255, 0.15);
     --glass-highlight-hover: rgba(255, 255, 255, 0.25);
     --glass-shadow-inset: rgba(0, 0, 0, 0.1);
     --glass-edge-width: 1.5px;
+}
+
+/* ===== SEASONAL THEMES ===== */
+/* Glass vars must live on body (not :root) so they resolve with body's --bg-rgb */
+body[data-season="summer"] {
+    --bg-base: #081510;
+    --bg-rgb: 8, 21, 16;
+    --season-image: url('bonetop/img/Year 1 Summer.png');
+    --season-icon-color: #4fff90;
+    background-color: var(--bg-base) !important;
+}
+
+body[data-season="spring"] {
+    --bg-base: #0a1628;
+    --bg-rgb: 10, 22, 40;
+    --season-image: url('bonetop/img/Year 1 Spring.png');
+    --season-icon-color: #7fffd8;
+    background-color: var(--bg-base) !important;
+}
+
+body {
+    --glass-subtle: rgba(var(--bg-rgb), 0.4);
+    --glass-medium: rgba(var(--bg-rgb), 0.6);
+    --glass-strong: rgba(var(--bg-rgb), 0.8);
+    transition: background-color 0.8s ease;
 }
 
 * {
@@ -305,7 +326,7 @@ mark {
     position: absolute;
     inset: 0;
     z-index: -2;
-    background-image: url('bonetop/img/bonetop-splash.png');
+    background-image: var(--season-image, url('bonetop/img/bonetop-splash.png'));
     background-size: cover;
     background-position: center;
     opacity: 0.05;
@@ -319,7 +340,7 @@ mark {
     z-index: -1;
 
     /* High contrast glass */
-    background: rgba(30, 41, 59, 0.4);
+    background: rgba(var(--bg-rgb, 30, 41, 59), 0.4);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
 
@@ -341,11 +362,11 @@ mark {
     background: linear-gradient(
         180deg,
         rgba(255, 255, 255, 0.05) 0%,
-        rgba(255, 255, 255, 0.02) 50%,
-        rgba(0, 0, 0, 0.01) 100%
+        rgba(0, 0, 0, 0.15) 50%,
+        rgba(0, 0, 0, 0.25) 100%
     );
-    backdrop-filter: blur(2px) saturate(150%);
-    -webkit-backdrop-filter: blur(2px) saturate(150%);
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
     border: none;
     box-shadow:
         inset 0 1px 1px rgba(255, 255, 255, 0.375),
@@ -673,12 +694,19 @@ mark {
 
 /* Page Cover Image (Generic) */
 .page-cover {
+    position: relative;
+    overflow: hidden;
     width: 100%;
     /* background-image set via inline style or JS */
     background-size: cover;
-    background-position: center 30%;
+    background-position: center 35%;
     padding: 10rem 0 0 0;
-    /* margin-bottom: 2rem; */
+    animation: coverFadeIn 0.6s ease-out;
+}
+
+@keyframes coverFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @media (min-width: 768px) {
@@ -688,6 +716,8 @@ mark {
 }
 
 .page-cover-content {
+    position: relative;
+    z-index: 2;
     max-width: 56rem; /* max-w-4xl */
     margin: 0 auto;
     padding: 0 1rem;
@@ -713,7 +743,7 @@ mark {
 /* Character Backgrounds */
 .character-bg {
     background-repeat: no-repeat;
-    background-image: linear-gradient(to right, rgba(2, 6, 23, 0.9) 0%, rgba(2, 6, 23, 0.6) 100%), var(--char-bg-image);
+    background-image: linear-gradient(to right, rgba(var(--bg-rgb), 0.9) 0%, rgba(var(--bg-rgb), 0.6) 100%), var(--char-bg-image);
     /* Mobile: subtle background at bottom right */
     background-position: 120% 100%;
     background-size: 80% auto;
@@ -726,7 +756,7 @@ mark {
         /* Positioned at right bottom, offset slightly to the right */
         background-position: 110% 100%;
         background-size: auto 85vh; /* Scale based on height to fit nicely */
-        background-image: linear-gradient(to right, rgba(2, 6, 23, 1) 50%, rgba(2, 6, 23, 0.7) 100%), var(--char-bg-image);
+        background-image: linear-gradient(to right, rgba(var(--bg-rgb), 1) 50%, rgba(var(--bg-rgb), 0.7) 100%), var(--char-bg-image);
         background-attachment: fixed;
     }
 }
@@ -936,8 +966,6 @@ mark {
     object-fit: contain;
     border-radius: 0.5rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    background: white;
-    padding: 1rem;
 }
 
 @keyframes fadeIn {
@@ -1057,11 +1085,9 @@ mark {
 
 .compendium-card-img img {
     width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    background: white;
+    aspect-ratio: 1;
+    object-fit: contain;
     border-radius: 0.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
 
@@ -1330,7 +1356,6 @@ mark {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    background: white;
     transition: transform 0.3s ease;
 }
 
@@ -1508,4 +1533,15 @@ mark {
     color: var(--color-placeholder);
     font-style: italic;
     font-weight: 400;
+}
+
+/* Season toggle button */
+.season-btn svg {
+    color: var(--season-icon-color);
+    transition: color 0.15s ease, filter 0.15s ease;
+}
+
+.season-btn:hover svg {
+    color: var(--season-icon-color);
+    filter: brightness(1.3);
 }

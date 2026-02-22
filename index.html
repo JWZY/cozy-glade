@@ -26,9 +26,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.4.0/color-thief.umd.js"></script>
-    <link rel="stylesheet" href="styles.css?v=20260210">
+    <link rel="stylesheet" href="styles.css?v=20260222">
 </head>
-<body class="bg-slate-950 text-slate-200">
+<body class="text-slate-200" data-season="summer">
     <!-- Desktop Floating Buttons (hidden on mobile) -->
     <div id="desktopFloatingNav" class="hidden md:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 items-center gap-3">
         <button id="desktopBackBtn" class="bubble-btn disabled" onclick="goBack()">
@@ -53,6 +53,9 @@
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
             </svg>
+        </button>
+        <button id="seasonBtn" class="bubble-btn season-btn" onclick="cycleSeason()" title="Change season theme">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>
         </button>
         <button id="dmModeBtn" class="bubble-btn dm-mode-btn hidden" onclick="toggleDmMode()" title="DM Mode Active (Alt+Shift+D)">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,7 +130,7 @@
     </div>
 
     <!-- Mobile Bottom Bar -->
-    <div class="mobile-bottom-bar-wrapper md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-[60]" style="width: 168px;">
+    <div class="mobile-bottom-bar-wrapper md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-[60]" style="width: 212px;">
         <div id="mobileBottomBar" class="mobile-bottom-bar rounded-full">
             <div class="mobile-bubble" id="mobileBubble"></div>
             <div class="mobile-bottom-bar-inner">
@@ -140,6 +143,9 @@
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
+                </button>
+                <button id="mobileSeasonBtn" class="mobile-bar-btn season-btn" onclick="cycleSeason()">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>
                 </button>
                 <button id="pagesButton" class="mobile-bar-btn" onclick="toggleMobileModal('pages')">
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -198,6 +204,6 @@
         </div>
     </div>
 
-    <script src="app.js?v=20260210"></script>
+    <script src="app.js?v=20260222"></script>
 </body>
 </html>

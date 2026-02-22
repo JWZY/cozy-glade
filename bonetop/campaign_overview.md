@@ -1,4 +1,4 @@
-<!-- cover: bonetop/img/bonetop-splash.png -->
+<!-- cover: season -->
 # Cozy Glade
 
 <p class="overview-intro">A frontier settlement beneath the calcified skeleton of an ancient dragon, where a band of settlers seek a fresh start in the wilderness.</p>
