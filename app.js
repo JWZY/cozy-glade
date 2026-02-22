@@ -67,6 +67,114 @@ function cycleSeason() {
     }
 
     localStorage.setItem('bonetop-season', currentSeason);
+    playSeasonVFX(currentSeason);
+}
+
+function playSeasonVFX(season) {
+    // Remove any existing VFX container
+    const existing = document.querySelector('.season-vfx');
+    if (existing) existing.remove();
+
+    const container = document.createElement('div');
+    container.className = 'season-vfx';
+    document.body.appendChild(container);
+
+    const W = window.innerWidth;
+    const H = window.innerHeight;
+
+    let spawnInterval;
+
+    if (season === 'summer') {
+        // Godrays — burst then trickle
+        const spawnRay = () => {
+            const ray = document.createElement('div');
+            ray.className = 'ray';
+
+            const rayWidth = 10 + Math.random() * 20;
+            const rayHeight = H * (0.65 + Math.random() * 0.26);
+            ray.style.width = rayWidth + 'px';
+            ray.style.height = rayHeight + 'px';
+
+            const progress = Math.random();
+            ray.style.left = (W * 0.95 - progress * W * 0.9) + 'px';
+            ray.style.top = '-20px';
+
+            const angle = 15 + progress * 30 + (Math.random() - 0.5) * 10;
+            ray.style.transform = `rotate(${angle}deg)`;
+            ray.style.transformOrigin = 'top center';
+
+            container.appendChild(ray);
+
+            ray.animate([
+                { opacity: 0, transform: `rotate(${angle}deg) scaleY(0.7)` },
+                { opacity: 0.575, transform: `rotate(${angle}deg) scaleY(1)`, offset: 0.3 },
+                { opacity: 0.46, transform: `rotate(${angle}deg) scaleY(1)`, offset: 0.7 },
+                { opacity: 0, transform: `rotate(${angle}deg) scaleY(0.8)` }
+            ], {
+                duration: 3500 + Math.random() * 2000,
+                easing: 'ease-in-out'
+            }).onfinish = () => ray.remove();
+        };
+
+        // Initial burst
+        for (let i = 0; i < 15; i++) spawnRay();
+        // Trickle for 2s
+        spawnInterval = setInterval(spawnRay, 200);
+        setTimeout(() => clearInterval(spawnInterval), 2000);
+
+    } else if (season === 'spring') {
+        // Snowflakes — burst then trickle
+        const spawnFlake = () => {
+            const flake = document.createElement('div');
+            flake.className = 'snowflake';
+
+            // Depth system
+            const depthRand = Math.random();
+            const depth = depthRand < 0.6 ? depthRand * 0.5 : 0.25 + depthRand * 0.75;
+
+            const size = 2 + depth * 6 + Math.random() * 2;
+            flake.style.width = size + 'px';
+            flake.style.height = size + 'px';
+
+            if (depth < 0.4) {
+                const blur = (0.4 - depth) * 3;
+                flake.style.filter = `blur(${blur}px)`;
+            }
+
+            const startX = Math.random() * (W + 40) - 20;
+            flake.style.left = startX + 'px';
+            flake.style.top = '-20px';
+
+            container.appendChild(flake);
+
+            const driftX = 20 + Math.random() * 40;
+            const wobble1 = (Math.random() - 0.5) * 30;
+            const wobble2 = (Math.random() - 0.5) * 36;
+            const fallDist = H + 50;
+            const opacity = 0.6 + depth * 0.35;
+            const dur = 2000 + Math.random() * 2000;
+
+            flake.animate([
+                { transform: 'translate(0, 0) rotate(0deg)', opacity: opacity },
+                { transform: `translate(${driftX * 0.3 + wobble1}px, ${fallDist * 0.3}px) rotate(120deg)`, opacity: opacity, offset: 0.3 },
+                { transform: `translate(${driftX * 0.6 + wobble2}px, ${fallDist * 0.6}px) rotate(240deg)`, opacity: opacity * 0.95, offset: 0.6 },
+                { transform: `translate(${driftX * 0.85 + wobble1}px, ${fallDist * 0.85}px) rotate(360deg)`, opacity: opacity * 0.8, offset: 0.85 },
+                { transform: `translate(${driftX}px, ${fallDist}px) rotate(420deg)`, opacity: 0 }
+            ], {
+                duration: dur,
+                easing: 'linear'
+            }).onfinish = () => flake.remove();
+        };
+
+        // Initial burst
+        for (let i = 0; i < 20; i++) spawnFlake();
+        // Trickle for 2s
+        spawnInterval = setInterval(spawnFlake, 50);
+        setTimeout(() => clearInterval(spawnInterval), 2000);
+    }
+
+    // Remove container after all particles finish
+    setTimeout(() => container.remove(), 6000);
 }
 
 // Apply saved season immediately

@@ -83,6 +83,7 @@ When deploying updates, increment the version param in `index.html`:
 - **Search**: `Ctrl/Cmd+K` to focus search
 - **Color Thief**: Extracts dominant colors from images for card gradients
 - **Favorite Images**: Gallery thumbnails have star button to set preferred image (localStorage)
+- **Season VFX**: `playSeasonVFX(season)` fires a ~3s particle burst on season toggle — godrays for summer, snowflakes for spring. Uses Web Animations API with auto-cleanup (`element.animate()` + `.onfinish` removal)
 
 ## Style Notes
 

@@ -54,3 +54,13 @@ Key prompts used to build this project, in order. Follow these to replicate the 
 - "Search results don't navigate when clicked" → `collapseDesktopSearch` was racing with `loadMarkdown`, added `skipReload` param
 - "Card text alignment is uneven" → Changed `justify-content: center` to `flex-start`
 - "Rolling Moss layout is different from Crystal Pines" → Was using wrong template class
+
+---
+
+## 2026-02-22 — Season Transition VFX
+
+### Particle Effects
+- "When the user clicks the season toggle, the transition feels flat. Add a brief particle VFX burst — godrays for summer, snowflakes for spring — that plays for ~3 seconds then auto-cleans."
+- Referenced `/Users/javan/Documents/Projects/rpg-weather/index.html` for proven godray and snowflake implementations using Web Animations API
+- Ported particle patterns: depth-based snowflakes with wobble/blur, fanning godrays from top-right with scaleY animation
+- "Make the god rays a bit stronger — increase length and width by 30%, opacity by ~15%"

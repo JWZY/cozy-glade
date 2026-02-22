@@ -1535,6 +1535,41 @@ mark {
     font-weight: 400;
 }
 
+/* Season transition VFX */
+.season-vfx {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.season-vfx .ray {
+    position: absolute;
+    width: 8px;
+    height: 120px;
+    background: linear-gradient(to bottom,
+        rgba(255, 250, 200, 0.5),
+        rgba(255, 240, 150, 0.3) 30%,
+        rgba(255, 240, 150, 0.1) 60%,
+        transparent 85%
+    );
+    border-radius: 40% 40% 50% 50% / 5% 5% 50% 50%;
+    filter: blur(3px);
+    box-shadow: 0 0 15px rgba(255, 240, 150, 0.2);
+}
+
+.season-vfx .snowflake {
+    position: absolute;
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(255, 255, 255, 0.3) 70%,
+        transparent 100%
+    );
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
 /* Season toggle button */
 .season-btn svg {
     color: var(--season-icon-color);
