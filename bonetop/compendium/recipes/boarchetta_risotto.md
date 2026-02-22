@@ -16,14 +16,14 @@
 </div>
 <div class="bestiary-prop">
 <span class="prop-label">Key Ingredient</span>
-<span class="prop-value">Frog Boar</span>
+<span class="prop-value">Pollihog</span>
 </div>
 </div>
 
 <div class="bestiary-content">
 <div class="bestiary-section">
 <div class="section-label">Description</div>
-<p>Fresh caught frog boar roast, slathered in natural fruit compote, plated with a wild rice and truffle side dish. Cooked over an open flame until juicy, and served with a warm, wild rice "Risotto al Tartufo" (creamy truffle and rice).</p>
+<p>Fresh caught pollihog roast, slathered in natural fruit compote, plated with a wild rice and truffle side dish. Cooked over an open flame until juicy, and served with a warm, wild rice "Risotto al Tartufo" (creamy truffle and rice).</p>
 </div>
 
 <div class="bestiary-section">

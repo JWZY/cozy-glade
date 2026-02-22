@@ -10,7 +10,7 @@ A web-based campaign companion for the Bonetop Daggerheart campaign - a cozy sli
 
 - **Hub-Style Overview**: Quick access to PCs, NPCs, and the Compendium from the main page
 - **Compendium**: Pokédex-inspired entries for discoveries
-  - **Fauna**: Creatures & beasts encountered (Frog Boar, Dragon-flies)
+  - **Fauna**: Creatures & beasts encountered (Frog Boar, Flyverns)
   - **Flora**: Plants & fungi discovered (Weeping Crystal Pine)
   - **Feasts**: Culinary creations from local ingredients
 - **Character Pages**: Detailed info for player characters and NPCs

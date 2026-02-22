@@ -68,7 +68,7 @@ Vinos returns from his latest run, looking slightly less chill than usual. He's 
 The pear tree sapling has grown unnaturally fast — it's already taller than Halden. The fruit is ripening early: oversized pears with a faint golden luminescence. They smell incredible.
 
 **The Catch:**
-- The fruit attracts creatures from the surrounding forest. Frog Boars are circling. Jub-jubs are hoarding fallen pears.
+- The fruit attracts creatures from the surrounding forest. Pollihogs are circling. Jub-jubs are hoarding fallen pears.
 - The roots have spread far — Nellie's herb garden is being invaded by pear tree roots.
 - **Oleg notices:** The mushroom circles near the tree are *thriving*. The spirits are feeding it. This is dragon-bone magic leeching into the soil.
 
@@ -124,7 +124,7 @@ This is a great **downtime montage** where players choose how to spend their tim
 | **Build a proper gate/entrance** | Halden | Strength/Craft check | First impression for visitors. Finley insists on a banner. |
 | **Map the surrounding area** | Ellery | Knowledge/Exploration check | Creates a basic map for traders. Discovers something unexpected in the process. |
 | **Set up a welcome ward** | Oleg | Instinct/Spellcast check | Magical boundary that alerts settlers to approaching visitors. Spirits may "help." |
-| **Prepare trade goods** | Nellie | Alchemy/Knowledge check | Catalogues what Bonetop can offer: Crystal Pine lumber, medicinal herbs, pear fruit(?), Frog Boar leather. |
+| **Prepare trade goods** | Nellie | Alchemy/Knowledge check | Catalogues what Bonetop can offer: Crystal Pine lumber, medicinal herbs, pear fruit(?), Pollihog leather. |
 | **Make Bonetop look "civilized"** | Finley | Charisma/Social check | Finley's desperate attempt to impress the assessor. Comedy gold. |
 
 Each project takes about a week of in-game time. Players can assist each other for advantage.

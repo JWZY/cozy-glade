@@ -2,22 +2,25 @@
 
 <div class="compendium-grid">
 
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/fauna/frog_boar.md')" class="compendium-card" id="card-frog-boar">
+<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/fauna/pollihog.md')" class="compendium-card" id="card-pollihog">
 <div class="compendium-card-content">
 <div class="compendium-card-number">#001</div>
-<div class="compendium-card-name">Frog Boar</div>
+<div class="compendium-card-name">Pollihog</div>
 <div class="compendium-card-desc">Amphibious truffle forager with frog legs and boar tusks. Found around the lake's shore.</div>
 </div>
 <div class="compendium-card-img">
-<img src="bonetop/img/compendium/BoarFrog-jake.jpg" alt="Frog Boar" crossorigin="anonymous" onload="applyCardGradient(this, document.getElementById('card-frog-boar'))">
+<img src="bonetop/img/compendium/PolliHog.png" alt="Pollihog" crossorigin="anonymous" onload="applyCardGradient(this, document.getElementById('card-pollihog'))">
 </div>
 </a>
 
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/fauna/dragon_flies.md')" class="compendium-card compendium-card-no-img" id="card-dragon-flies">
+<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/fauna/flyverns.md')" class="compendium-card" id="card-flyverns">
 <div class="compendium-card-content">
 <div class="compendium-card-number">#002</div>
-<div class="compendium-card-name">Dragon-flies</div>
+<div class="compendium-card-name">Flyverns</div>
 <div class="compendium-card-desc">Tiny dragons with insectoid eyes that hunt in armada formations. Build glass dome nests on the beach.</div>
+</div>
+<div class="compendium-card-img">
+<img src="bonetop/img/compendium/Flyverns.png" alt="Flyverns" crossorigin="anonymous" style="transform: scaleX(-1)" onload="applyCardGradient(this, document.getElementById('card-flyverns'))">
 </div>
 </a>
 
@@ -29,11 +32,14 @@
 </div>
 </a>
 
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/fauna/jub_jub.md')" class="compendium-card compendium-card-no-img" id="card-jub-jub">
+<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/fauna/jub_jub.md')" class="compendium-card" id="card-jub-jub">
 <div class="compendium-card-content">
 <div class="compendium-card-number">#004</div>
 <div class="compendium-card-name">Jub-jub</div>
 <div class="compendium-card-desc">Wallaby-like creatures with squirrel tails and antlers. Collect teeth and can turn ethereal.</div>
+</div>
+<div class="compendium-card-img">
+<img src="bonetop/img/compendium/Jub-jub.png" alt="Jub-jub" crossorigin="anonymous" onload="applyCardGradient(this, document.getElementById('card-jub-jub'))">
 </div>
 </a>
 
