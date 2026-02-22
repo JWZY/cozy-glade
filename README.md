@@ -1,6 +1,6 @@
-# Bonetop Campaign Wiki
+# Cozy Glade Wiki
 
-A web-based campaign companion for the Bonetop Daggerheart campaign - a cozy slice-of-life adventure beneath the calcified skeleton of an ancient dragon.
+A web-based campaign wiki for the Cozy Glade Daggerheart campaign - a cozy slice-of-life adventure beneath the calcified skeleton of an ancient dragon.
 
 ## Live Site
 
