@@ -4,7 +4,7 @@ A web-based campaign wiki for the Cozy Glade Daggerheart campaign - a cozy slice
 
 ## Live Site
 
-**[jwzy.github.io/daggerheart-planning](https://jwzy.github.io/daggerheart-planning)**
+**[jwzy.github.io/cozy-glade](https://jwzy.github.io/cozy-glade)**
 
 ## Features
 

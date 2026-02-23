@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A static web app for the **Bonetop** Daggerheart TTRPG campaign - a cozy slice-of-life adventure. Features a Pokédex-inspired Compendium for tracking discovered creatures, plants, and recipes.
 
-**Live site**: https://jwzy.github.io/daggerheart-planning
+**Live site**: https://jwzy.github.io/cozy-glade
 
 ## Running the Project
 
