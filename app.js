@@ -181,23 +181,6 @@ function playSeasonVFX(season) {
 applySeason(currentSeason);
 
 const campaigns = {
-    'prison-planet': {
-        name: 'Prison Planet',
-        description: 'Space western',
-        icon: '🪐',
-        basePath: 'prison-planet/',
-        sections: [
-            {
-                title: 'Player Characters',
-                items: [
-                    { file: 'javan.md', name: 'Bran', sub: 'Played by Javan' },
-                    { file: 'pat.md', name: 'Bory', sub: 'Played by Pat' },
-                    { file: 'tess.md', name: 'Nyra', sub: 'Played by Tess' },
-                    { file: 'sarah.md', name: 'Madsen', sub: 'Played by Sarah' }
-                ]
-            }
-        ]
-    },
     'bonetop': {
         name: 'Cozy Glade',
         description: 'Cozy slice of life',
@@ -344,26 +327,6 @@ Object.values(campaigns).forEach(campaign => {
     });
 });
 
-function toggleCampaign() {
-    currentCampaign = currentCampaign === 'prison-planet' ? 'bonetop' : 'prison-planet';
-    renderNav();
-    loadAllDocuments();
-    
-    if (currentCampaign === 'bonetop') {
-        loadMarkdown('bonetop/campaign_overview.md');
-    } else {
-        // Reset content to welcome screen for other campaigns
-        document.getElementById('content').innerHTML = `
-            <div class="text-center py-12 md:py-20">
-                <svg class="w-16 h-16 md:w-24 md:h-24 mx-auto mb-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                </svg>
-                <h1 class="text-2xl md:text-4xl font-bold text-white mb-4">Welcome to ${campaigns[currentCampaign].name}</h1>
-                <p class="text-slate-400 text-base md:text-lg mb-8 hidden md:block">Select a document from the sidebar to begin</p>
-            </div>
-        `;
-    }
-}
 
 function toggleDmMode() {
     isDmMode = !isDmMode;
@@ -406,7 +369,6 @@ function renderNav() {
 
     // Handle DM Only Elements
     const dmElements = [
-        document.getElementById('campaign-toggle-btn'),
         document.getElementById('resources-header'),
         document.getElementById('goal-pyramid-nav'),
         document.getElementById('mobile-resources-section')
