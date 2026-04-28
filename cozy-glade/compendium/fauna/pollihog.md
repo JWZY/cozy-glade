@@ -1,5 +1,13 @@
+---
+title: Pollihog
+number: "001"
+aliases: Pollihog, PolliHog
+summary: Amphibious truffle forager with frog legs and boar tusks. Found around the lake's shore.
+image: cozy-glade/img/compendium/PolliHog.png
+---
+
 <div class="breadcrumb-title">
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/fauna.md')">Fauna</a>
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/compendium/fauna.md')">Fauna</a>
 <span class="breadcrumb-caret">></span>
 <span class="breadcrumb-current">Pollihog</span>
 </div>
@@ -7,16 +15,16 @@
 <div class="bestiary-page">
 <div class="bestiary-illustration">
 <div class="bestiary-gallery-main" onclick="openLightbox(this)">
-<img src="bonetop/img/compendium/PolliHog.png" alt="Pollihog" onload="applyImageGradient(this)" crossorigin="anonymous">
+<img src="cozy-glade/img/compendium/PolliHog.png" alt="Pollihog" onload="applyImageGradient(this)" crossorigin="anonymous">
 </div>
 <div class="bestiary-gallery-thumbs">
-<div class="gallery-thumb active" onclick="switchMainImage(this, 'bonetop/img/compendium/BoarFrog-jake.jpg')">
-<img src="bonetop/img/compendium/BoarFrog-jake.jpg" alt="Pollihog sketch">
-<button class="favorite-star" onclick="setFavoriteImage('pollihog', 'bonetop/img/compendium/BoarFrog-jake.jpg', event)" title="Set as main image"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></button>
+<div class="gallery-thumb active" onclick="switchMainImage(this, 'cozy-glade/img/compendium/BoarFrog-jake.jpg')">
+<img src="cozy-glade/img/compendium/BoarFrog-jake.jpg" alt="Pollihog sketch">
+<button class="favorite-star" onclick="setFavoriteImage('pollihog', 'cozy-glade/img/compendium/BoarFrog-jake.jpg', event)" title="Set as main image"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></button>
 </div>
-<div class="gallery-thumb" onclick="switchMainImage(this, 'bonetop/img/compendium/boarfrog-token.png')">
-<img src="bonetop/img/compendium/boarfrog-token.png" alt="Pollihog token">
-<button class="favorite-star" onclick="setFavoriteImage('pollihog', 'bonetop/img/compendium/boarfrog-token.png', event)" title="Set as main image"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></button>
+<div class="gallery-thumb" onclick="switchMainImage(this, 'cozy-glade/img/compendium/boarfrog-token.png')">
+<img src="cozy-glade/img/compendium/boarfrog-token.png" alt="Pollihog token">
+<button class="favorite-star" onclick="setFavoriteImage('pollihog', 'cozy-glade/img/compendium/boarfrog-token.png', event)" title="Set as main image"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></button>
 </div>
 </div>
 <script>loadFavoriteImage('pollihog');</script>

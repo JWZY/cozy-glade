@@ -1,5 +1,12 @@
+---
+title: Wooly Moss Moose
+number: "005"
+aliases: Wooly Moss Moose
+summary: Green-wooled moose that eat Rolling Moss like jawbreakers. Found in herds by the riverside.
+---
+
 <div class="breadcrumb-title">
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/fauna.md')">Fauna</a>
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/compendium/fauna.md')">Fauna</a>
 <span class="breadcrumb-caret">></span>
 <span class="breadcrumb-current">Wooly Moss Moose</span>
 </div>

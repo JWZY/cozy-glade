@@ -25,7 +25,7 @@ No build step required - vanilla HTML/CSS/JS with CDN dependencies.
 
 ## Compendium System
 
-The Compendium (`bonetop/compendium/`) has three sections:
+The Compendium (`cozy-glade/compendium/`) has three sections:
 - **Fauna** (`fauna/`) - Creatures & beasts
 - **Flora** (`flora/`) - Plants & fungi
 - **Feasts** (`recipes/`) - Culinary creations (note: folder is "recipes" but displays as "Feasts")
@@ -35,7 +35,7 @@ The Compendium (`bonetop/compendium/`) has three sections:
 Each compendium entry uses this structure:
 ```html
 <div class="breadcrumb-title">
-  <a onclick="loadMarkdown('bonetop/compendium/fauna.md')">Fauna</a>
+  <a onclick="loadMarkdown('cozy-glade/compendium/fauna.md')">Fauna</a>
   <span class="breadcrumb-caret">></span>
   <span class="breadcrumb-current">Entry Name</span>
 </div>

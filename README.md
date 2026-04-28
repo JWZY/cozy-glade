@@ -39,9 +39,9 @@ Then open [http://localhost:8000](http://localhost:8000)
 ### New Compendium Entry
 
 1. Create markdown file in the appropriate folder:
-   - `bonetop/compendium/fauna/creature_name.md`
-   - `bonetop/compendium/flora/plant_name.md`
-   - `bonetop/compendium/recipes/recipe_name.md`
+   - `cozy-glade/compendium/fauna/creature_name.md`
+   - `cozy-glade/compendium/flora/plant_name.md`
+   - `cozy-glade/compendium/recipes/recipe_name.md`
 
 2. Use the existing entry templates (breadcrumb, bestiary-page layout)
 
@@ -49,9 +49,11 @@ Then open [http://localhost:8000](http://localhost:8000)
 
 ### New Character/NPC
 
-1. Create markdown file in `bonetop/` folder
-2. Add entry to the appropriate section in `app.js` campaigns object
+1. Create markdown file in `cozy-glade/` folder
+2. Add entry to the appropriate section in the `campaign` config in `app.js`
 
 ## DM Mode
 
-Press `Alt+Shift+D` to toggle DM mode, which reveals hidden documents marked with `dmOnly: true`.
+Press `Alt+Shift+D` to toggle DM mode, which reveals nav entries marked `dmOnly: true` (e.g. the Arc 2 roadmap).
+
+> **Note:** DM mode is a UX convenience, not access control. The site is fully static and deployed via GitHub Pages, so any DM-only file is publicly fetchable by URL. Don't put true secrets in this repo — use a private repo and a token-gated endpoint if players actually visit the site.

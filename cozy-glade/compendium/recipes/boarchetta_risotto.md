@@ -1,5 +1,12 @@
+---
+title: Boarchetta and Wild Grain Risotto
+number: "001"
+aliases: Boarchetta and Wild Grain Risotto, Boarchetta Risotto
+summary: Fresh caught pollihog roast with fruit compote, served with creamy Risotto al Tartufo.
+---
+
 <div class="breadcrumb-title">
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/recipes.md')">Feasts</a>
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/compendium/recipes.md')">Feasts</a>
 <span class="breadcrumb-caret">></span>
 <span class="breadcrumb-current">Boarchetta and Wild Grain Risotto</span>
 </div>

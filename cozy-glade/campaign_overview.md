@@ -15,7 +15,7 @@
 
 <div class="compendium-grid-compact">
 
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/arc2_roadmap.md')" class="compendium-card compendium-card-no-img dm-card">
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/arc2_roadmap.md')" class="compendium-card compendium-card-no-img dm-card">
 <div class="compendium-card-content">
 <div class="compendium-card-number">Portents & Pressures</div>
 <div class="compendium-card-name">Arc 2 Roadmap</div>
@@ -23,7 +23,7 @@
 </div>
 </a>
 
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/player_wishlist.md')" class="compendium-card compendium-card-no-img dm-card">
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/player_wishlist.md')" class="compendium-card compendium-card-no-img dm-card">
 <div class="compendium-card-content">
 <div class="compendium-card-number">Session Ideas</div>
 <div class="compendium-card-name">Player Wishlist</div>
@@ -39,7 +39,7 @@
 
 <div class="compendium-grid-compact">
 
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/Oleg.md')" class="compendium-card compendium-card-no-img">
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/Oleg.md')" class="compendium-card compendium-card-no-img">
 <div class="compendium-card-content">
 <div class="compendium-card-number">Played by Token</div>
 <div class="compendium-card-name">Oleg</div>
@@ -47,7 +47,7 @@
 </div>
 </a>
 
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/Halden.md')" class="compendium-card compendium-card-no-img">
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/Halden.md')" class="compendium-card compendium-card-no-img">
 <div class="compendium-card-content">
 <div class="compendium-card-number">Played by Lumberjake</div>
 <div class="compendium-card-name">Halden</div>
@@ -55,7 +55,7 @@
 </div>
 </a>
 
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/Ellery.md')" class="compendium-card compendium-card-no-img">
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/Ellery.md')" class="compendium-card compendium-card-no-img">
 <div class="compendium-card-content">
 <div class="compendium-card-number">Played by Cheez</div>
 <div class="compendium-card-name">Ellery Briggs</div>
@@ -71,7 +71,7 @@
 
 <div class="compendium-grid-compact">
 
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/Finley_Boreas.md')" class="compendium-card compendium-card-no-img">
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/Finley_Boreas.md')" class="compendium-card compendium-card-no-img">
 <div class="compendium-card-content">
 <div class="compendium-card-number">Elf Noble</div>
 <div class="compendium-card-name">Finley Boreas</div>
@@ -79,7 +79,7 @@
 </div>
 </a>
 
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/Nellie_Saddler.md')" class="compendium-card compendium-card-no-img">
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/Nellie_Saddler.md')" class="compendium-card compendium-card-no-img">
 <div class="compendium-card-content">
 <div class="compendium-card-number">Halfling Doctor</div>
 <div class="compendium-card-name">Nellie Saddler</div>
@@ -87,7 +87,7 @@
 </div>
 </a>
 
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/Vinos.md')" class="compendium-card compendium-card-no-img">
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/Vinos.md')" class="compendium-card compendium-card-no-img">
 <div class="compendium-card-content">
 <div class="compendium-card-number">Simiah Mailboy</div>
 <div class="compendium-card-name">Vinos</div>
@@ -103,7 +103,7 @@
 
 <div class="compendium-grid-compact">
 
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/fauna.md')" class="compendium-card compendium-card-no-img">
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/compendium/fauna.md')" class="compendium-card compendium-card-no-img">
 <div class="compendium-card-content">
 <div class="compendium-card-number">Creatures & Beasts</div>
 <div class="compendium-card-name">Fauna</div>
@@ -111,7 +111,7 @@
 </div>
 </a>
 
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/flora.md')" class="compendium-card compendium-card-no-img">
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/compendium/flora.md')" class="compendium-card compendium-card-no-img">
 <div class="compendium-card-content">
 <div class="compendium-card-number">Plants & Fungi</div>
 <div class="compendium-card-name">Flora</div>
@@ -119,7 +119,7 @@
 </div>
 </a>
 
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/recipes.md')" class="compendium-card compendium-card-no-img">
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/compendium/recipes.md')" class="compendium-card compendium-card-no-img">
 <div class="compendium-card-content">
 <div class="compendium-card-number">Culinary Creations</div>
 <div class="compendium-card-name">Feasts</div>
@@ -127,7 +127,7 @@
 </div>
 </a>
 
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/session_notes.md')" class="compendium-card compendium-card-no-img">
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/compendium/session_notes.md')" class="compendium-card compendium-card-no-img">
 <div class="compendium-card-content">
 <div class="compendium-card-number">Adventure Log</div>
 <div class="compendium-card-name">Session Notes</div>

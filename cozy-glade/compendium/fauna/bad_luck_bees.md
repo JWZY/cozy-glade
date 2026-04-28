@@ -1,5 +1,12 @@
+---
+title: Bad Luck Bees
+number: "006"
+aliases: Bad Luck Bees
+summary: Misfortune-bringing bees with extraordinarily valuable honey. Ruled by a queen.
+---
+
 <div class="breadcrumb-title">
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/fauna.md')">Fauna</a>
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/compendium/fauna.md')">Fauna</a>
 <span class="breadcrumb-caret">></span>
 <span class="breadcrumb-current">Bad Luck Bees</span>
 </div>

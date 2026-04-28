@@ -1,13 +1,12 @@
 let allDocuments = {};
 let currentContent = '';
 let currentFile = '';
-let currentCampaign = 'bonetop';
 let isDmMode = false;
 const dmFileSet = new Set();
 
 // Seasonal theme system
 const seasons = ['summer', 'spring'];
-let currentSeason = localStorage.getItem('bonetop-season') || 'summer';
+let currentSeason = localStorage.getItem('cozy-glade-season') || 'summer';
 
 const seasonIcons = {
     summer: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>',
@@ -23,7 +22,7 @@ function applySeason(season) {
     });
 }
 
-const seasonImages = { summer: 'bonetop/img/Year 1 Summer.png', spring: 'bonetop/img/Year 1 Spring.png' };
+const seasonImages = { summer: 'cozy-glade/img/Year 1 Summer.png', spring: 'cozy-glade/img/Year 1 Spring.png' };
 
 function cycleSeason() {
     const idx = seasons.indexOf(currentSeason);
@@ -66,7 +65,7 @@ function cycleSeason() {
         if (currentFile) loadMarkdown(currentFile);
     }
 
-    localStorage.setItem('bonetop-season', currentSeason);
+    localStorage.setItem('cozy-glade-season', currentSeason);
     playSeasonVFX(currentSeason);
 }
 
@@ -180,13 +179,12 @@ function playSeasonVFX(season) {
 // Apply saved season immediately
 applySeason(currentSeason);
 
-const campaigns = {
-    'bonetop': {
-        name: 'Cozy Glade',
-        description: 'Cozy slice of life',
-        icon: '🦴',
-        basePath: 'bonetop/',
-        sections: [
+const campaign = {
+    name: 'Cozy Glade',
+    description: 'Cozy slice of life',
+    icon: '🦴',
+    basePath: 'cozy-glade/',
+    sections: [
             {
                 title: 'Campaign Overview',
                 items: [
@@ -214,14 +212,39 @@ const campaigns = {
             {
                 title: 'Compendium',
                 items: [
-                    { file: 'compendium/fauna.md', name: 'Fauna', sub: 'Creatures & Beasts' },
-                    { file: 'compendium/flora.md', name: 'Flora', sub: 'Plants & Fungi' },
-                    { file: 'compendium/recipes.md', name: 'Feasts', sub: 'Culinary Creations' },
-                    { file: 'compendium/session_notes.md', name: 'Session Notes', sub: 'Adventure Log' }
+                    {
+                        file: 'compendium/fauna.md', name: 'Fauna', sub: 'Creatures & Beasts',
+                        subpages: [
+                            'compendium/fauna/wooly_moss_moose.md',
+                            'compendium/fauna/bad_luck_bees.md',
+                            'compendium/fauna/flyverns.md',
+                            'compendium/fauna/jub_jub.md',
+                            'compendium/fauna/night_strix.md',
+                            'compendium/fauna/pollihog.md'
+                        ]
+                    },
+                    {
+                        file: 'compendium/flora.md', name: 'Flora', sub: 'Plants & Fungi',
+                        subpages: [
+                            'compendium/flora/crystalline_pines.md',
+                            'compendium/flora/rolling_moss.md'
+                        ]
+                    },
+                    {
+                        file: 'compendium/recipes.md', name: 'Feasts', sub: 'Culinary Creations',
+                        subpages: [
+                            'compendium/recipes/boarchetta_risotto.md'
+                        ]
+                    },
+                    {
+                        file: 'compendium/session_notes.md', name: 'Session Notes', sub: 'Adventure Log',
+                        subpages: [
+                            'compendium/session_notes/arc2_the_wooly_terrors.md'
+                        ]
+                    }
                 ]
             }
-        ]
-    }
+    ]
 };
 
 const sharedResources = [
@@ -229,33 +252,65 @@ const sharedResources = [
 ];
 
 const characterBackgrounds = {
-    'bonetop/Ellery.md': 'bonetop/img/ellery-svg.svg',
-    'bonetop/Halden.md': 'bonetop/img/halden-svg.svg',
-    'bonetop/Oleg.md': 'bonetop/img/oleg-svg.svg'
+    'cozy-glade/Ellery.md': 'cozy-glade/img/ellery-svg.svg',
+    'cozy-glade/Halden.md': 'cozy-glade/img/halden-svg.svg',
+    'cozy-glade/Oleg.md': 'cozy-glade/img/oleg-svg.svg'
 };
 
-// Wiki-link dictionary: term → page path (longest terms first to avoid partial matches)
-const wikiLinks = [
-    { term: 'Wooly Moss Moose', file: 'bonetop/compendium/fauna/wooly_moss_moose.md' },
-    { term: 'Weeping Crystal Pine', file: 'bonetop/compendium/flora/crystalline_pines.md' },
-    { term: 'Crystal Pine', file: 'bonetop/compendium/flora/crystalline_pines.md' },
-    { term: 'Bad Luck Bees', file: 'bonetop/compendium/fauna/bad_luck_bees.md' },
-    { term: 'Rolling Moss', file: 'bonetop/compendium/flora/rolling_moss.md' },
-    { term: 'Roly Poly', file: 'bonetop/compendium/flora/rolling_moss.md' },
-    { term: 'Roly Polys', file: 'bonetop/compendium/flora/rolling_moss.md' },
-    { term: 'Flyverns', file: 'bonetop/compendium/fauna/flyverns.md' },
-    { term: 'Night Strix', file: 'bonetop/compendium/fauna/night_strix.md' },
-    { term: 'PolliHog', file: 'bonetop/compendium/fauna/pollihog.md' },
-    { term: 'Pollihog', file: 'bonetop/compendium/fauna/pollihog.md' },
-    { term: 'Jub-jub', file: 'bonetop/compendium/fauna/jub_jub.md' },
-    { term: 'Jub-jubs', file: 'bonetop/compendium/fauna/jub_jub.md' },
-    { term: 'Ellery', file: 'bonetop/Ellery.md' },
-    { term: 'Halden', file: 'bonetop/Halden.md' },
-    { term: 'Oleg', file: 'bonetop/Oleg.md' },
-    { term: 'Finley', file: 'bonetop/Finley_Boreas.md' },
-    { term: 'Nellie', file: 'bonetop/Nellie_Saddler.md' },
-    { term: 'Vinos', file: 'bonetop/Vinos.md' },
+// Tiny YAML-ish frontmatter parser. Format: ---\nkey: value\n--- at top of file.
+// Supports: scalar strings, booleans (true/false), and `aliases` as comma-separated list → array.
+function parseFrontmatter(text) {
+    const match = text.match(/^---\n([\s\S]*?)\n---\n?/);
+    if (!match) return { meta: {}, body: text };
+    const meta = {};
+    for (const line of match[1].split('\n')) {
+        const m = line.match(/^([a-zA-Z][\w-]*):\s*(.*)$/);
+        if (!m) continue;
+        let [, key, val] = m;
+        val = val.trim();
+        if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+            val = val.slice(1, -1);
+        }
+        if (val === 'true') meta[key] = true;
+        else if (val === 'false') meta[key] = false;
+        else if (key === 'aliases') meta[key] = val.split(',').map(s => s.trim()).filter(Boolean);
+        else meta[key] = val;
+    }
+    return { meta, body: text.slice(match[0].length) };
+}
+
+// Wiki-link dictionary: term → page path (longest terms first to avoid partial matches).
+// Compendium entries are derived from frontmatter `aliases` after loadAllDocuments() runs.
+// Character/NPC links stay hand-rolled — they're a stable, short list.
+let wikiLinks = [
+    { term: 'Ellery', file: 'cozy-glade/Ellery.md' },
+    { term: 'Halden', file: 'cozy-glade/Halden.md' },
+    { term: 'Oleg', file: 'cozy-glade/Oleg.md' },
+    { term: 'Finley', file: 'cozy-glade/Finley_Boreas.md' },
+    { term: 'Nellie', file: 'cozy-glade/Nellie_Saddler.md' },
+    { term: 'Vinos', file: 'cozy-glade/Vinos.md' },
 ];
+
+function buildWikiLinksFromFrontmatter() {
+    const fromFrontmatter = [];
+    for (const [file, content] of Object.entries(allDocuments)) {
+        const { meta } = parseFrontmatter(content);
+        if (Array.isArray(meta.aliases)) {
+            for (const alias of meta.aliases) {
+                fromFrontmatter.push({ term: alias, file });
+            }
+        }
+    }
+    // Merge with hand-rolled (PC/NPC) links, dedupe by term, sort longest-first
+    const seen = new Set();
+    const merged = [...fromFrontmatter, ...wikiLinks].filter(l => {
+        if (seen.has(l.term)) return false;
+        seen.add(l.term);
+        return true;
+    });
+    merged.sort((a, b) => b.term.length - a.term.length);
+    wikiLinks = merged;
+}
 
 function applyWikiLinks(container, currentFilename) {
     // Tags to skip: links, buttons, headings, breadcrumbs, card elements, props
@@ -316,30 +371,29 @@ function applyWikiLinks(container, currentFilename) {
     });
 }
 
-// Initialize DM file set
-Object.values(campaigns).forEach(campaign => {
-    campaign.sections.forEach(section => {
-        section.items.forEach(item => {
-            if (item.dmOnly) {
-                dmFileSet.add(campaign.basePath + item.file);
-            }
-        });
+// Initialize DM file set — items marked dmOnly and any of their subpages
+campaign.sections.forEach(section => {
+    section.items.forEach(item => {
+        if (item.dmOnly) {
+            dmFileSet.add(campaign.basePath + item.file);
+            (item.subpages || []).forEach(sp => dmFileSet.add(campaign.basePath + sp));
+        }
     });
 });
 
 
 function toggleDmMode() {
     isDmMode = !isDmMode;
-    console.log('DM Mode:', isDmMode);
     renderNav();
     updateDmModeButton();
-    // Reload documents if turning on DM mode to ensure we have them
-    if (isDmMode) loadAllDocuments();
 
     // Toggle DM-only elements on the current page
     document.querySelectorAll('.dm-only').forEach(el => {
         el.style.display = isDmMode ? '' : 'none';
     });
+
+    // Re-render the current page so any compendium index re-evaluates dmOnly cards
+    if (currentFile) loadMarkdown(currentFile);
 }
 
 function updateDmModeButton() {
@@ -356,8 +410,6 @@ function updateDmModeButton() {
 }
 
 function renderNav() {
-    const campaign = campaigns[currentCampaign];
-    
     // Update Header
     const titleEl = document.getElementById('campaign-title');
     const descEl = document.getElementById('campaign-desc');
@@ -427,31 +479,35 @@ function renderNav() {
     }
 }
 
+// Stable per-session cache-bust so the browser can reuse fetched markdown
+// across navigations within a single visit.
+const SESSION_CACHE_BUST = Date.now();
+
 // Load all markdown files
 async function loadAllDocuments() {
-    const campaign = campaigns[currentCampaign];
-    // Flatten files from all sections
-    const campaignFiles = campaign.sections.flatMap(section => 
-        section.items.map(item => campaign.basePath + item.file)
+    // Flatten files from all sections, including subpages (compendium entries etc.)
+    const campaignFiles = campaign.sections.flatMap(section =>
+        section.items.flatMap(item => [
+            campaign.basePath + item.file,
+            ...(item.subpages || []).map(sp => campaign.basePath + sp)
+        ])
     );
-    
+
     const files = [
         ...sharedResources,
         ...campaignFiles
     ];
 
-    const cacheBust = Date.now();
-    for (const file of files) {
+    await Promise.all(files.map(async file => {
         try {
-            const response = await fetch(file + '?v=' + cacheBust);
+            const response = await fetch(file + '?v=' + SESSION_CACHE_BUST);
             if (response.ok) {
-                const text = await response.text();
-                allDocuments[file] = text;
+                allDocuments[file] = await response.text();
             }
         } catch (error) {
             console.error(`Error loading ${file}:`, error);
         }
-    }
+    }));
 }
 
 // Load and display markdown file
@@ -468,7 +524,7 @@ async function loadMarkdown(filename) {
         if (allDocuments[filename]) {
             content = allDocuments[filename];
         } else {
-            const response = await fetch(filename + '?v=' + Date.now());
+            const response = await fetch(filename + '?v=' + SESSION_CACHE_BUST);
             if (!response.ok) {
                 throw new Error('File not found');
             }
@@ -478,11 +534,12 @@ async function loadMarkdown(filename) {
         currentContent = content;
         currentFile = filename;
         // Update URL hash for shareable links & browser history
-        const hashPath = filename.replace(/^bonetop\//, '');
+        const hashPath = filename.replace(/^cozy-glade\//, '');
         if (window.location.hash.slice(1) !== hashPath) {
             history.pushState(null, '', '#' + hashPath);
         }
-        const html = marked.parse(content);
+        const { body } = parseFrontmatter(content);
+        const html = marked.parse(body);
         const contentEl = document.getElementById('content');
 
         // Cleanup existing cover
@@ -504,6 +561,9 @@ async function loadMarkdown(filename) {
         }
 
         contentEl.innerHTML = html;
+
+        // Hydrate compendium index grid from subpage frontmatter
+        renderCompendiumGrid(filename, contentEl);
 
         // Show/hide DM-only elements based on current mode
         contentEl.querySelectorAll('.dm-only').forEach(el => {
@@ -608,7 +668,9 @@ function performSearch(query, targetElement) {
         // Skip DM files if not in DM mode
         if (!isDmMode && dmFileSet.has(filename)) continue;
 
-        const lines = content.split('\n');
+        // Search the body only — frontmatter shouldn't surface as search hits
+        const { body } = parseFrontmatter(content);
+        const lines = body.split('\n');
         lines.forEach((line, index) => {
             if (line.toLowerCase().includes(query)) {
                 results.push({
@@ -766,7 +828,6 @@ if (desktopSearchInput) {
 function getParentPath(filename) {
     if (!filename) return null;
 
-    const campaign = campaigns[currentCampaign];
     const overviewPath = campaign.basePath + 'campaign_overview.md';
 
     // Overview has no parent
@@ -861,7 +922,7 @@ function goHome() {
     // Close desktop search if open
     collapseDesktopSearch();
 
-    loadMarkdown('bonetop/campaign_overview.md');
+    loadMarkdown('cozy-glade/campaign_overview.md');
 }
 
 // Desktop search expand/collapse
@@ -1202,10 +1263,70 @@ function applyCardGradient(img, card) {
     }
 }
 
+// Render the compendium index grid (e.g. fauna.md) from each subpage's frontmatter.
+// The index .md only contains a stub <div data-compendium-grid></div>; we hydrate it here.
+function renderCompendiumGrid(filename, contentEl) {
+    const grid = contentEl.querySelector('[data-compendium-grid]');
+    if (!grid) return;
+
+    // Find the matching item in campaign config (e.g. compendium/fauna.md → fauna section)
+    let item = null;
+    for (const section of campaign.sections) {
+        for (const it of section.items) {
+            if (campaign.basePath + it.file === filename) item = it;
+        }
+    }
+    if (!item || !item.subpages) return;
+
+    const escapeHtml = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+    // Sort subpages by frontmatter `number` so display order matches the entry number
+    const sorted = [...item.subpages].sort((a, b) => {
+        const metaA = parseFrontmatter(allDocuments[campaign.basePath + a] || '').meta;
+        const metaB = parseFrontmatter(allDocuments[campaign.basePath + b] || '').meta;
+        return String(metaA.number || '').localeCompare(String(metaB.number || ''));
+    });
+
+    const cards = sorted.map(sp => {
+        const fullPath = campaign.basePath + sp;
+        const raw = allDocuments[fullPath];
+        if (!raw) return '';
+        const { meta } = parseFrontmatter(raw);
+        if (!meta.title) return '';
+        if (meta.dmOnly && !isDmMode) return '';
+
+        const id = 'card-' + slug(meta.title);
+        const number = meta.number ? `<div class="compendium-card-number">${escapeHtml(meta.number)}</div>` : '';
+        const summary = meta.summary ? `<div class="compendium-card-desc">${escapeHtml(meta.summary)}</div>` : '';
+
+        if (meta.image) {
+            const styleAttr = meta.imageStyle ? ` style="${escapeHtml(meta.imageStyle)}"` : '';
+            return `<a href="javascript:void(0)" onclick="loadMarkdown('${fullPath}')" class="compendium-card" id="${id}">
+<div class="compendium-card-content">
+${number}
+<div class="compendium-card-name">${escapeHtml(meta.title)}</div>
+${summary}
+</div>
+<div class="compendium-card-img">
+<img src="${escapeHtml(meta.image)}" alt="${escapeHtml(meta.title)}" crossorigin="anonymous"${styleAttr} onload="applyCardGradient(this, document.getElementById('${id}'))">
+</div>
+</a>`;
+        }
+        return `<a href="javascript:void(0)" onclick="loadMarkdown('${fullPath}')" class="compendium-card compendium-card-no-img" id="${id}">
+<div class="compendium-card-content">
+${number}
+<div class="compendium-card-name">${escapeHtml(meta.title)}</div>
+${summary}
+</div>
+</a>`;
+    }).filter(Boolean).join('\n');
+
+    grid.innerHTML = cards;
+}
+
 // Highlight nav item for current page (including parent for subpages)
 function highlightNavItem(filename) {
-    const campaign = campaigns[currentCampaign];
-
     // Reset all nav items
     document.querySelectorAll('.nav-item').forEach(btn => {
         btn.classList.remove('bg-white/10', 'text-white');
@@ -1313,8 +1434,8 @@ function highlightNavItem(filename) {
 function getPageFromHash() {
     const hash = window.location.hash.slice(1);
     if (!hash) return null;
-    // Add bonetop/ prefix if not present
-    return hash.startsWith('bonetop/') ? hash : 'bonetop/' + hash;
+    // Add cozy-glade/ prefix if not present
+    return hash.startsWith('cozy-glade/') ? hash : 'cozy-glade/' + hash;
 }
 
 window.addEventListener('popstate', () => {
@@ -1327,7 +1448,8 @@ window.addEventListener('popstate', () => {
 // Initialize
 renderNav();
 loadAllDocuments().then(() => {
-    const startPage = getPageFromHash() || 'bonetop/campaign_overview.md';
+    buildWikiLinksFromFrontmatter();
+    const startPage = getPageFromHash() || 'cozy-glade/campaign_overview.md';
     loadMarkdown(startPage);
 });
 

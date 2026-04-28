@@ -1,5 +1,12 @@
+---
+title: Rolling Moss
+number: "002"
+aliases: Rolling Moss, Roly Poly, Roly Polys
+summary: Self-propelled moss balls that trundle across the forest floor. Speakers call themselves "Roly Polys."
+---
+
 <div class="breadcrumb-title">
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/flora.md')">Flora</a>
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/compendium/flora.md')">Flora</a>
 <span class="breadcrumb-caret">></span>
 <span class="breadcrumb-current">Rolling Moss</span>
 </div>

@@ -1,5 +1,12 @@
+---
+title: Weeping Crystal Pine
+number: "001"
+aliases: Weeping Crystal Pine, Crystal Pine
+summary: Pines that shed red crystalline tears. Found near the main encampment.
+---
+
 <div class="breadcrumb-title">
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/flora.md')">Flora</a>
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/compendium/flora.md')">Flora</a>
 <span class="breadcrumb-caret">></span>
 <span class="breadcrumb-current">Weeping Crystal Pine</span>
 </div>

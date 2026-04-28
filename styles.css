@@ -95,7 +95,7 @@
 body[data-season="summer"] {
     --bg-base: #081510;
     --bg-rgb: 8, 21, 16;
-    --season-image: url('bonetop/img/Year 1 Summer.png');
+    --season-image: url('cozy-glade/img/Year 1 Summer.png');
     --season-icon-color: #4fff90;
     background-color: var(--bg-base) !important;
 }
@@ -103,7 +103,7 @@ body[data-season="summer"] {
 body[data-season="spring"] {
     --bg-base: #0a1628;
     --bg-rgb: 10, 22, 40;
-    --season-image: url('bonetop/img/Year 1 Spring.png');
+    --season-image: url('cozy-glade/img/Year 1 Spring.png');
     --season-icon-color: #7fffd8;
     background-color: var(--bg-base) !important;
 }
@@ -326,7 +326,7 @@ mark {
     position: absolute;
     inset: 0;
     z-index: -2;
-    background-image: var(--season-image, url('bonetop/img/bonetop-splash.png'));
+    background-image: var(--season-image, url('cozy-glade/img/cozy-glade-splash.png'));
     background-size: cover;
     background-position: center;
     opacity: 0.05;

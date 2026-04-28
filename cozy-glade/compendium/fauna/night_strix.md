@@ -1,5 +1,12 @@
+---
+title: Night Strix
+number: "003"
+aliases: Night Strix
+summary: Giant one-eyed owl that blends into the night sky. Can trap prey in another dimension.
+---
+
 <div class="breadcrumb-title">
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/fauna.md')">Fauna</a>
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/compendium/fauna.md')">Fauna</a>
 <span class="breadcrumb-caret">></span>
 <span class="breadcrumb-current">Night Strix</span>
 </div>

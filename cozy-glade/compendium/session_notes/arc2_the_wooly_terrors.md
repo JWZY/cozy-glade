@@ -1,5 +1,12 @@
+---
+title: The Wooly Terrors
+number: Arc 2
+aliases: The Wooly Terrors
+summary: Feb 10, 2026 — A foraging walk leads to a Roly Poly, a herd of moose, and a chase that ends in betrayal.
+---
+
 <div class="breadcrumb-title">
-<a href="javascript:void(0)" onclick="loadMarkdown('bonetop/compendium/session_notes.md')">Session Notes</a>
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/compendium/session_notes.md')">Session Notes</a>
 <span class="breadcrumb-caret">></span>
 <span class="breadcrumb-current">The Wooly Terrors</span>
 </div>
