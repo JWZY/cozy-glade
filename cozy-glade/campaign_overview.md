@@ -15,11 +15,11 @@
 
 <div class="compendium-grid-compact">
 
-<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/arc2_roadmap.md')" class="compendium-card compendium-card-no-img dm-card">
+<a href="javascript:void(0)" onclick="loadMarkdown('cozy-glade/arc2_summer_timeline.md')" class="compendium-card compendium-card-no-img dm-card">
 <div class="compendium-card-content">
-<div class="compendium-card-number">Portents & Pressures</div>
-<div class="compendium-card-name">Arc 2 Roadmap</div>
-<div class="compendium-card-desc">Faction escalation chains, environment stat blocks, and the Summer Clock.</div>
+<div class="compendium-card-number">Arc 2 Session Flow</div>
+<div class="compendium-card-name">Summer Timeline</div>
+<div class="compendium-card-desc">Session-by-session beats, NPC moves, and hooks for Summer Year 1.</div>
 </div>
 </a>
 

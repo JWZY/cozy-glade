@@ -16,11 +16,7 @@ Paste this before each scene prompt so the model stays consistent:
 
 > A small frontier settlement built beneath and around the calcified ribcage of an enormous ancient dragon skeleton. The massive white-grey bones arc overhead like cathedral buttresses, draped with flowering vines and moss. Timber-frame buildings with stone foundations nestle between the ribs. A glowing pear tree with faintly golden fruit stands in the central clearing. Early morning light streams through the rib gaps, casting long bone-shadows across vegetable gardens and a lumber yard. Smoke rises from a communal hearth area. Lush boreal forest surrounds the settlement. Cozy, lived-in, fragile.
 
-## 2. The Bone-Tender Mandala
-
-> An overhead wide shot of a frontier lumber yard transformed into sacred geometry. Every plank, beam, and wood offcut has been arranged overnight into concentric spiral patterns radiating from a central ancient tree stump. Glowing red-orange lines of crystallized tree sap trace veins between the wooden rings, pulsing faintly like a heartbeat. Tiny crab-like spirit creatures with iridescent shells sit motionless in the gaps between the spirals, watching. Dawn light. The pattern is unmistakably intentional — alien, beautiful, and waiting for a response. Dragon bones frame the background.
-
-## 3. The Caravan Arrives
+## 2. The Caravan Arrives
 
 > A wide shot of a trade caravan arriving at a frontier settlement built within a dragon skeleton. Colorful merchant tarps and awnings are being stretched between massive calcified dragon ribs, creating a makeshift market. Wagons loaded with goods line a dirt road. The settlement is half-built — scaffolding on some structures, raw timber stacked. The contrast between the ancient bones overhead and the bustling new activity below. Late morning, warm golden light, dust motes in the air. A sense of a small world suddenly getting much bigger.
 
@@ -40,9 +36,9 @@ Paste this before each scene prompt so the model stays consistent:
 
 > A wide meadow at the edge of a boreal forest at blue hour. Tall dark conifers frame the scene. Fireflies drift between exposed dragon rib bones that jut from the ground like ancient fence posts. In the distance, warm orange light glows from a small settlement. The foreground is wild grass and small white flowers. The sky is deep purple fading to dark blue with the first stars appearing. The boundary between civilization and wilderness. Peaceful but liminal — the feeling of standing between two worlds.
 
-## 8. The Pear Tree — Golden Hour
+## 8. The Pear Sapling — Golden Hour
 
-> A single pear tree standing alone in a clearing, unnaturally tall and lush for its age. Its fruit glows with a faint golden luminescence. The tree grows from soil laced with white dragon-bone mineral veins visible at the roots. Late afternoon golden hour light catches the luminous fruit, creating a warm halo effect. Small creatures — round frog-like beasts with tusks, colorful birds — circle at a respectful distance, drawn to the tree but not approaching. The roots are visibly spreading into a nearby herb garden. Beautiful abundance on the edge of becoming something uncontrollable.
+> A young pear sapling, knee-to-waist high, standing alone in a clearing. Tender green leaves catching the late afternoon light, slender trunk staked with a single supporting post. The soil around its base is laced with faint white dragon-bone mineral veins visible at the roots. Late afternoon golden hour light, long grass swaying around it. A small carved marker beside the sapling — handmade, weathered. Tiny insects drift in the warm air. A quiet moment of something tender beginning. Hopeful, fragile, unremarkable on the surface.
 
 ## 9. Crystal Pine Forest — Night
 
@@ -50,7 +46,7 @@ Paste this before each scene prompt so the model stays consistent:
 
 ## 10. Bonetop — End of Summer
 
-> The same dragon-skeleton settlement from prompt 1, but now in late summer decline. The light is lower, more amber. The pear tree is enormous now, almost too large, heavy with glowing fruit. Leaves are just starting to show the first hints of turning. The buildings are more complete but weathered. Garden plots are overgrown. There's a weariness to the abundance — too much fruit, too many vines on the bones, nature pressing in. Beautiful and heavy. The golden hour of something that can't last. A place worth protecting precisely because it's fragile.
+> The same dragon-skeleton settlement from prompt 1, but now in late summer. The light is lower, more amber. The pear sapling has grown — now waist-high, leaves dense and green, but still clearly a young tree. Leaves on surrounding plants are just starting to show the first hints of turning. The buildings are more complete, lived-in. Garden plots are full and abundant. The longhouse is finished. There's a quiet ripeness to the scene — a settlement that has just survived its first real summer. Beautiful and earned. The golden hour of something fragile that made it through.
 
 ---
 

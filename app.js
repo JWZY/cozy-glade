@@ -189,7 +189,7 @@ const campaign = {
                 title: 'Campaign Overview',
                 items: [
                     { file: 'campaign_overview.md', name: 'Overview & Setting', sub: 'The World' },
-                    { file: 'arc2_roadmap.md', name: 'Arc 2 Roadmap', sub: 'Portents & Pressures', dmOnly: true },
+                    { file: 'arc2_summer_timeline.md', name: 'Summer Timeline', sub: 'Arc 2 Session Flow', dmOnly: true },
                     { file: 'player_wishlist.md', name: 'Player Wishlist', sub: 'Session Ideas', dmOnly: true }
                 ]
             },

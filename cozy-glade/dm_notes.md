@@ -37,7 +37,7 @@
 | **The Flipped Coin** | Crime Syndicate | *The Collector* (Enforcer) | **Goal:** Recoup "lost assets" (Oleg). <br> **Opposition:** Send thugs or blackmail to disrupt the peace. |
 | **The Academy** | Institution | *Alprazepam the Stern* | **Goal:** Retrieve/Test the "Experiment" (Ellery). <br> **Opposition:** Bureaucratic hurdles, magical summons, or recalling Vinos. |
 | **Boreas Family** | Nobility | *Lord Boreas* (Letter writer) | **Goal:** Ensure Finley is "punished" but safe. <br> **Opposition:** Cut funding if Finley enjoys himself too much; sending "auditors." |
-| **The Spirits of Bonetop** | Supernatural | *The East Wind*, *Dragon's Echo*, *The Bone-Tenders* | **Goal:** Preserve the wild magic of the dragon corpse. <br> **Opposition:** Resist the settlement's expansion (Halden/Oleg's clearing). Fey pranks, shifting landscapes. |
+| **The Spirits of Bonetop** | Supernatural | *The East Wind*, *Dragon's Echo*, *The Fey Crew* (unnamed crab-like fey) | **Goal:** Preserve the wild magic of the dragon corpse. <br> **Opposition:** Resist the settlement's expansion (Halden/Oleg's clearing). Fey pranks, shifting landscapes. |
 
 ---
 
@@ -45,7 +45,7 @@
 *Since the party is settling near a magical dragon corpse, the local spirits are active and mischievous.*
 
 *   **The East Wind:** A fickle spirit Oleg has spoken to. It loves gossip and moving small objects.
-*   **The Bone-Tenders:** Small, crab-like fey creatures that "repair" the dragon skeleton. They might steal the party's tools to "fix" the dragon.
+*   **The Fey Crew (unnamed):** Small, crab-like fey creatures that "repair" the dragon skeleton. They might steal the party's tools to "fix" the dragon.
 *   **The Echo:** A spirit that mimics the sounds of the dragon. It might roar when the party is arguing, or purr when they are bonding.
 *   **Shenanigan Ideas:**
     *   The campsite moves 10 feet to the left overnight.
