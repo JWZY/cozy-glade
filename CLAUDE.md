@@ -17,6 +17,12 @@ Then open http://localhost:8000
 
 No build step required - vanilla HTML/CSS/JS with CDN dependencies.
 
+Run the smoke check before publishing:
+
+```bash
+node scripts/smoke-check.mjs
+```
+
 ## Key Files
 
 - `index.html` - App shell, includes cache-busting version params on CSS/JS
@@ -66,9 +72,12 @@ Cards without images use `compendium-card-no-img` class for glass styling.
 ### Adding New Entries
 
 1. Create markdown file in appropriate folder (e.g., `fauna/new_creature.md`)
-2. Add card to index page (e.g., `fauna.md`)
-3. Use `#XXX` numbering for entry numbers
-4. Use placeholder classes for unknown info: `<span class="prop-value placeholder">Awaiting measurement</span>`
+2. Add frontmatter: `title`, `number`, `aliases`, `summary`, and optional `image`
+3. Add the entry path to the appropriate `subpages` list in the `campaign` config in `app.js`
+4. Use `#XXX` numbering for entry numbers
+5. Use placeholder classes for unknown info: `<span class="prop-value placeholder">Awaiting measurement</span>`
+
+The section index pages (`fauna.md`, `flora.md`, `recipes.md`, `session_notes.md`) are stubs with `<div data-compendium-grid>`. Cards are generated from entry frontmatter by `renderCompendiumGrid()`.
 
 ## Cache Busting
 
@@ -82,7 +91,6 @@ When deploying updates, increment the version param in `index.html`:
 - **Cover Images**: `<!-- cover: url -->` comment in markdown for hero images
 - **Search**: `Ctrl/Cmd+K` to focus search
 - **Color Thief**: Extracts dominant colors from images for card gradients
-- **Favorite Images**: Gallery thumbnails have star button to set preferred image (localStorage)
 - **Season VFX**: `playSeasonVFX(season)` fires a ~3s particle burst on season toggle — godrays for summer, snowflakes for spring. Uses Web Animations API with auto-cleanup (`element.animate()` + `.onfinish` removal)
 
 ## Style Notes
@@ -90,3 +98,7 @@ When deploying updates, increment the version param in `index.html`:
 - Use `compendium-card-no-img` for glass-style cards without images
 - Markdown must have NO indentation for raw HTML to render (marked.js quirk)
 - Nav highlighting for nested paths: `compendium/fauna/frog_boar.md` highlights parent `compendium/fauna.md`
+
+## Visual References
+
+Image-generation references and moodboards live in `cozy-glade/img/moodboard/`. These can include images that are not directly rendered by the wiki.

@@ -34,6 +34,12 @@ python3 -m http.server 8000
 
 Then open [http://localhost:8000](http://localhost:8000)
 
+Run the smoke check before publishing:
+
+```bash
+node scripts/smoke-check.mjs
+```
+
 ## Adding Content
 
 ### New Compendium Entry
@@ -43,14 +49,27 @@ Then open [http://localhost:8000](http://localhost:8000)
    - `cozy-glade/compendium/flora/plant_name.md`
    - `cozy-glade/compendium/recipes/recipe_name.md`
 
-2. Use the existing entry templates (breadcrumb, bestiary-page layout)
+2. Add frontmatter at the top of the file:
+   - `title`
+   - `number`
+   - `aliases`
+   - `summary`
+   - optional `image`
 
-3. Add card to the index page (`fauna.md`, `flora.md`, or `recipes.md`)
+3. Use the existing entry templates (breadcrumb, bestiary-page layout)
+
+4. Add the entry path to the appropriate `subpages` list in the `campaign` config in `app.js`
+
+The section index pages (`fauna.md`, `flora.md`, `recipes.md`, `session_notes.md`) are generated from frontmatter, so you do not need to hand-write cards there.
 
 ### New Character/NPC
 
 1. Create markdown file in `cozy-glade/` folder
 2. Add entry to the appropriate section in the `campaign` config in `app.js`
+
+## Visual References
+
+Image-generation references and moodboards live in `cozy-glade/img/moodboard/`. These are project assets even when they are not shown directly on the wiki.
 
 ## DM Mode
 
