@@ -239,7 +239,8 @@ const campaign = {
                     {
                         file: 'compendium/session_notes.md', name: 'Session Notes', sub: 'Adventure Log',
                         subpages: [
-                            'compendium/session_notes/arc2_the_wooly_terrors.md'
+                            'compendium/session_notes/arc2_the_wooly_terrors.md',
+                            'compendium/session_notes/arc2_the_longhouse_raising.md'
                         ]
                     }
                 ]
@@ -1452,4 +1453,3 @@ loadAllDocuments().then(() => {
     const startPage = getPageFromHash() || 'cozy-glade/campaign_overview.md';
     loadMarkdown(startPage);
 });
-
