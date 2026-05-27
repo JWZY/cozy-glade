@@ -45,7 +45,7 @@ summary: Green-wooled moose that eat Rolling Moss like jawbreakers. Found in her
 
 <div class="bestiary-section">
 <div class="section-label">Field Notes</div>
-<p>First catalogued by the settlers of Bonetop during a foraging expedition. Halden attempted to domesticate the herd alpha, which was in heat and became obsessively affectionate — but the herd escaped after a chase through the forest. The alpha looked back at Halden before disappearing into the trees.</p>
+<p>First catalogued by the settlers during a foraging expedition. Halden attempted to domesticate the herd alpha, which was in heat and became obsessively affectionate — but the herd escaped after a chase through the forest. The alpha looked back at Halden before disappearing into the trees.</p>
 <p><em>Notable individual: the alpha has a brother with darker moss and a scar across one eye.</em></p>
 </div>
 </div>

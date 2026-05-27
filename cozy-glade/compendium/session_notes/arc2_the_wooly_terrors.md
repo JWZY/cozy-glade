@@ -1,6 +1,6 @@
 ---
 title: The Wooly Terrors
-number: Arc 2
+number: Year 1 Summer 1
 aliases: The Wooly Terrors
 summary: Feb 10, 2026 — A foraging walk leads to a Roly Poly, a herd of moose, and a chase that ends in betrayal.
 ---
@@ -13,10 +13,6 @@ summary: Feb 10, 2026 — A foraging walk leads to a Roly Poly, a herd of moose,
 
 <div class="bestiary-page-no-img">
 <div class="bestiary-props">
-<div class="bestiary-prop">
-<span class="prop-label">Arc</span>
-<span class="prop-value">2 — "The Thaw"</span>
-</div>
 <div class="bestiary-prop">
 <span class="prop-label">In-Game</span>
 <span class="prop-value">Year 1, Summer</span>
@@ -31,7 +27,7 @@ summary: Feb 10, 2026 — A foraging walk leads to a Roly Poly, a herd of moose,
 <div class="bestiary-section">
 <div class="section-label">Summary</div>
 <ul>
-<li>Three months have passed — snow melted, summer arrived, Bonetop has taken shape</li>
+<li>Three months have passed — snow melted, summer arrived, and the settlement has taken shape</li>
 <li>Halden built homesteads for everyone; Ellery designed a floating library with no entrance; Oleg kept crashing Finley's Hot Goss Club</li>
 <li>Nellie lost her eyebrows to Bad Luck Bees; Vinos still hasn't opened his communication kit</li>
 <li>On a foraging walk, Ellery burst out of the brush chasing a Rolling Moss ("Roly Poly")</li>

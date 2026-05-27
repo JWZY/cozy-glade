@@ -8,13 +8,13 @@
 
 Start the arc with a collaborative montage. Each player narrates a short vignette of their character over the past few months. Give them these prompts:
 
-> "It's been three months since you arrived at Bonetop. The snow has melted, the days are long and warm, and the settlement has taken shape. Tell us about **one thing your character built**, and **one thing that surprised them**."
+> "It's been three months since you arrived at the settlement. The snow has melted, the days are long and warm, and the settlement has taken shape. Tell us about **one thing your character built**, and **one thing that surprised them**."
 
 Let each player take 2-3 minutes. Fill in NPC reactions as they go.
 
 ---
 
-## How Bonetop Has Grown
+## How the Settlement Has Grown
 
 *Use these as established facts, or ask players to confirm/adjust.*
 
@@ -55,9 +55,9 @@ Vinos returns from his latest run, looking slightly less chill than usual. He's 
 
 1. **For Finley** — Sealed with the Boreas family crest. Lord Boreas is sending an "assessor" to evaluate Finley's progress. Arriving within the month. Finley panics — he needs the settlement to look *impressive*.
 2. **For Ellery** — From The Academy. Formal letterhead. Alprazepam's funding for Ellery's "field study" is under review. She must submit a "Thesis of Findings" or be recalled. Deadline: end of summer.
-3. **For the Settlement of Bonetop** — A trade caravan is requesting permission to visit. They've heard about the settlement and want to establish a route. They'll arrive in two weeks. They're bringing supplies... and people.
+3. **For the Settlement** — A trade caravan is requesting permission to visit. They've heard about the settlement and want to establish a route. They'll arrive in two weeks. They're bringing supplies... and people.
 
-**Player Reactions:** Let this breathe. Each letter creates personal stakes. Finley will try to recruit the PCs into making Bonetop look good. Ellery has a ticking clock. The trade caravan is an opportunity and a threat.
+**Player Reactions:** Let this breathe. Each letter creates personal stakes. Finley will try to recruit the PCs into making the settlement look good. Ellery has a ticking clock. The trade caravan is an opportunity and a threat.
 
 ---
 
@@ -78,7 +78,7 @@ The pear tree sapling has grown unnaturally fast — it's already taller than Ha
 - **Ask the spirits?** Oleg can commune with the mushroom circles to understand why they're supercharging the tree (Instinct/Spellcast check).
 
 **Possible Outcomes:**
-- The fruit is safe and *magical* — it heals minor wounds when eaten. This becomes Bonetop's first trade good.
+- The fruit is safe and *magical* — it heals minor wounds when eaten. This becomes the settlement's first trade good.
 - The fruit is a spirit offering — the Bone-Tenders planted extra magic in it as a gift to the settlers. Taking too much offends them.
 - The tree is drawing something up from deep underground — the dragon's residual life force. If left unchecked, it could awaken something.
 
@@ -113,7 +113,7 @@ Over the past three months, the Bone-Tenders have been increasingly active:
 
 ## Scene 4: Preparing for Visitors
 
-*The trade caravan arrives in two weeks. Bonetop needs to get ready.*
+*The trade caravan arrives in two weeks. The settlement needs to get ready.*
 
 This is a great **downtime montage** where players choose how to spend their time. Each player picks a project:
 
@@ -124,8 +124,8 @@ This is a great **downtime montage** where players choose how to spend their tim
 | **Build a proper gate/entrance** | Halden | Strength/Craft check | First impression for visitors. Finley insists on a banner. |
 | **Map the surrounding area** | Ellery | Knowledge/Exploration check | Creates a basic map for traders. Discovers something unexpected in the process. |
 | **Set up a welcome ward** | Oleg | Instinct/Spellcast check | Magical boundary that alerts settlers to approaching visitors. Spirits may "help." |
-| **Prepare trade goods** | Nellie | Alchemy/Knowledge check | Catalogues what Bonetop can offer: Crystal Pine lumber, medicinal herbs, pear fruit(?), Pollihog leather. |
-| **Make Bonetop look "civilized"** | Finley | Charisma/Social check | Finley's desperate attempt to impress the assessor. Comedy gold. |
+| **Prepare trade goods** | Nellie | Alchemy/Knowledge check | Catalogues what the settlement can offer: Crystal Pine lumber, medicinal herbs, pear fruit(?), Pollihog leather. |
+| **Make the settlement look "civilized"** | Finley | Charisma/Social check | Finley's desperate attempt to impress the assessor. Comedy gold. |
 
 Each project takes about a week of in-game time. Players can assist each other for advantage.
 
@@ -140,7 +140,7 @@ The trade caravan crests the hill — but it's bigger than expected. Not just tr
 **What the players see:**
 - Three wagons of supplies and trade goods (as promised).
 - A well-dressed figure with a ledger — **the Boreas assessor**, who arrived early by joining the caravan.
-- **2-3 new settlers** hoping to join Bonetop. Who are they? (Collaborative — ask the players to invent one each, or have pre-made options.)
+- **2-3 new settlers** hoping to join the settlement. Who are they? (Collaborative — ask the players to invent one each, or have pre-made options.)
 - And at the back of the caravan, a hooded figure who asks for Oleg by name.
 
 **End of arc.**
@@ -154,7 +154,7 @@ The trade caravan crests the hill — but it's bigger than expected. Not just tr
 | Name | Ancestry | Occupation | Why They're Here |
 | :--- | :--- | :--- | :--- |
 | **Bramble** | Faun | Beekeeper | Heard about the magical flora — wants to establish hives near the Crystal Pines. |
-| **Suki** | Human | Blacksmith's Apprentice | Ran away from a cruel master. Has basic smithing skills — exactly what Bonetop needs for Ironbark tools. |
+| **Suki** | Human | Blacksmith's Apprentice | Ran away from a cruel master. Has basic smithing skills — exactly what the settlement needs for Ironbark tools. |
 | **Old Marsh** | Katari (Tortoise) | Cartographer | Retired. Wants somewhere quiet to finish his life's work: a map of the entire frontier. |
 
 ---

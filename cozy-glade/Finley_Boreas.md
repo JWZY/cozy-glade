@@ -24,7 +24,7 @@
 
 ## Developments
 
-- Founded the **Hot Goss Club** in Bonetop
+- Founded the **Hot Goss Club** in the settlement
 - Made a cedar chest for his sweaters — already infested with moths. Won't stop complaining about it.
 
 ---

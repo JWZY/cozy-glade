@@ -14,7 +14,7 @@
 - Tried to set up shop but was boycotted by a local spiritual group
 - When she wouldn't back down, Nellie's shop was burnt to the ground in protest
 - Joined up with the Caravan as it was passing through to the docks
-- Hoping that she can build a new life for herself in Bonetop, in a town with modern ideals
+- Hoping that she can build a new life for herself in the settlement, in a town with modern ideals
 - Will attempt to recruit people into the Modernistic Medical Society, which only has one member.... her.
 - Young and feels like she has much to prove
 

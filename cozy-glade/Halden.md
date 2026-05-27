@@ -4,11 +4,11 @@
 
 ## Short-term Goals
 
-**Build a tavern** — The homesteads are done, now Bonetop needs a communal gathering place.
+**Build a tavern** — The homesteads are done, now the settlement needs a communal gathering place.
 
 **Find livestock** — Looking for a sheep equivalent to herd onto his homestead.
 
-**Attract new settlers** — Give people a reason to come to Bonetop. Ideas include gathering ingredients for ale to get the pub started, drawing up advertisements for Vinos to send back to the mainland.
+**Attract new settlers** — Give people a reason to come to the settlement. Ideas include gathering ingredients for ale to get the pub started, drawing up advertisements for Vinos to send back to the mainland.
 
 ## Long-term Goal
 

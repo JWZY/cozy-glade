@@ -12,7 +12,7 @@ Paste this before each scene prompt so the model stays consistent:
 
 ---
 
-## 1. Bonetop Settlement — Morning
+## 1. The Settlement — Morning
 
 > A small frontier settlement built beneath and around the calcified ribcage of an enormous ancient dragon skeleton. The massive white-grey bones arc overhead like cathedral buttresses, draped with flowering vines and moss. Timber-frame buildings with stone foundations nestle between the ribs. A glowing pear tree with faintly golden fruit stands in the central clearing. Early morning light streams through the rib gaps, casting long bone-shadows across vegetable gardens and a lumber yard. Smoke rises from a communal hearth area. Lush boreal forest surrounds the settlement. Cozy, lived-in, fragile.
 
@@ -44,7 +44,7 @@ Paste this before each scene prompt so the model stays consistent:
 
 > A nighttime forest scene among enormous pine trees whose bark is veined with crystallized red-orange sap. The sap glows faintly, creating natural light lines that trace up the trunks like circuits. The forest floor is carpeted in bioluminescent moss — cool blue-green light from below, warm amber-red from the tree veins above. Stars visible through gaps in the canopy. Absolute stillness. The kind of forest that feels like it's breathing. Magical realism, not fantasy cliche — the light feels natural, not spell-like.
 
-## 10. Bonetop — End of Summer
+## 10. The Settlement — End of Summer
 
 > The same dragon-skeleton settlement from prompt 1, but now in late summer. The light is lower, more amber. The pear sapling has grown — now waist-high, leaves dense and green, but still clearly a young tree. Leaves on surrounding plants are just starting to show the first hints of turning. The buildings are more complete, lived-in. Garden plots are full and abundant. The longhouse is finished. There's a quiet ripeness to the scene — a settlement that has just survived its first real summer. Beautiful and earned. The golden hour of something fragile that made it through.
 

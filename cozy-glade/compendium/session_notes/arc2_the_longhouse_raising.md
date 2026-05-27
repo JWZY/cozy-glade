@@ -1,8 +1,8 @@
 ---
 title: The Longhouse Raising
-number: Arc 2.2
+number: Year 1 Summer 2
 aliases: The Longhouse Raising
-summary: May 26, 2026 — Bonetop finishes its longhouse, Vinos falls for Laureth, and a spirit ritual reveals dragon-bone crystals beneath the skeleton.
+summary: May 26, 2026 — The settlement finishes its longhouse, Vinos falls for Laureth, and a spirit ritual reveals dragon-bone crystals beneath the skeleton.
 ---
 
 <div class="breadcrumb-title">
@@ -13,10 +13,6 @@ summary: May 26, 2026 — Bonetop finishes its longhouse, Vinos falls for Lauret
 
 <div class="bestiary-page-no-img">
 <div class="bestiary-props">
-<div class="bestiary-prop">
-<span class="prop-label">Arc</span>
-<span class="prop-value">2 — "The Thaw"</span>
-</div>
 <div class="bestiary-prop">
 <span class="prop-label">In-Game</span>
 <span class="prop-value">Year 1, Summer</span>
@@ -32,7 +28,7 @@ summary: May 26, 2026 — Bonetop finishes its longhouse, Vinos falls for Lauret
 <div class="section-label">Summary</div>
 <ul>
 <li>A few weeks after the moose stampede, Halden's body is healing, but his pride is still bruised</li>
-<li>Bonetop's longhouse is nearly finished; Halden hammers in the final shingle with one of Oleg's bent nail-necklace nails</li>
+<li>The settlement's longhouse is nearly finished; Halden hammers in the final shingle with one of Oleg's bent nail-necklace nails</li>
 <li>Oleg hangs the remaining nails as a wind chime while everyone pins up small keepsakes to mark the occasion</li>
 <li>Finley calls the longhouse ugly, offers to order linens and banners, then realizes the settlement has no usable address</li>
 <li>Finley leaves to start mapping the area, producing a squirrel and deciding he must do everything himself</li>
@@ -59,8 +55,8 @@ summary: May 26, 2026 — Bonetop finishes its longhouse, Vinos falls for Lauret
 <div class="bestiary-section">
 <div class="section-label">Discoveries</div>
 <ul>
-<li><strong>The Longhouse</strong> — Bonetop's communal home now stands. It is functional, heartfelt, and, according to Finley, aesthetically unforgivable.</li>
-<li><strong>Bonetop Has No Address</strong> — Finley cannot order decor or supplies until the settlement knows where it is on the map.</li>
+<li><strong>The Longhouse</strong> — The settlement's communal home now stands. It is functional, heartfelt, and, according to Finley, aesthetically unforgivable.</li>
+<li><strong>The Settlement Has No Address</strong> — Finley cannot order decor or supplies until the settlement knows where it is on the map.</li>
 <li><strong>Metal Shortage</strong> — Nails and other worked metal are becoming scarce. A blacksmith would be useful, but the settlement needs materials worth attracting one.</li>
 <li><strong>Laureth</strong> — Vinos has been secretly corresponding with a tall, black-haired, wicked-smart academy acquaintance who calls him her "sweet little monkey."</li>
 <li><strong>Halden's Magic</strong> — Halden's magic manifests as warm gold-green hearthlight, with small handlike tendrils that seem tied to love, home, and protection.</li>
@@ -73,7 +69,7 @@ summary: May 26, 2026 — Bonetop finishes its longhouse, Vinos falls for Lauret
 <div class="bestiary-section">
 <div class="section-label">Threads</div>
 <ul>
-<li>Finley is mapping the area and may unlock Bonetop's first real address</li>
+<li>Finley is mapping the area and may unlock the settlement's first real address</li>
 <li>Vinos wants Laureth to visit once the settlement can tell people where it is</li>
 <li>Laureth has asked Vinos about his location, companions, and the size of the encampment</li>
 <li>Oleg may add Laureth to his ritual list, though Halden advised against making that part of the courtship pitch</li>

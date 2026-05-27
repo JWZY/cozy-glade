@@ -4,7 +4,7 @@
 
 ## Short-term Goal
 
-**Construct the Floating Library** — Assemble and complete the magically suspended library above Bonetop. The structure is designed but needs to be built and put together.
+**Construct the Floating Library** — Assemble and complete the magically suspended library above the settlement. The structure is designed but needs to be built and put together.
 
 ## Long-term Goal
 
@@ -24,7 +24,7 @@
 
 ## Completed Goals
 
-- ~~Find the perfect reading nook~~ — Built the Floating Library: a magically suspended, self-stabilizing structure above Bonetop using lumber from the communal yard. A perfectly organized prefab set, levitated into the sky. Canonically did not design an entrance. Assembly spell on hold until the dampening bracelet is repaired.
+- ~~Find the perfect reading nook~~ — Built the Floating Library: a magically suspended, self-stabilizing structure above the settlement using lumber from the communal yard. A perfectly organized prefab set, levitated into the sky. Canonically did not design an entrance. Assembly spell on hold until the dampening bracelet is repaired.
 
 ## Appearance
 - Wooden dummy with a very faint yellow glow lining each wooden groove.

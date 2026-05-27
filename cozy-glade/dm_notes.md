@@ -37,7 +37,7 @@
 | **The Flipped Coin** | Crime Syndicate | *The Collector* (Enforcer) | **Goal:** Recoup "lost assets" (Oleg). <br> **Opposition:** Send thugs or blackmail to disrupt the peace. |
 | **The Academy** | Institution | *Alprazepam the Stern* | **Goal:** Retrieve/Test the "Experiment" (Ellery). <br> **Opposition:** Bureaucratic hurdles, magical summons, or recalling Vinos. |
 | **Boreas Family** | Nobility | *Lord Boreas* (Letter writer) | **Goal:** Ensure Finley is "punished" but safe. <br> **Opposition:** Cut funding if Finley enjoys himself too much; sending "auditors." |
-| **The Spirits of Bonetop** | Supernatural | *The East Wind*, *Dragon's Echo*, *The Fey Crew* (unnamed crab-like fey) | **Goal:** Preserve the wild magic of the dragon corpse. <br> **Opposition:** Resist the settlement's expansion (Halden/Oleg's clearing). Fey pranks, shifting landscapes. |
+| **The Spirits of the Settlement** | Supernatural | *The East Wind*, *Dragon's Echo*, *The Fey Crew* (unnamed crab-like fey) | **Goal:** Preserve the wild magic of the dragon corpse. <br> **Opposition:** Resist the settlement's expansion (Halden/Oleg's clearing). Fey pranks, shifting landscapes. |
 
 ---
 
@@ -73,7 +73,7 @@ Ellery noticed the jade/emerald trees thin out approaching the river and eventua
 Discussed in session: the forest may be governed by multiple queens (Bad Luck Bee Queen, Jub-Jub Queen, possibly others), each ruling their own domain with contracts between them. Wizard of Oz witches analogy. Not yet encountered, but seeds are planted through the player wishlist items.
 
 ### Nellie's Situation
-Got magically immolated by Bad Luck Bees — burned, stung, lost eyebrows. Ellery is secretly trying to cure her "unbalanced aura." Oleg is making it worse with his golden retriever spiritualist energy. She's a comedy fulcrum but could become more — her modernist worldview vs. the increasingly magical reality of Bonetop.
+Got magically immolated by Bad Luck Bees — burned, stung, lost eyebrows. Ellery is secretly trying to cure her "unbalanced aura." Oleg is making it worse with his golden retriever spiritualist energy. She's a comedy fulcrum but could become more — her modernist worldview vs. the increasingly magical reality of the settlement.
 
 ### Vinos's Kit
 Still. Not. Opened. The longer this runs, the funnier it gets. But eventually it needs to pay off — the communication kit is the settlement's link to the outside world.
