@@ -1,3 +1,5 @@
+<!-- cover: cozy-glade/img/generated/player_wishlist.png -->
+
 # Player Wishlist
 
 *DM reference — things players have expressed interest in doing. Pull from this when planning arcs.*

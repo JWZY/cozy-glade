@@ -1,3 +1,5 @@
+<!-- cover: cozy-glade/img/generated/summer_timeline.png -->
+
 # Summer Year 1 — Timeline
 
 *DM prep. Situations, NPC moves, and hooks — no PC choreography. Order is loose; each cluster can stretch or compress.*
