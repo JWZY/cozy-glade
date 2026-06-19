@@ -1301,26 +1301,22 @@ mark {
 
 @media (min-width: 768px) {
     .bestiary-page-no-img {
-        flex-direction: row;
-        align-items: flex-start;
+        flex-direction: column;
         gap: 2rem;
     }
 
     .bestiary-page-no-img .bestiary-props {
-        flex-shrink: 0;
-        width: 280px;
-        margin-bottom: 0;
+        width: 100%;
     }
 
     .bestiary-page-no-img .bestiary-content {
-        flex: 1;
-        min-width: 0;
+        width: 100%;
     }
 }
 
 @media (min-width: 1024px) {
     .bestiary-page-no-img .bestiary-props {
-        width: 320px;
+        width: 100%;
     }
 }
 

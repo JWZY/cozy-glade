@@ -29,24 +29,23 @@ summary: June 16, 2026 — Halden and Oleg descend into the crystal cave, befrie
 <ul>
 <li>The group takes a short rest at the cave mouth; Halden repairs his armor and Oleg gifts him a Jub-jub keychain charm enchanted as a protective talisman</li>
 <li>Halden forages cave moss and spring water to brew a carbonated iced-matcha smoothie, spiking it with a pinch of the guardian's spirit dust</li>
-<li>Past the rotten, fog-choked exterior, the cave interior is unexpectedly cozy, dry, and safe — Oleg feels immediately at home</li>
-<li>Cave bats with ghostly green-glowing eyes confirm the cave is steeped in the same spiritual radiation as the corrupted land above</li>
-<li>The party follows a bioluminescent underground stream; Halden kicks a black-eyed bony fish out of the water and fends off a clinging leech-fish</li>
+<li>Past the rotten, fog-choked exterior, the cave interior is unexpectedly cozy and safe — Oleg proposes making it their new home</li>
+<li>They encounter cave bats with ghostly green-glowing eyes</li>
+<li>The party follows a bioluminescent underground stream; Halden kicks a black-eyed bony fish out of the water and shakes off several leech-fish with Oleg's help</li>
 <li>They discover crystal hermit snails that grow no shell of their own, instead cementing loose crystals to their backs with secreted goop</li>
 <li>Oleg rescues one snail, names it "Robert," and communes with it through Nature's Tongue by tapping in tactile rhythm</li>
-<li>Halden vows never to harvest a crystal from a snail still living inside its shell</li>
 <li>Robert leads them up a ceiling tunnel into a vast chamber holding thousands of green crystalline snails</li>
 <li>The chamber splits into two passages, and the party decides to separate and explore both</li>
 <li>Oleg takes the narrow left passage and reaches a sheer cliff over a bottomless gap, with giant crystals jutting from the far wall</li>
-<li>Whispering "slug form," Oleg uses snail goop to climb sideways along the wall; the snails help him across when he slips, costing him all his hope and a jolt of stress</li>
+<li>Whispering "slug form," Oleg uses snail goop to climb sideways along the wall; the experience causes a jolt of stress</li>
 <li>Oleg reaches a giant crystal at the midpoint, catches his breath, and sees the passage continue deeper on the far side</li>
+<li>Alone on his side, Oleg paints slime war-paint on his cheeks for courage and makes a frog-squat leap of faith across the gap, landing on solid ground</li>
 <li>Halden takes the wider right passage and dives into a cold, flooded tunnel of dark water and air pockets, recalling an old fight where he dove into a sea monster's mouth</li>
 <li>Swimming noisily, Halden hears a deep grumble echo through the same water he is in</li>
 <li>The tunnel opens into a cavern that is itself a giant geode, its ceiling crusted with crystals</li>
 <li>Halden spots a glowing orb underwater and swims toward it — only for white eyes and the maw of a whale-sized anglerfish to resolve around the lure</li>
 <li>A desperate chase begins; Halden launches off a jutting crystal and swims for the far ledge as the fish's lure casts his shadow ahead of him</li>
-<li>Alone on his side, Oleg paints slime war-paint on his cheeks for courage and makes a frog-squat leap of faith across the gap, landing on solid ground — then wonders how he will ever get back</li>
-<li>Halden draws on his farmhand days wrangling a young, water-loving Star to power through the water, hauling himself onto land just ahead of the anglerfish</li>
+<li>Halden draws on memories of his farmhand days, hauling himself onto land just ahead of the anglerfish</li>
 <li>The session ends with the two heroes on separate paths, each pressing deeper into the dark</li>
 </ul>
 </div>
@@ -73,7 +72,6 @@ summary: June 16, 2026 — Halden and Oleg descend into the crystal cave, befrie
 <li>Halden escaped the anglerfish but is now alone and deeper in the flooded cave</li>
 <li>The dragon-bone crystals that drew them here still lie somewhere ahead, unreached</li>
 <li>The thousands of crystalline snails — and Robert — remain in the chamber behind them</li>
-<li>Halden's vow not to harvest a living snail's crystal may complicate any future harvesting in the cave</li>
 </ul>
 </div>
 </div>
